@@ -1,6 +1,6 @@
 ---
 title: First Post Test
-date: YYYY-MM-DD HH:MM:SS +/-TTTT
+date: 2022-11-23 01:00:00
 categories: [jekyll, testing]
 tags: [test]     # TAG names should always be lowercase
 ---
