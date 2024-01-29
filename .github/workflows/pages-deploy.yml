@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2  # Update to the latest version
+        uses: actions/checkout@v4  # Update to the latest version
 
       - name: Setup Pages
         id: pages
