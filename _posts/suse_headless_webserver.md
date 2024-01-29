@@ -1,0 +1,1 @@
+/Volumes/Charles10/charles/IT/hardware/gigabyte/brix/suse_headless_webserver.md
