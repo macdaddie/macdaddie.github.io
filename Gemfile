@@ -2,10 +2,6 @@
 
 source 'https://rubygems.org'
 
-# support for github pages
-
-gem 'github-pages', '~> 231', group: :jekyll_plugins
-
 # gem "jekyll-theme-chirpy", "~> 5.3", ">= 5.3.2"
 gem 'jekyll-compose', group: [:jekyll_plugins]
 gem 'jekyll-theme-chirpy', '~> 6.4.2'
@@ -30,6 +26,3 @@ gem 'wdm', '~> 0.1.1', install_if: Gem.win_platform?
 
 # Jekyll <= 4.2.0 compatibility with Ruby 3.0
 gem 'webrick', '~> 1.7'
-
-# Google protobuf compatibility with Ruby 3.3.3
-gem 'google-protobuf', '~> 3.21'
