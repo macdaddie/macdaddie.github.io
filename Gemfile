@@ -2,6 +2,10 @@
 
 source 'https://rubygems.org'
 
+# support for github pages
+
+gem 'github-pages', '~> 231', group: :jekyll_plugins
+
 # gem "jekyll-theme-chirpy", "~> 5.3", ">= 5.3.2"
 gem 'jekyll-compose', group: [:jekyll_plugins]
 gem 'jekyll-theme-chirpy', '~> 6.4.2'
