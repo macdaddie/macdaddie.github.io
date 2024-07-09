@@ -198,10 +198,11 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-gems:
-  - jekyll-asciidoc
-
 asciidoc:
   attributes:
     showtitle: true
     icons: font
+
+include:
+  - ".adoc"
+  - ".asciidoc"
