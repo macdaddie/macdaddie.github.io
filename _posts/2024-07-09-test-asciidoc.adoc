@@ -1,3 +1,7 @@
 = This is an asciidoc test
 
 If this is rendered then jekyll is recognising asciidoc
+
+/... and I have succeeded!
+
+NOTE: This is a note

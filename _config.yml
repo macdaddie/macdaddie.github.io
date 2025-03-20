@@ -202,7 +202,6 @@ asciidoc:
   attributes:
     showtitle: true
     icons: font
-
 include:
   - ".adoc"
   - ".asciidoc"
