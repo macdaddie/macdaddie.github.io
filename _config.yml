@@ -3,134 +3,102 @@
 # Import the theme
 theme: jekyll-theme-chirpy
 
-# Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
-# and doesn't have a custom domain.
+# Base URL: Set this if hosting on GitHub Pages under a project repo
+# Leave empty if using a custom domain (e.g., rocasta.com)
 baseurl: ""
 
-# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
-# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
-# otherwise, the layout language will use the default value of 'en'.
+# Site Language & Timezone
 lang: en
-
-# Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: US/Central
 
-# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-# ↓ --------------------------
-
-title: Rocasta Dot Com # the main title
-
-tagline: A website created with almost no thought at all # it will display as the sub-title
-
-description: >- # used by seo meta and the atom feed
+# SEO & Metadata
+title: Rocasta Dot Com
+tagline: A website created with almost no thought at all
+description: >-
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
 
-# fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
+# Change to your domain name
 url: "https://www.rocasta.com"
 
+# GitHub & Social Links
 github:
-  username: macdaddie # change to your github username
+  username: macdaddie
 
-twitter:
-  username: twitter_username # change to your twitter username
+# twitter:
+#   username: twitter_username
 
 social:
-  # Change to your full name.
-  # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Charles Webster
-  email: jekyll@rocasta.com # change to your email address
+  email: jekyll@rocasta.com
   links:
-    # The first element serves as the copyright owner's link
-    # - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/macdaddie # change to your github homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
+    - https://github.com/macdaddie
+    # Uncomment to add more social links
+    # - https://twitter.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: # fill in to your verification string
-
-# ↑ --------------------------
-# The end of `jekyll-seo-tag` settings
-
+# Google Services
+google_site_verification: "" # Add your Google verification string
 google_analytics:
-  id: # fill in your Google Analytics ID
-  # Google Analytics pageviews report settings
+  id: "" # Add your Google Analytics ID
   pv:
-    proxy_endpoint: # fill in the Google Analytics superProxy endpoint of Google App Engine
-    cache_path: # the local PV cache data, friendly to visitors from GFW region
+    proxy_endpoint: "" # Google Analytics superProxy endpoint
+    cache_path: "" # Local PV cache for users behind firewalls
 
-# Prefer color scheme setting.
-#
-# Note: Keep empty will follow the system prefer color by default,
-# and there will be a toggle to switch the theme between dark and light
-# on the bottom left of the sidebar.
-#
-# Available options:
-#
-#     light  - Use the light color scheme
-#     dark   - Use the dark color scheme
-#
-theme_mode: # [light|dark]
+# Theme Preferences
+theme_mode: "" # [light | dark] - Leave empty for system preference
 
-# The CDN endpoint for images.
-# Notice that once it is assigned, the CDN url
-# will be added to all image (site avatar & posts' images) paths starting with '/'
-#
-# e.g. 'https://cdn.com'
-img_cdn:
+# Image CDN (if using external image hosting)
+img_cdn: ""
 
-# the avatar on sidebar, support local or CORS resources
-avatar:
+# Sidebar Avatar (local or remote image URL)
+avatar: ""
 
-# boolean type, the global switch for ToC in posts.
+# Table of Contents (ToC) in posts
 toc: true
 
+# Comments Configuration
 comments:
-  active: # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
-  # The active options are as follows:
+  active: "" # Options: [disqus | utterances | giscus] - Leave empty to disable
   disqus:
-    shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-  # utterances settings › https://utteranc.es/
+    shortname: "" # Your Disqus shortname
   utterances:
-    repo: # <gh-username>/<repo>
-    issue_term: # < url | pathname | title | ...>
-  # Giscus options › https://giscus.app
+    repo: "" # GitHub repo for comments
+    issue_term: "" # [url | pathname | title | ...]
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
-    mapping: # optional, default to 'pathname'
-    input_position: # optional, default to 'bottom'
-    lang: # optional, default to the value of `site.lang`
-    reactions_enabled: # optional, default to the value of `1`
+    repo: "" # GitHub repo
+    repo_id: ""
+    category: ""
+    category_id: ""
+    mapping: "" # Default: 'pathname'
+    input_position: "" # Default: 'bottom'
+    lang: "" # Default to `site.lang`
+    reactions_enabled: "" # Default: '1'
 
-# Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
+# Self-hosted static assets
 assets:
   self_host:
-    enabled: # boolean, keep empty means false
-    # specify the Jekyll environment, empty means both
-    # only works if `assets.self_host.enabled` is 'true'
-    env: # [development|production]
+    enabled: false # Set to true if using self-hosted assets
+    env: "" # [development | production]
 
+# Progressive Web App (PWA)
 pwa:
-  enabled: true # the option for PWA feature
+  enabled: true
 
+# Pagination
 paginate: 10
 
-# ------------ The following options are not recommended to be modified ------------------
-
+# Code Syntax Highlighting
 kramdown:
   syntax_highlighter: rouge
-  syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
+  syntax_highlighter_opts:
     css_class: highlight
-    # default_lang: console
     span:
       line_numbers: false
     block:
       line_numbers: true
       start_line: 1
 
+# Collections & Content Defaults
 collections:
   tabs:
     output: true
@@ -138,14 +106,12 @@ collections:
 
 defaults:
   - scope:
-      path: "" # An empty string here means all files in the project
+      path: "" # Applies to all files
       type: posts
     values:
       layout: post
-      comments: true # Enable comments in posts.
-      toc: true # Display TOC column in posts.
-      # DO NOT modify the following parameter unless you are confident enough
-      # to update the code of all other post links in this project.
+      comments: true
+      toc: true
       permalink: /posts/:title/
   - scope:
       path: _drafts
@@ -153,7 +119,7 @@ defaults:
       comments: false
   - scope:
       path: ""
-      type: tabs # see `site.collections`
+      type: tabs
     values:
       layout: page
       permalink: /:title/
@@ -166,9 +132,21 @@ defaults:
     values:
       swcache: true
 
+# Jekyll Archives (for categories & tags)
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+# SASS Settings (CSS compression)
 sass:
   style: compressed
 
+# HTML Compression
 compress_html:
   clippings: all
   comments: all
@@ -178,6 +156,7 @@ compress_html:
   ignore:
     envs: [development]
 
+# Excluded Files
 exclude:
   - "*.gem"
   - "*.gemspec"
@@ -189,19 +168,15 @@ exclude:
   - node_modules
   - package*.json
 
-jekyll-archives:
-  enabled: [categories, tags]
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/
-
+# AsciiDoc Support
 asciidoc:
   attributes:
     showtitle: true
     icons: font
+
+# Ensure AsciiDoc files are included in site build
 include:
-  - ".adoc"
-  - ".asciidoc"
+  - "_posts/*.adoc"
+  - "_posts/*.asciidoc"
+  - "*.adoc"
+  - "*.asciidoc"
