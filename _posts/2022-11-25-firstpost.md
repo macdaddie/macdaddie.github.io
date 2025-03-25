@@ -1,11 +1,12 @@
 ---
-title: First Post Test
-date: 2022-11-23 01:00:00
+title: Second Post Test
+date: 2022-11-25 01:00:00
 categories: [jekyll, testing]
-tags: [test]     # TAG names should always be lowercase
+tags: [test] # TAG names should always be lowercase
 ---
-# first post
 
-this is the first post
+# Second post
+
+This is the Second post
 
 It should be displayed somewhere
