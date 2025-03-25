@@ -2,8 +2,9 @@
 title: Building A Headless gigabyte brix Server
 date: 2022-11-23 01:00:00
 categories: [jekyll, hardware, server]
-tags: [hardware]     # TAG names should always be lowercase
+tags: [hardware] # TAG names should always be lowercase
 ---
+
 # building a gigabyte brix suse distro
 
 1. download latest copy of suse [tumbleweed](https://get.opensuse.org/tumbleweed)
@@ -26,7 +27,7 @@ tags: [hardware]     # TAG names should always be lowercase
 
 ## enable ssh
 
-*(if it's not installed)*
+_(if it's not installed)_
 
 ```sh
 sudo zypper refresh
@@ -79,7 +80,7 @@ zypper in apache2
 
 - add your websites as separate folders to this location eg. `mkdir -p /srv/www/htdocs/mywebsite`
 
-   by default apache denies access to all files. Don't edit the http.conf file correctly, rather create a default virtual host file in `vhosts.d` directory that sends all traffic to the default location (`svr/www/htdocs/mywebsite`) - if in future you add multiple sites then this is the file to edit and add new sites here.
+  by default apache denies access to all files. Don't edit the http.conf file correctly, rather create a default virtual host file in `vhosts.d` directory that sends all traffic to the default location (`svr/www/htdocs/mywebsite`) - if in future you add multiple sites then this is the file to edit and add new sites here.
 
   the way I did it was to `cd` to `/etc/apache2/vhosts.d` and
 
