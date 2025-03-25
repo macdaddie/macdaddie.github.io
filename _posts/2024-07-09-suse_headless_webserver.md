@@ -1,3 +1,9 @@
+---
+title: Building A Headless gigabyte brix Server
+date: 2022-11-23 01:00:00
+categories: [jekyll, hardware, server]
+tags: [hardware]     # TAG names should always be lowercase
+---
 # building a gigabyte brix suse distro
 
 1. download latest copy of suse [tumbleweed](https://get.opensuse.org/tumbleweed)
