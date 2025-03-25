@@ -241,3 +241,4 @@ asciidoctor:
   ext: asciidoc,adoc,ad
 plugins:
   - jekyll-asciidoc
+future: true
