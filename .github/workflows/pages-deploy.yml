@@ -50,6 +50,13 @@ jobs:
         run: |
           bundle exec htmlproofer _site --disable-external --check-html --allow_hash_href
 
+      # 💡 Optional: workaround for the missing action download info bug
+      - name: Dummy artifact upload (to satisfy dependency)
+        uses: actions/upload-artifact@v3
+        with:
+          name: dummy
+          path: _site/index.html  # Any file to upload; will be discarded
+
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v1
         with:
