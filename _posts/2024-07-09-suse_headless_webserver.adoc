@@ -1,0 +1,105 @@
+---
+title: "Building a Gigabyte Brix SUSE Distro"
+date: 2024-07-09
+layout: post
+---
+
+= Building a Gigabyte Brix SUSE Distro
+
+. Download the latest copy of SUSE link:tumbleweed[https://get.opensuse.org/tumbleweed]
+. Burn this ISO image to thumb drive
+
+[source,sh]
+----
+dd if=<location_of_iso> of=/dev/rdisk<thumbdrive_disk_number> bs=1m
+----
+
+. Put this in the front USB slot of the Brix
+. Power off and power on (a hard reboot is important)
+. Press the delete key repeatedly to get to Brix BIOS
+. Change boot order in boot section to specify USB drive as 1st boot
+. Save and Exit (reboot on thumb drive)
+. Run installer
+
+== Enable SSH
+
+*(if it's not installed)*
+
+[source,sh]
+----
+sudo zypper refresh
+sudo zypper install --no-confirm openssh
+
+sudo systemctl start sshd
+sudo systemctl enable sshd
+----
+
+=== Firewall
+
+==== Allow SSH
+
+[source,sh]
+----
+sudo firewall-cmd --permanent --add-service=ssh
+sudo firewall-cmd --reload
+----
+
+==== Allow Web
+
+[source,sh]
+----
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --reload
+----
+
+== Configuring GRUB for Headless Boot
+
+Edit `/etc/default/grub`
+
+Change `GRUB_TERMINAL="gfxterm"` to `GRUB_TERMINAL="console"`
+
+Run
+
+[source,sh]
+----
+grub2-mkconfig -o /boot/grub2/grub.cfg
+----
+
+== Apache
+
+=== Installing Apache
+
+[source,sh]
+----
+zypper in apache2
+----
+
+=== Configuring Apache
+
+- Document root can be found in `/etc/apache2/default-server.conf` and by default is `/srv/www/htdocs`
+- Add your websites as separate folders to this location e.g., `mkdir -p /srv/www/htdocs/mywebsite`
+
+By default, Apache denies access to all files. Don't edit the http.conf file directly; rather, create a default virtual host file in the `vhosts.d` directory that sends all traffic to the default location (`/srv/www/htdocs/mywebsite`). If in the future you add multiple sites, then this is the file to edit and add new sites here.
+
+The way I did it was to `cd` to `/etc/apache2/vhosts.d` and
+
+[source,sh]
+----
+cp vhost.template _default_vhost.conf
+----
+
+(`vhost.conf` files are loaded automatically in name order, so the `_default_vhost.conf` file name virtually guarantees it will be the first one)
+
+I then edited the `_default_vhost.conf` and changed the placeholders for the domain and the document root for my domain and my document root of `/srv/www/htdocs/mywebsite`.
+
+Be sure to scan the whole file for any other paths where you could insert `/srv/www/htdocs/mywebsite` as there are a couple.
+
+Then restart Apache with
+
+[source,sh]
+----
+systemctl restart apache2
+----
+
+This worked for me.

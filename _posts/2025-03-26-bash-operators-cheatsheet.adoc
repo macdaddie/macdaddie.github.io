@@ -1,0 +1,7 @@
+---
+title: Bash Operator Cheatsheet
+date: 2025-03-26
+toc: right
+---
+
+include::../../../os/unix/bash_operators_cheatsheet.adoc[]

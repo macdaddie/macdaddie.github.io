@@ -1,0 +1,9 @@
+---
+title: Useful UNIX
+date: 2025-03-26
+layout: post
+tags: [commands,unix]
+toc: true
+---
+
+include::../../../os/unix/useful_unix.adoc[]
