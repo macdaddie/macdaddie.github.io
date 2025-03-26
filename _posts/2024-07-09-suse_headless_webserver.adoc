@@ -2,11 +2,12 @@
 title: "Building a Gigabyte Brix SUSE Distro"
 date: 2024-07-09
 layout: post
+toc: true
 ---
 
 = Building a Gigabyte Brix SUSE Distro
 
-. Download the latest copy of SUSE link:tumbleweed[https://get.opensuse.org/tumbleweed]
+. Download the latest copy of SUSE link:https://get.opensuse.org/tumbleweed[tumbleweed]
 . Burn this ISO image to thumb drive
 
 [source,sh]
