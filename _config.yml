@@ -237,7 +237,7 @@ asciidoctor:
     experimental: true # Enables experimental features if needed
     nofooter: true # Removes default footer
     sectanchors: true # Adds section anchors for easy linking
-    toc: left # Enables a table of contents on the left
+    toc: right # Enables a table of contents on the left
   ext: asciidoc,adoc,ad
 plugins:
   - jekyll-asciidoc
