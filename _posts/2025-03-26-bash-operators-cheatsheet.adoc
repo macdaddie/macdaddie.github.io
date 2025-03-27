@@ -4,4 +4,4 @@ date: 2025-03-26
 toc: right
 ---
 
-include::/Volumes/Charles10/charles/IT/os/unix/bash_operators_cheatsheet.adoc[]
+include::../docs/bash_operators_cheatsheet.adoc[]

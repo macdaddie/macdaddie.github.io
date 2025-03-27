@@ -1,0 +1,180 @@
+// Document Attributes
+:source-highlighter: highlight.js
+:highlightjs-theme: monokai
+:source-language: bash
+:icons: font
+:experimental:
+// Image directory
+:imagesdir: <insert relative path to image directory here>
+// force the base64 embedding of images
+:data-uri:
+// enables the representation of mathematical formulae using STEM
+:stem:
+// you can use ‘left’ or ‘right’ instead of ’true’ if you want the toc off to the side
+:toc: right 
+:toclevels: 3
+:toc-title: Table of Contents
+:sectnums:
+// set up the appendix caption and number series
+:appendix-caption: Appendix
+:appendix-number: 0
+// :leveloffset: +1 // pushes included document section headings down one level
+// Github Specific attributes
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+:author: Charles Webster
+:email: charles.webster@kyndryl.com
+:revdate: {docdate}
+// Main Document
+= Diagnosing and Optimizing SMB Performance Between Two M1 Macs
+
+== Diagnosing the Problem
+
+. Check Network Speed
+* Use `iperf3` to measure network throughput between the two Macs.
++
+[source,shell]
+----
+# On Mac B (SMB Server)
+iperf3 -s
+
+# On Mac A (Client)
+iperf3 -c <Mac B's IP>
+----
+* If the speed is close to 1Gbps, the network is performing as expected.  
+* If it’s significantly lower (e.g., below 500 Mbps), there may be a bottleneck in the network hardware or cabling.
+
+. Check Latency with `ping`
+* Use `ping` to measure round-trip time between Mac A and Mac B.
++
+[source,shell]
+----
+ping -c 10 <Mac B's IP>
+----
+* A response time below 1ms is expected.
+* If latency is higher, check for network congestion or interference.
+
+. Test File Transfer Speed
+* Copy a large file using `rsync` to measure SMB performance.
++
+[source,shell]
+----
+rsync --progress /Volumes/SharedDrive/testfile.bin ~/Desktop/
+----
+* A well-performing SMB connection on a 1Gb network should achieve speeds close to 110 MB/s.
+
+== Diagnosing SMB-Specific Issues
+
+SMB Version::
+Check which SMB version is being used.
++
+[source,shell]
+----
+smbutil statshares -a
+----
+* If the SMB version is 2.1, it may not be negotiating SMB 3 properly.
+
+Forcing SMB 3::
+* Modify `/etc/nsmb.conf` to enforce SMB 3.
++
+[source,ini]
+----
+[default]
+protocol_vers_map=6
+----
+* Restart SMB services:
++
+[source,shell]
+----
+sudo launchctl stop com.apple.smbd
+sudo launchctl start com.apple.smbd
+----
+
+== Optimizing macOS for SMB
+
+Finder Metadata Indexing::
+* Finder generates thumbnails and previews, which can slow down SMB access.  
+* Disable animations and metadata caching:
++
+[source,shell]
+----
+defaults write com.apple.finder DisableAllAnimations -bool true
+killall Finder
+----
+
+Opportunistic Locking::
+* Disabling OpLocks can improve performance. Add to `/etc/nsmb.conf`:
++
+[source,ini]
+----
+[default]
+oplocks=no
+----
+* Restart SMB services:
++
+[source,shell]
+----
+sudo launchctl stop com.apple.smbd
+sudo launchctl start com.apple.smbd
+----
+
+Spotlight Indexing::
+* Prevent Spotlight from indexing SMB shares:
++
+[source,shell]
+----
+sudo mdutil -i off /Volumes/SharedDrive
+----
+* Permanently exclude the SMB share from indexing:
++
+[source,shell]
+----
+echo "/Volumes/SharedDrive" >> ~/.metadata_never_index
+----
+
+Disabling SMB Signing::
+SMB signing adds security but reduces performance. It is enabled by default on macOS, which can impact file transfer speeds footnote:smb_signing[link:https://support.apple.com/en-us/HT208209[Apple Support - SMB Signing]].
+
+. Check if SMB signing is enabled:
++
+[source,shell]
+----
+sysctl -a | grep net.smb.fs.kern.signed
+----
+* If it returns `1`, signing is enabled.
+
+. Disable SMB signing:
++
+[source,ini]
+----
+[default]
+signing_required=no
+----
+. Restart SMB services:
++
+[source,shell]
+----
+sudo launchctl stop com.apple.smbd
+sudo launchctl start com.apple.smbd
+----
+
+== Testing Performance After Optimization
+
+* Re-run `iperf3` to verify network speeds.  
+* Use `cp` or `rsync` to test file transfer speeds.  
+* If performance is still slow, consider using `NFS` instead of `SMB` for macOS-to-macOS file sharing footnote:nfs_better_smb[link:https://apple.stackexchange.com/questions/261628/why-is-smb-so-slow-on-macos[Apple Stack Exchange - SMB vs NFS]].
+
+== Expected Improvements
+
+* Enabling SMB 3: 10–20% improvement in speed.  
+* Disabling SMB signing: Up to 2× faster transfers.  
+* Disabling Finder previews: Faster browsing of network shares.  
+* Preventing Spotlight indexing: No lag when accessing files.  
+* Using `rsync` instead of Finder: More consistent transfer speeds.
+
+After applying these optimizations, SMB performance should be significantly improved, reducing latency and maximizing transfer speeds across the 1Gb network.

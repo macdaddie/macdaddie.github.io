@@ -5,4 +5,4 @@ tags: [unix, smb, os,mac]
 toc: true
 ---
 
-include::/Volumes/Charles10/charles/IT/os/unix/bash_operators_cheatsheet.adoc[]
+include::../docs/diagnose_smb_latency.adoc[]
