@@ -6,4 +6,4 @@ tags: [commands,unix]
 toc: true
 ---
 
-include::../../../os/unix/useful_unix.adoc[]
+include::/Volumes/Charles10/charles/IT/os/unix/useful_unix.adoc[]
