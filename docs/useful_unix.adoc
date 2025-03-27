@@ -319,7 +319,7 @@ mount -t smbfs //cwebster@bdc.localnet/CSW01 /<path_to_mount_point/<mount_point>
 [source, bash]
 mount_smbfs //cwebster@bdc.localnet/CSW01 /<path_to_mount_point/<mount_point>
 
-== link:Useful_OpenSSL.md[useful Openssl]
+== link:./useful_ssl/Useful_OpenSSL.md[useful Openssl]
 
 === Encrypt a file using OpenSSL
 
