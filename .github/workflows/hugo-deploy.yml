@@ -37,7 +37,7 @@ jobs:
           extended: true
 
       - name: Setup Asciidoctor
-        run: gem install asciidoctor
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq asciidoctor
 
       - name: Build
         run: hugo --minify
