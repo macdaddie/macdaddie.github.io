@@ -5,6 +5,7 @@ vendor
 # Hugo build output
 /public
 /resources
+_site
 
 # IDE
 .idea
