@@ -36,6 +36,9 @@ jobs:
           hugo-version: "latest"
           extended: true
 
+      - name: Setup Asciidoctor
+        run: gem install asciidoctor
+
       - name: Build
         run: hugo --minify
 
