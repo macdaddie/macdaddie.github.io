@@ -1,0 +1,40 @@
+baseURL = "https://www.rocasta.com/"
+locale = "en"
+title = "Rocasta Dot Com"
+theme = "PaperMod"
+
+paginate = 10
+enableRobotsTXT = true
+enableEmoji = true
+
+[params]
+  description = "A minimal, responsive and feature-rich blog for technical writing and creative projects."
+  author = "Charles Webster"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[menu]
+  main = [
+    { identifier = "posts", name = "Posts", url = "/posts/", weight = 10 },
+    { identifier = "about", name = "About", url = "/about/", weight = 20 },
+    { identifier = "arch", name = "Arch", url = "/arch/", weight = 15 },
+    { identifier = "tags", name = "Tags", url = "/tags/", weight = 30 },
+  ]
+
+[security.exec]
+  allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^git$', '^node$', '^postcss$', '^tailwindcss$', '^asciidoctor$']
+
+[markup.asciidocExt]
+  workingFolderCurrent = true
+  noHeaderOrFooter = true
+  safeMode = "unsafe"
+  attributes = { icons = "font", idseparator = "_", source-highlighter = "rouge", "rouge-style" = "monokai", experimental = true, sectanchors = true }

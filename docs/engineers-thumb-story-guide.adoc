@@ -1,0 +1,430 @@
+// Document Attributes
+:icons: font
+:experimental:
+// Image directory — local vs Jekyll
+ifndef::env-jekyll[]
+:imagesdir: ./images/
+:source-highlighter: highlight.js
+:highlightjs-theme: monokai
+:data-uri:
+:plantuml-jar-path: /usr/local/bin/plantuml.jar
+:plantuml-format: svg
+:diagram-cache-path: ./.diagram-cache
+:stylesheet: steampunk.css
+:stylesdir: /Volumes/Charles10/charles/personal/documents/stories/adv_sherlock_holmes/.opencode/skills/steampunk-asciidoc/
+endif::[]
+ifdef::env-jekyll[]
+:imagesdir: /assets/img/posts/engineers-thumb
+:source-highlighter: rouge
+endif::[]
+:source-language: bash
+:stem:
+:toc: right 
+:toclevels: 3
+:toc-title: Table of Contents
+:doctype: book
+:sectnums:
+:appendix-caption: Appendix
+:appendix-number: 0
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+:author: Charles Webster
+:email: charles.webster@rocasta.com
+:revdate: {docdate}
+
+// Main Document
+= The Adventure of the Engineer's Thumb
+
+== Story Guide
+
+The original story runs approximately 6,000 words. For a 32-page picture book
+(13–14 double-page spreads after front matter), target text is ~600 words,
+roughly 40–50 words per spread.
+
+This guide lists every spread with its scene, text, and the cats' involvement.
+
+---
+
+=== Page Credits
+
+- Pages 1–3: Front matter (half-title, title, copyright)
+- Pages 4–31: Story content (14 spreads)
+- Page 32: Back matter / colophon
+
+---
+
+== Spread 1 — The Clock Strikes Seven
+
+*Page 4 — Full-page illustration*
+
+image:scene-01-watsons-consulting-room.png[]
+
+*Scene:* Dr. Watson's consulting room, early morning. A young man sits with a
+blood-soaked handkerchief wrapped around his hand. Watson, still in his
+dressing-gown, examines him with concern.
+
+*Narration:*
+
+[quote]
+It was just before seven o'clock when the maid knocked. A young gentleman had arrived from Paddington Station with a hand wrapped in bloody linen. His card read: _Mr. Victor Hatherley, Hydraulic Engineer._
+
+*Cat note (invisible to text):* On the rooftops visible through the window,
+two silhouettes — Catticus and Lollipop — watch the cab that brought
+Hatherley. They had tracked him from Paddington.
+
+---
+
+== Spread 2 — A Strange Case
+
+*Pages 6–7 — Double-page spread*
+
+image:scene-02-thumb-theft.png[]
+
+*Scene:* Consulting room. Hatherley sits with his bandaged hand extended.
+Watson is half-rising from his chair, one hand reaching out, his face caught
+between professional concern and frustrated alarm.
+
+Catticus has jumped on the table and is sniffing the enginner's injured hand. His nose as turned into brass, indicating that those steamborg implants have activated.
+At the
+doorway, Lollipop has the severed thumb in her mouth, a swift blur dashing
+from the room as Watson's shout forms on his lips.
+
+*Narration:*
+[quote]
+____
+"A cleaver," said he, when I asked. "And not an accident — murderously
+intended."
+
+He had brought the thumb with him, wrapped in linen. I stared at it, then
+at the wound, then back again. Before I could speak, one of Mrs. Hudson's
+cats — the calico — had seized it and was disappearing through the door.
+
+I gave chase, but too late. The cat was gone.
+
+"You must tell this to my friend, Mr. Sherlock Holmes," I said at last,
+"before you go to the police."
+____
+
+*Cat note:* Lollipop's theft is not random — the severed thumb carries trace
+metal residues from the press. She and Catticus will analyse it in their
+quarters beneath the kitchen floorboards. Catticus's apparent curiosity at the
+wound is equally calculated: his enhanced olfactory sensors are cataloguing
+hydraulic oil, nickel dust, and fuller's-earth (the colonel's cover story) —
+evidence that the wound is not what it seems.
+
+---
+
+== Spread 3 — Breakfast at Baker Street
+
+*Pages 8–9 — Double-page spread*
+
+image:scene-03-221b-breakfast.png[]
+
+*Scene:* 221B Baker Street. Morning light through the bay window. Holmes in his
+dressing-gown, pipe in hand, rashers and eggs on the table. Watson and Hatherley
+enter; Hatherley is talking, animatedly, his hand freshly bandaged by Dr. Watson. On the mantelpiece, Catticus Finch sits motionless, his brass monocle
+catching the light. Lollipop curls on the window seat.
+
+*Narration:*
+[quote]
+____
+Holmes received us in his quietly genial fashion, ordered fresh rashers and
+eggs, and joined us in a hearty meal. When it was concluded, he settled our
+new acquaintance upon the sofa.
+
+"Tell us what you can," said he.
+____
+
+*Cat note:* Catticus's monocle lens shifts, becoming slightly telescopic — magnifying,
+analysing. the tip of Lollipop's scorpion tail transforms into a brass mesh parabolic reflector, swivel toward Hatherley's voice, cataloguing every
+vocal tremor. Neither cat appears to be doing anything but being cats.
+
+---
+
+== Spread 4 — The Mysterious Colonel
+
+*Pages 10–11 — Double-page spread*
+
+image:scene-04-colonel-stark-office.png[]
+
+*Scene:* Flashback — Hatherley's modest Victoria Street office. A gaunt,
+fleshless man with a German accent leans across the desk. His eyes are bright
+and suspicious. Fifty guineas glint on the table.
+
+*Narration:*
+[quote]
+____
+"I am Colonel Lysander Stark," said he. "I need a hydraulic engineer for a
+single night's work. The pay is fifty guineas. You will tell no one."
+
+Hungry for work, Hatherley agreed.
+____
+
+*Cat note (metaphorical):* No cats in this flashback, but you can see one or two clockwork mice, one sitting on a shelf next to an old oil can that is dripping oil onto a grateful mouse, and another is running allong the skirting board towards a mouse hole that has a small but ornate archway over it.
+
+
+== Spread 5 — The Night Train
+
+*Pages 12–13 — Double-page spread*
+
+image:scene-05-night-train.png[]
+
+*Scene:* Paddington Station at night. Steam hisses around the platform lamps.
+Hatherley boards the last train to Eyford, a small Berkshire village.
+
+*Narration:*
+[quote]
+____
+At eleven o'clock that night, he took the last train from Paddington. At
+Reading he changed, and at Eyford, a sleepy porter with a lantern watched
+the sole passenger alight.
+
+In the shadows beyond the wicket, a carriage waited.
+
+*Cat note:* there is a hydro-clockwork mouse sticking it's head out of Hatherley's coat pocket (surreptitiously). Catticus and Lollipop are not present but there are a couple of feral steamborg cats on the platform eyeing Hatherley and the mouse slyly and sinisterly. Feral steambord cats can be paralleled with the street urchins making up Sherlock Holmes "irregulars". One may have a worn out cap. They can't hide their steampunk modifications so there should be tarnished brass fittings clearly visible. Likely legs and spine replacements.
+____
+
+---
+
+== Spread 6 — The Frosted Windows
+
+*Pages 14–15 — Double-page spread*
+
+image:scene-06-carriage-ride.png[]
+
+*Scene:* Hatherley has arrived at Eyford where Colonel Stark picks him up from the station, in his carriage. Inside the carriage. Hatherley sits opposite Colonel Stark. The
+windows are frosted — he can see nothing of the route. The colonel watches him
+in silence.
+
+*Narration:*
+[quote]
+____
+The carriage windows were made of frosted glass. Hatherley could see
+nothing but the occasional blur of a passing light. The colonel sat in
+silence, watching.
+
+The drive took an hour. Seven miles, Stark had said. It felt like twelve.
+____
+
+*Cat note:* 
+There are no cats in this scene. Hatherley's hydro-clockwork mouse's ears have transformed into little radar dishes and are scanning from side to side. The mouse makes little notes as to where they are going (out 3.5 miles, back 3.5 miles, in a curcle) in a tiny notebook with a tiny pencil. The mouse does this surreptitiously, out of sight of the Colonel
+
+---
+
+== Spread 7 — The House in the Country
+
+*Pages 16–17 — Double-page spread*
+
+image:scene-07-dark-house.png[]
+
+*Scene:* A large, rambling country house. The carriage pulls up to a porch.
+Hatherley is hurried inside before he can glimpse the front. The door slams.
+Inside, darkness — then a woman appears with a lamp, her face frightened.
+
+*Narration:*
+> The instant he crossed the threshold, the door slammed behind him. A woman
+> appeared with a lamp, her face beautiful but sick with fear.
+>
+> "I would go," she whispered. "There is no good for you to do."
+>
+> Hatherley, thinking only of his fee, refused.
+
+*Cat note:* Outside, Lollipop perches on the stable roof, her optical enhancer
+telescoping. She maps every window, every door, every chimney. Through the
+walls, she hears the faint hiss of a hydraulic accumulator charging.
+
+---
+
+== Spread 8 — The Hydraulic Press
+
+*Pages 18–19 — Double-page spread*
+
+image:scene-08-hydraulic-press.png[]
+
+*Scene:* A small, square chamber inside the press. Hatherley stands with
+Stark and the fat manager, Ferguson. The ceiling is the underside of a massive
+piston. Hatherley's lamp illuminates a metal floor crusted with metallic
+deposit.
+
+*Narration:*
+> "This is the hydraulic press," said Stark. He watched Hatherley examine the
+> mechanism.
+>
+> Hatherley saw at once the truth: the story of fuller's-earth was a lie.
+> This was a coining press — a counterfeit operation. He had been tricked.
+
+*Cat note:* At 221B, Catticus hops down from the mantelpiece and paces to
+Holmes's map of Berkshire. He places one paw deliberately on Eyford, then
+returns to his post. Holmes, absorbed in thought, does not notice.
+
+---
+
+== Spread 9 — Trapped
+
+*Pages 20–21 — Double-page spread*
+
+image:scene-09-trapped-in-press.png[]
+
+*Scene:* The door slams shut. Hatherley hammers against it. Above him, the
+black ceiling begins to descend — slowly, jerkily, with terrible force.
+
+*Narration:*
+> "You shall know all about the machine," Stark snarled — and slammed the
+> door. The key turned. The levers clanked.
+>
+> The ceiling began to descend. One foot. Two feet. Hatherley could not
+> stand upright.
+
+*Cat note:* High on a beam above the press, Lollipop's tail extends silently
+— whip mode. She hooks a ceiling joist and swings down. Her purpose is not
+to fight, but to observe. She memorises every detail of the press mechanism
+for later.
+
+---
+
+== Spread 10 — The Secret Panel
+
+*Pages 22–23 — Double-page spread*
+
+image:scene-10-secret-panel.png[]
+
+*Scene:* A thin line of yellow light appears between the wooden wall panels.
+They slide open — the woman from before, candle in hand. Hatherley throws
+himself through. Behind him, the lamp shatters; the press closes with a
+crunch of metal on metal.
+
+*Narration:*
+> A thin line of yellow light split the darkness — a hidden panel, opened by
+> the woman. Hatherley threw himself through. Behind him, the lamp crashed;
+> the press clanged shut.
+>
+> "Come!" she cried. "They will be here in a moment!"
+
+*Cat note:* Lollipop, still hidden in the rafters, flicks her tail. The
+woman's intervention was unplanned — but the press malfunction that gave
+Hatherley those extra seconds? That was the small gear Lollipop and Catticus
+strategically displaced earlier, now grinding the mechanism at just the right
+moment.
+
+---
+
+== Spread 11 — The Cleaver
+
+*Pages 24–25 — Double-page spread*
+
+image:scene-11-cleaver-attack.png[]
+
+*Scene:* The moonlit bedroom. The woman holds Stark back as Hatherley
+clambers out the window. The colonel breaks free, raises a butcher's cleaver,
+and brings it down. Hatherley falls.
+
+*Narration:*
+> The woman threw her arms around the colonel, crying, "He will be silent!"
+> He dashed her aside and swung the cleaver.
+>
+> Hatherley let himself drop. The blade caught his thumb — hacked it clean
+> off. He fell into the garden below, unconscious.
+
+*Cat note:* As Hatherley falls, Lollipop's grappling-hook tail catches a
+gutter, slowing his descent just enough to save his life. He never knows. In
+the moonlight, for just an instant, a cat-shaped silhouette watches from the
+roof, then vanishes.
+
+---
+
+== Spread 12 — Morning at Eyford
+
+*Pages 26–27 — Double-page spread*
+
+image:scene-12-morning-station.png[]
+
+*Scene:* Dawn. Hatherley wakes in a hedge by the roadside, hand throbbing. He
+staggers to the railway station — it is the very station where he arrived.
+
+*Narration:*
+> When he awoke, the moon had sunk and a bright morning was breaking. He was
+> lying in a hedge by the high road. Neither house nor garden were to be
+> seen.
+>
+> Staggering to the station, he took the first train back to London.
+
+*Cat note:* At 221B, Catticus and Lollipop sit side by side on the
+mantelpiece, waiting. They know the story is not yet over.
+
+---
+
+== Spread 13 — Holmes Deduces
+
+*Pages 28–29 — Double-page spread*
+
+image:scene-13-holmes-map.png[]
+
+*Scene:* The train to Eyford. Holmes, Hatherley, Watson, and Inspector
+Bradstreet gather around an ordnance map. Each points to a different compass
+point. Holmes calmly places his finger in the centre of the circle.
+
+*Narration:*
+> "Six miles out and six miles back," said Holmes. "The horse was fresh.
+> The house is here — within a mile of the station."
+>
+> "They are coiners on a large scale," he added. "The press was used to
+> form counterfeit silver."
+
+*Cat note:* If anyone had been watching Catticus as Holmes made his
+deduction, they might have noticed the cat's monocle briefly flash — a
+silent acknowledgement of a job well done.
+
+---
+
+== Spread 14 — The Burning House
+
+*Pages 30–31 — Double-page spread*
+
+image:scene-14-burning-house.png[]
+
+*Scene:* Eyford station platform. A column of smoke rises over the trees.
+The party rushes to find the house in flames — the broken lamp in the press
+started a fire. The criminals have fled.
+
+*Narration:*
+> As the train pulled into Eyford, a column of smoke rose above the trees.
+> The house was in flames — the shattered lamp had set the wooden walls
+> alight.
+>
+> "You have had your revenge," said Holmes. But the criminals were gone.
+>
+> "I have lost my thumb and my fee. What have I gained?" asked Hatherley.
+>
+> "Experience," said Holmes.
+
+*Cat note:* On the roof of the station house, two small silhouettes watch the
+fire. Catticus and Lollipop, having run the whole way from London along the
+telegraph wires, observe their work. The counterfeiting ring is broken. The
+house is ash. The woman and her captors have fled — but they know where.
+
+The cats turn and pad silently home to Baker Street, where Mrs. Hudson has
+left them a saucer of milk.
+
+---
+
+== Back Matter
+
+*Page 32*
+
+image:scene-00-cats-mantelpiece-221b.png[]
+
+*Scene:* The sitting room at 221B Baker Street. Evening. Holmes reads by the
+fire. On the mantelpiece, Catticus Finch and Lollipop sit in the warm glow
+of the gaslight. Nothing unusual. Just two ordinary cats.
+
+. . .
+
+. . .
+
+(Unless you look very closely at the tiny brass gear balanced on the edge of
+the mantelpiece, still faintly glistening with hydraulic oil.)

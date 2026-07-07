@@ -13,5 +13,4 @@ end
 
 gem 'wdm', '~> 0.2.0', platforms: %i[mingw x64_mingw mswin]
 
-gem 'jekyll-asciidoc'
-gem 'coderay'
+gem 'jekyll-asciidoc', '~> 3.0'

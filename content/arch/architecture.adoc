@@ -1,0 +1,103 @@
+---
+title: "Architecture Overview"
+date: 2026-07-07
+weight: 10
+showToc: true
+---
+
+This document describes the architecture of the rocasta.com static site.
+
+== Technology Stack
+
+* *Static Site Generator:* Hugo (Extended) v0.164+
+* *Theme:* PaperMod
+* *Content Format:* AsciiDoc (processed by Asciidoctor)
+* *Deployment:* GitHub Pages via GitHub Actions
+* *Local Development:* Hugo development server with live reload
+
+== Directory Structure
+
+[options="header"]
+|===
+| Path | Purpose
+| `content/posts/` | Blog posts in AsciiDoc
+| `content/arch/` | Architecture and build documentation
+| `content/about.md` | About page
+| `static/images/` | Static images served at `/images/`
+| `themes/PaperMod/` | Git submodule for theme
+| `public/` | Built site output (gitignored)
+|===
+
+== Content Model
+
+Each post is a standalone AsciiDoc file in `content/posts/` with Hugo YAML front matter:
+
+[source,yaml]
+----
+---
+title: "Post Title"
+date: 2026-07-07
+tags: [tag1, tag2]
+showToc: true
+---
+----
+
+Images are placed in `static/images/<post-name>/` and referenced via `image:` macro with `:imagesdir:` pointing to `/images/<post-name>`.
+
+AsciiDoc attributes that must be set per-post when using images:
+
+[source,asciidoc]
+----
+:imagesdir: /images/<post-name>
+----
+
+== Theme Architecture
+
+PaperMod provides:
+- Dark/light/auto theme toggle
+- Responsive design
+- Taxonomy support (tags, categories)
+- Table of contents
+- Code copy buttons
+- Social share buttons
+
+== Build Pipeline
+
+The site is built in two environments:
+
+=== Local Development
+
+ hugo server -D
+
+This starts a live-reload server at `http://localhost:1313`.
+
+=== CI/CD (GitHub Actions)
+
+On push to `main`, the `hugo-deploy.yml` workflow:
+1. Checks out the repo with submodules
+2. Installs Hugo Extended
+3. Runs `hugo --minify`
+4. Uploads `./public` as a Pages artifact
+5. Deploys to GitHub Pages
+
+== AsciiDoc Configuration
+
+Hugo's `hugo.toml` configures AsciiDoc processing:
+
+[options="header"]
+|===
+| Setting | Value | Purpose
+| `workingFolderCurrent` | `true` | Resolves `:imagesdir:` relative to the page file
+| `noHeaderOrFooter` | `true` | Prevents Asciidoctor from adding HTML wrappers
+| `safeMode` | `unsafe` | Allows file includes and custom attributes
+|===
+
+== Security
+
+Hugo restricts which external executables can run. Asciidoctor must be whitelisted in `hugo.toml`:
+
+[source,toml]
+----
+[security.exec]
+  allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^git$', '^node$', '^postcss$', '^tailwindcss$', '^asciidoctor$']
+----

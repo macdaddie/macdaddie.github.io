@@ -1,0 +1,90 @@
+---
+title: "Design Guide"
+date: 2026-07-07
+weight: 20
+showToc: true
+---
+
+This document explains the design decisions behind the site.
+
+== Why Hugo over Jekyll
+
+The site was originally built with Jekyll 4.4.1 + Chirpy theme. It was migrated to Hugo + PaperMod for the following reasons:
+
+=== Ruby Version Incompatibility
+
+Jekyll's dependency chain (specifically the `jekyll-theme-chirpy` gem) requires Ruby `~> 3.1`. Modern systems ship with Ruby 4.x, requiring a version manager (`chruby`, `rbenv`) to build locally. Hugo is a single Go binary with no runtime dependencies.
+
+=== Build Speed
+
+Hugo builds the entire site in ~1 second. Jekyll takes 30+ seconds.
+
+=== AsciiDoc Handling
+
+Hugo uses Asciidoctor as an external helper (same rendering engine). Jekyll uses the `jekyll-asciidoc` plugin which introduces additional complexity:
+- Pinning gem versions
+- Plugin compatibility with GitHub Pages
+- `include::` directives for content reuse
+
+Hugo's approach is simpler: standalone AsciiDoc files in `content/posts/`.
+
+=== Content Management
+
+|===
+| Aspect | Jekyll Approach | Hugo Approach
+| Post structure | Stub in `_posts/` + `include::` from `docs/` | Single file in `content/posts/`
+| Images | `assets/img/posts/` | `static/images/`
+| Config | `_config.yml` (YAML) | `hugo.toml` (TOML)
+| Build output | `_site/` | `public/`
+|===
+
+== Why PaperMod
+
+PaperMod was chosen over other Hugo themes because:
+
+* Excellent dark mode support (including auto-detect)
+* Minimal, content-first design
+* Active maintenance
+* Built-in TOC, code copy, and share buttons
+* No JavaScript framework dependencies
+
+=== PaperMod Configuration
+
+Key PaperMod settings in `hugo.toml`:
+
+[source,toml]
+----
+[params]
+  defaultTheme = "auto"     # auto/light/dark
+  ShowToc = true            # table of contents per post
+  ShowCodeCopyButtons = true
+  ShowReadingTime = true
+  ShowPostNavLinks = true   # prev/next post links
+  ShowBreadCrumbs = true
+----
+
+== Why AsciiDoc
+
+AsciiDoc was chosen over Markdown for:
+
+* Rich table support (span, formatting, cell alignment)
+* Built-in admonitions (NOTE, TIP, WARNING, CAUTION, IMPORTANT)
+* Document attributes (variables, conditionals)
+* `image:` and `video:` block macros
+* Better support for technical documentation
+* Same content format for both blog posts and architecture docs
+
+== Content Organization
+
+Blog posts live in `content/posts/` with filenames following the pattern `YYYY-MM-DD-slug.adoc`.
+
+Architecture and documentation content lives in `content/arch/` and is rendered at `/arch/` on the site.
+
+== Workflow
+
+1. Create a new `.adoc` file in `content/posts/`
+2. Add Hugo front matter (title, date, tags)
+3. Place images in `static/images/<post-name>/`
+4. Set `:imagesdir:` in the AsciiDoc front matter
+5. Run `hugo server -D` to preview
+6. Push to `main` — GitHub Actions deploys automatically

@@ -1,0 +1,197 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>Rocasta Dot Com</title>
+  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
+  <updated>2025-03-27T09:49:36-05:00</updated>
+  <author>
+    <name>Charles Webster</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
+  <rights> © 2025 Charles Webster </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Useful Unix</title>
+    <link href="http://localhost:4000/posts/useful_unix/" rel="alternate" type="text/html" title="Useful Unix" />
+    <published>2025-03-26T00:00:00-05:00</published>
+  
+    <updated>2025-03-26T00:00:00-05:00</updated>
+  
+    <id>http://localhost:4000/posts/useful_unix/</id>
+    <content type="text/html" src="http://localhost:4000/posts/useful_unix/" />
+    <author>
+      <name>Charles Webster</name>
+    </author>
+
+  
+    
+  
+
+  <summary>Table of Contents
+
+Useful Find
+
+Converting xlsx files to csv
+Deleting recursive files &amp;amp;amp; directory structure
+Deleting recursive files but leaving directory structure
+Finding empty directories and deleting them
+Deleting files of a certain size
+Removes all files older than and including &amp;amp;lt;file&amp;amp;gt;
+To display filename and line count minus 1 for csv files (well, any text file)
+To remove whites...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Bash Operators Cheat Sheet</title>
+    <link href="http://localhost:4000/posts/diagnose_smb_latency/" rel="alternate" type="text/html" title="Bash Operators Cheat Sheet" />
+    <published>2025-03-26T00:00:00-05:00</published>
+  
+    <updated>2025-03-26T00:00:00-05:00</updated>
+  
+    <id>http://localhost:4000/posts/diagnose_smb_latency/</id>
+    <content type="text/html" src="http://localhost:4000/posts/diagnose_smb_latency/" />
+    <author>
+      <name>Charles Webster</name>
+    </author>
+
+  
+    
+  
+
+  <summary>Table of Contents
+
+1. 1. File Test Operators
+2. 2. String Comparison Operators
+3. 3. Numeric Comparison Operators
+4. 4. Logical Operators
+5. 5. Arithmetic Operators
+6. 6. Assignment Operators
+7. 7. Bitwise Operators
+8. 8. Process Control Operators
+9. Conclusion
+
+
+
+
+
+This cheat sheet covers Bash operators including file tests, string comparisons, logical operations, and arithmetic evaluations.
+
+...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Bash Operators Cheat Sheet</title>
+    <link href="http://localhost:4000/posts/bash-operators-cheatsheet/" rel="alternate" type="text/html" title="Bash Operators Cheat Sheet" />
+    <published>2025-03-26T00:00:00-05:00</published>
+  
+    <updated>2025-03-26T00:00:00-05:00</updated>
+  
+    <id>http://localhost:4000/posts/bash-operators-cheatsheet/</id>
+    <content type="text/html" src="http://localhost:4000/posts/bash-operators-cheatsheet/" />
+    <author>
+      <name>Charles Webster</name>
+    </author>
+
+  
+    
+  
+
+  <summary>Table of Contents
+
+1. 1. File Test Operators
+2. 2. String Comparison Operators
+3. 3. Numeric Comparison Operators
+4. 4. Logical Operators
+5. 5. Arithmetic Operators
+6. 6. Assignment Operators
+7. 7. Bitwise Operators
+8. 8. Process Control Operators
+9. Conclusion
+
+
+
+
+
+This cheat sheet covers Bash operators including file tests, string comparisons, logical operations, and arithmetic evaluations.
+
+...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Building a Gigabyte Brix SUSE Distro</title>
+    <link href="http://localhost:4000/posts/suse_headless_webserver/" rel="alternate" type="text/html" title="Building a Gigabyte Brix SUSE Distro" />
+    <published>2024-07-09T00:00:00-05:00</published>
+  
+    <updated>2025-03-26T10:33:44-05:00</updated>
+  
+    <id>http://localhost:4000/posts/suse_headless_webserver/</id>
+    <content type="text/html" src="http://localhost:4000/posts/suse_headless_webserver/" />
+    <author>
+      <name>Charles Webster</name>
+    </author>
+
+  
+    
+  
+
+  <summary>Table of Contents
+
+Enable SSH
+
+Firewall
+
+
+Configuring GRUB for Headless Boot
+Apache
+
+Installing Apache
+Configuring Apache
+
+
+
+
+
+
+
+
+
+Download the latest copy of SUSE tumbleweed
+
+
+Burn this ISO image to thumb drive
+
+
+
+
+
+dd if=&amp;amp;lt;location_of_iso&amp;amp;gt; of=/dev/rdisk&amp;amp;lt;thumbdrive_disk_number&amp;amp;gt; bs=1m
+
+
+
+
+
+Put this in the front USB slot of the Brix
+
+
+Power off and power on (a hard reboot is important...</summary>
+
+  </entry>
+
+</feed>
+
+

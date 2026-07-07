@@ -1,0 +1,336 @@
+---
+title: "Build Guide"
+date: 2026-07-07
+weight: 30
+showToc: true
+---
+
+Step-by-step instructions to build and maintain a Hugo + PaperMod + AsciiDoc static site on GitHub Pages.
+
+== Prerequisites
+
+* Homebrew (macOS) or equivalent package manager
+* Git
+* Hugo Extended (installed via Homebrew)
+
+[source,sh]
+----
+brew install hugo
+hugo version
+----
+
+Verify the output includes `extended`:
+
+ hugo v0.164.0+extended ...
+
+== Asciidoctor
+
+Hugo requires `asciidoctor` to process `.adoc` files:
+
+[source,sh]
+----
+brew install asciidoctor
+gem install asciidoctor
+----
+
+Verify:
+
+ asciidoctor --version
+
+== Project Setup
+
+=== Create a New Site
+
+[source,sh]
+----
+hugo new site my-site
+cd my-site
+----
+
+=== Add the PaperMod Theme
+
+[source,sh]
+----
+git init
+git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod themes/PaperMod
+----
+
+=== Configure hugo.toml
+
+[source,toml]
+----
+baseURL = "https://example.com/"
+locale = "en"
+title = "My Site"
+theme = "PaperMod"
+
+paginate = 10
+enableRobotsTXT = true
+enableEmoji = true
+
+[params]
+  description = "Site description"
+  author = "Your Name"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowToc = true
+  ShowCodeCopyButtons = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[menu]
+  main = [
+    { identifier = "posts", name = "Posts", url = "/posts/", weight = 10 },
+    { identifier = "about", name = "About", url = "/about/", weight = 20 },
+  ]
+
+[security.exec]
+  allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^git$', '^node$', '^postcss$', '^tailwindcss$', '^asciidoctor$']
+
+[markup.asciidocExt]
+  workingFolderCurrent = true
+  noHeaderOrFooter = true
+  safeMode = "unsafe"
+  attributes = { icons = "font", idseparator = "_", source-highlighter = "rouge", "rouge-style" = "monokai", experimental = true, sectanchors = true }
+----
+
+=== Create Content Directory Structure
+
+[source,sh]
+----
+mkdir -p content/posts
+mkdir -p static/images
+mkdir -p content/arch
+----
+
+=== Create an About Page
+
+[source,sh]
+----
+cat > content/about.md << 'EOF'
+---
+title: "About"
+date: 2026-01-01
+---
+Your about page content here.
+EOF
+----
+
+=== Create a First Post
+
+[source,asciidoc]
+----
+---
+title: "My First Post"
+date: 2026-07-07
+showToc: true
+---
+
+= My First Post
+
+Content in AsciiDoc format.
+
+== Section Heading
+
+* Bullet point
+* Another point
+
+[source,sh]
+----
+echo "Code block"
+----
+----
+
+== Images
+
+Place images in `static/images/post-name/` and reference them in AsciiDoc:
+
+:imagesdir: /images/post-name
+
+image:my-image.png[]
+
+== Adding Images
+
+Images in Hugo are static files placed in the `static/` directory. Only files inside `static/` are copied to `public/` during build.
+
+=== For a Post with Images
+
+[source,sh]
+----
+mkdir -p static/images/my-post
+cp /path/to/images/*.png static/images/my-post/
+----
+
+Then in your AsciiDoc:
+
+:imagesdir: /images/my-post
+
+image:scene-01.png[]
+
+=== Hard-Linking Source Images
+
+For content that is edited outside the project directory, use hard links so changes propagate automatically:
+
+[source,sh]
+----
+ln /path/to/source/image.png static/images/my-post/image.png
+----
+
+NOTE: Hard links share the same inode. Editing the source file updates the site copy. Hard links cannot cross filesystem boundaries.
+
+== Setting Up GitHub Actions
+
+Create `.github/workflows/hugo-deploy.yml`:
+
+[source,yaml]
+----
+name: "Deploy Hugo site to Pages"
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "latest"
+          extended: true
+      - run: hugo --minify
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/deploy-pages@v4
+----
+
+NOTE: The `submodules: true` checkout option is required for the PaperMod theme.
+
+=== GitHub Pages Settings
+
+1. Go to Settings > Pages
+2. Under "Source", select "GitHub Actions"
+3. The workflow above handles the rest
+
+=== Custom Domain
+
+Place a `CNAME` file in the repo root with your domain:
+
+ www.rocasta.com
+
+== Local Development
+
+=== Build the Site
+
+[source,sh]
+----
+hugo
+----
+
+Output goes to `public/`.
+
+=== Development Server with Live Reload
+
+[source,sh]
+----
+hugo server -D
+----
+
+This starts a server at `http://localhost:1313/`. The `-D` flag includes draft content.
+Hugo watches for file changes and automatically refreshes the browser.
+
+=== Building with Drafts
+
+ hugo -D
+ hugo server -D
+
+== Gotchas and Troubleshooting
+
+=== Hugo Blocks Asciidoctor
+
+When using AsciiDoc, Hugo's security policy blocks external executables by default.
+Add `asciidoctor` to `[security.exec] allow` in `hugo.toml`:
+
+ ERROR asciidoctor is not whitelisted in policy security.exec.allow
+
+Fix: Add `^asciidoctor$` to the allow list.
+
+=== Asciidoctor Not Found
+
+ Hugo: asciidoctor ... unable to locate
+
+Install asciidoctor:
+
+ brew install asciidoctor
+
+=== Theme Not Found
+
+ ERROR module "PaperMod" not found
+
+Make sure the theme submodule is initialized:
+
+ git submodule update --init --recursive
+
+=== Image 404 in Development
+
+If images don't load in the Hugo dev server, check:
+1. Images are in `static/` directory (not `assets/`)
+2. The `:imagesdir:` in AsciiDoc matches the directory path
+3. Image filenames are case-sensitive
+
+Hugo serves `static/` content at the root. An image at `static/images/foo.png` is served at `/images/foo.png`.
+
+=== Git Submodule Updates
+
+To update the PaperMod theme:
+
+ git submodule update --remote themes/PaperMod
+
+=== Bundler 4.x Gemfile Resolution (Jekyll migration only)
+
+Bundler 4.x walks parent directories to find a `Gemfile`. If running `bundle exec` in a subdirectory and a parent has a different Gemfile, bundler may resolve the wrong one.
+Workaround: Set `BUNDLE_GEMFILE` explicitly:
+
+ BUNDLE_GEMFILE=/path/to/project/Gemfile bundle exec jekyll build
+
+=== Hugo Deprecation Warnings
+
+Older themes may use deprecated Hugo APIs. Warnings like:
+
+ WARN deprecated: .Language.LanguageCode was deprecated
+
+These are benign and come from the theme, not user code. They will be fixed in future theme releases.
+
+=== Hard Links on macOS
+
+Hard links cannot:
+- Link directories (use symlinks for directories)
+- Cross filesystem boundaries
+- Be tracked by Git (Git stores content, not links)
+
+Hard links are useful for keeping source content in sync with the site build directory,
+but use symlinks or copies for directories.
