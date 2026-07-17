@@ -16,7 +16,7 @@
 :plantuml-jar-path: /usr/local/bin/plantuml.jar
 :plantuml-format: svg
 :diagram-cache-path: ./.diagram-cache
-:toc: right 
+:toc: right
 :toclevels: 3
 :toc-title: Table of Contents
 :sectnums:
@@ -41,7 +41,7 @@ endif::[]
 
 // Main Document
 
-= Texas Health Insurance Bridge Playbook, 2026
+= Texas Health Insurance Bridge Playbook
 
 == Purpose
 
