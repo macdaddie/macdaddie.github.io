@@ -23,6 +23,38 @@ hugo --minify
 | `static/images/` | Post images served at `/images/` |
 | `themes/PaperMod/` | Theme submodule |
 
+## Writing a New Post
+
+```bash
+# 1. Create the post file
+cat > content/posts/YYYY-MM-DD-short-title.adoc << 'EOF'
+---
+title: "Your Title"
+date: YYYY-MM-DD
+showToc: true
+---
+
+= Your Title
+
+Content here in AsciiDoc.
+EOF
+
+# 2. If the post has images, create an image directory
+mkdir -p static/images/short-title
+# Copy or hard-link images into it
+# Reference images in the post with: :imagesdir: /images/short-title
+
+# 3. Preview locally
+hugo server -D
+# Open http://localhost:1313
+
+# 4. When ready, commit and push
+git add content/posts/ static/images/
+git commit -m "add post: Your Title"
+git push origin main
+# GitHub Actions deploys automatically
+```
+
 ## Deployment
 
 Push to `main` — GitHub Actions builds and deploys to GitHub Pages automatically.

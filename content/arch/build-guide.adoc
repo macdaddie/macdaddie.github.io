@@ -214,6 +214,8 @@ jobs:
         with:
           hugo-version: "latest"
           extended: true
+      - name: Install asciidoctor
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq asciidoctor
       - run: hugo --minify
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -228,19 +230,27 @@ jobs:
       - uses: actions/deploy-pages@v4
 ----
 
-NOTE: The `submodules: true` checkout option is required for the PaperMod theme.
+NOTE: The `submodules: true` checkout option is required for the PaperMod theme. The asciidoctor install step is required because the GitHub Actions Ubuntu runner does not include `asciidoctor` by default.
 
-=== GitHub Pages Settings
+=== GitHub Pages Settings — Critical
+
+The Pages source setting must match the deployment method:
 
 1. Go to Settings > Pages
-2. Under "Source", select "GitHub Actions"
-3. The workflow above handles the rest
+2. Under "Source", select **"GitHub Actions"** (not "Deploy from a branch")
+
+If "Deploy from a branch" is selected instead, the workflow will succeed but the site will not update. The old site continues serving from whatever branch was set there. This is the most common deploy failure mode.
+
+TIP: After switching from "Deploy from a branch" to "GitHub Actions", push an empty commit or re-run the workflow manually to trigger a fresh deploy:
+
+ git commit --allow-empty -m "trigger deploy after Pages config change"
+ git push origin main
 
 === Custom Domain
 
-Place a `CNAME` file in the repo root with your domain:
+When using the GitHub Actions workflow, the custom domain is managed in **Settings > Pages** under "Custom domain". Enter your domain there (e.g. `www.rocasta.com`).
 
- www.rocasta.com
+A `CNAME` file in the repo root is optional with the workflow-based deploy — GitHub stores the domain setting in the Pages configuration, not in the repo. However, keeping a `CNAME` file is harmless and documents the domain.
 
 == Local Development
 
@@ -317,13 +327,81 @@ Workaround: Set `BUNDLE_GEMFILE` explicitly:
 
  BUNDLE_GEMFILE=/path/to/project/Gemfile bundle exec jekyll build
 
-=== Hugo Deprecation Warnings
+=== Deploy Succeeds but Old Site Still Shows
 
-Older themes may use deprecated Hugo APIs. Warnings like:
+If the GitHub Actions workflow succeeds but the live site hasn't changed, check:
 
+1. **Pages source setting** — Settings > Pages > Source must be set to **"GitHub Actions"**, not "Deploy from a branch". This is the #1 cause. When switching back to the Jekyll-Chirpy branch, the old "Deploy from a branch" setting may be silently reselected.
+
+2. **Custom domain cleared** — Switching the Pages source can reset the custom domain field. Verify `www.rocasta.com` is still entered under Settings > Pages > Custom domain.
+
+3. **Diagnose with curl** — Bypass browser cache and DNS:
+
+ curl -sI https://www.rocasta.com/ | grep -i 'x-cache\|age:'
+
+If this shows a Hugo-generated page but the browser shows the old Jekyll site, the issue is browser cache (see below).
+
+4. **Check raw Pages URL** — Bypass custom domain entirely to distinguish DNS from deploy failure:
+
+ https://<username>.github.io/
+
+If the raw URL shows the new site but the custom domain doesn't, it's a DNS or CDN cache issue.
+
+=== Browser Cache After Deploy
+
+GitHub Pages serves with `Cache-Control: max-age=600` (10 minutes). After a deploy, browsers and CDN edge nodes may hold stale content.
+
+If curl shows the new site but the browser doesn't:
+
+* **Safari:** Develop menu (enable in Settings > Advanced) → Empty Caches (Cmd+Option+E) → reload
+* **Firefox:** Cmd+Shift+R (hard reload), or Dev Tools → right-click reload → "Empty Cache and Hard Reload"
+* **Any browser:** Open a private/incognito window — this always fetches uncached content
+
+=== CI Must Install Asciidoctor
+
+The GitHub Actions Ubuntu runner does not include `asciidoctor`. Without it, the Hugo build will fail silently or produce no output for `.adoc` files.
+
+Always add an explicit install step before the `hugo` command in the workflow:
+
+ sudo apt-get update -qq && sudo apt-get install -y -qq asciidoctor
+
+=== Node.js Deprecation Warnings in CI
+
+The deploy workflow may show warnings like:
+
+ Node 20 is being deprecated. This workflow is running with Node 24 by default.
+
+These are non-blocking informational messages from GitHub Actions. The workflow continues to function correctly.
+
+=== Hugo Deprecation Warnings in Theme
+
+PaperMod 7.x uses deprecated Hugo APIs:
+
+ WARN deprecated: .Language.LanguageDirection was deprecated
  WARN deprecated: .Language.LanguageCode was deprecated
 
-These are benign and come from the theme, not user code. They will be fixed in future theme releases.
+These are benign and come from the theme, not user code. They will be fixed in future PaperMod releases.
+
+== Migration Notes
+
+This site was migrated from **Jekyll + Chirpy** to **Hugo + PaperMod** in July 2026. The migration was driven by a Ruby version mismatch: Jekyll requires Ruby ~> 3.1, but macOS 13+ ships Ruby 4.0.5, and `rbenv`/`rvm` maintenance was not worth the overhead. Hugo is a single Go binary with no runtime dependencies.
+
+Key migration lessons:
+
+* **No incremental migration** — There is no easy path to slowly transition a Jekyll site to Hugo. It's a full rebuild: rewrite layouts, convert Markdown to AsciiDoc, restructure config, re-theme.
+
+* **Back up the old branch** — Before deleting or overwriting the Jekyll `main` branch, save it:
+
+  git branch -m main jekyll-chirpy
+  git push origin jekyll-chirpy
+
+* **PaperMod via submodule** — Pinning via submodule (not `git clone`) keeps the theme versioned with the site. Update with `git submodule update --remote themes/PaperMod`.
+
+* **AsciiDoc over Markdown** — Hugo supports both. AsciiDoc is more expressive for technical writing (admonitions, cross-references, attribute substitution) and avoids Markdown flavour lock-in.
+
+* **GitHub Actions must install asciidoctor** — The CI runner doesn't have it pre-installed. See the gotcha above.
+
+* **Pages source is the #1 deploy gotcha** — Switching to a workflow-based deploy requires explicitly setting Settings > Pages > Source to "GitHub Actions".
 
 === Hard Links on macOS
 
