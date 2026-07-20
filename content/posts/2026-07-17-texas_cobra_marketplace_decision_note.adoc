@@ -26,7 +26,6 @@ categories:
 ifndef::env-hugo[]
 :imagesdir: ./images
 
-:icons: font
 :experimental:
 :idseparator: _
 :sectanchors:
@@ -123,11 +122,11 @@ These are research leads, not recommendations. Availability, underwriting, benef
 
 |Allstate Health Solutions / National General
 |link:https://allstatehealth.com/[Allstate Health Solutions]
-|link:https://shop.allstatehealth.com/individual-family?insurance_type=short_term&hnref=https%253A%252F%252Fallstatehealth.com%252F&hostname=allstatehealth.com&pathname=%2Findividual%2Fquote%2F&guid=d4623185-d059-49c4-aa4d-5338127f1d00[allstate] - $25k deductable - $250k max benefits - $453.42 
+|link:https://shop.allstatehealth.com/individual-family?insurance_type=short_term&hnref=https%253A%252F%252Fallstatehealth.com%252F&hostname=allstatehealth.com&pathname=%2Findividual%2Fquote%2F&guid=d4623185-d059-49c4-aa4d-5338127f1d00[allstate] - $25k deductable - $250k max benefits - $453.42
 
 |Pivot Health
 |link:https://www.pivothealth.com/[Pivot Health]
-|link:https://enroll.pivothealth.com/quotes/?months=4&maxDuration=0&sort=deductible[pivot health] $10k detuctable max coverage $100k - $272.45 month 
+|link:https://enroll.pivothealth.com/quotes/?months=4&maxDuration=0&sort=deductible[pivot health] $10k detuctable max coverage $100k - $272.45 month
 
 |Everest
 |link:https://www.everesthealthinsurance.com/[Everest short-term health insurance]
@@ -135,7 +134,7 @@ These are research leads, not recommendations. Availability, underwriting, benef
 
 |eHealth
 |link:https://www.ehealthinsurance.com/short-term-health-insurance[eHealth short-term health insurance]
-|link:https://www.ehealthinsurance.com/short-term-health-insurance/plans?allid=ehe12862000&zipCode=76040&county=TARRANT[eHealth Comparison Site] - compares a whole bunch of options 
+|link:https://www.ehealthinsurance.com/short-term-health-insurance/plans?allid=ehe12862000&zipCode=76040&county=TARRANT[eHealth Comparison Site] - compares a whole bunch of options
 
 |===
 
