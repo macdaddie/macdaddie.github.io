@@ -1,43 +1,51 @@
-// Document Attributes
-:source-highlighter: highlight.js
-:highlightjs-theme: monokai
+ ---
+title: Texas Cobra Marketplace Alternative Research
+date: 2026-07-20
+tags:
+  - example
+categories:
+  - technical
+---
+
+//
+// Change this for each document collection.
+//
+:project-imagesdir: project-name
+
+//
+// Shared document attributes
+//
+:sectnums:
 :source-language: bash
-:icons: font
-// Required for the kbd[] macro to work
-:experimental:
-// Image directory
-// :imagesdir: <insert relative path to image directory here>
-// force the base64 embedding of images
-:data-uri:
-// enables the representation of mathematical formulae using STEM
-:stem:
-// you can use ‘left’ or ‘right’ instead of ’true’ if you want the toc off to the side
-// PlantUML document attributes
-:plantuml-jar-path: /usr/local/bin/plantuml.jar
 :plantuml-format: svg
 :diagram-cache-path: ./.diagram-cache
+
+//
+// Standalone local preview
+//
+ifndef::env-hugo[]
+:imagesdir: ./images
+
+:icons: font
+:experimental:
+:idseparator: _
+:sectanchors:
+
 :toc: right
 :toclevels: 3
-:toc-title: Table of Contents
-:sectnums:
-// set up the appendix caption and number series
-:appendix-caption: Appendix
-:appendix-number: 0
-// :leveloffset: +1 // pushes included document section headings down one level
-// Github Specific attributes
-ifdef::env-github[]
-:tip-caption: :bulb:
-:note-caption: :information_source:
-:important-caption: :heavy_exclamation_mark:
-:caution-caption: :fire:
-:warning-caption: :warning:
+
+:source-highlighter: highlight.js
+:highlightjs-theme: monokai
+
+:data-uri:
 endif::[]
-:author: Charles Webster
-:email: charles.webster@rocasta.com
-:revdate: {docdate}
-// Custom Stylesheet - specifically the one I made for kyndryl
-// :stylesheet: kyndryl_document_standard.css
-// :stylesdir: /Volumes/Charles10/charles/IT/languages/asciidoc/css_templates/css/
+
+//
+// Hugo publication
+//
+ifdef::env-hugo[]
+:imagesdir: /images/{project-imagesdir}
+endif::[]
 
 // Main Document
 
@@ -64,38 +72,6 @@ This is not yet a final recommendation document. It is a guide for gathering the
 |Protect against large emergency medical costs during a likely six-month gap while avoiding unnecessary monthly premium spend.
 |===
 
-== Research Priority
-
-[cols="1,1,2",options="header"]
-|===
-|Priority
-|Coverage Type
-|Why It Comes Here
-
-|1
-|Short-term medical insurance
-|Best match to the six-month bridge objective if it covers both accident and sudden illness with acceptable caps, deductibles, exclusions, and network rules.
-
-|2
-|Aflac-style accident / hospital indemnity / supplemental coverage
-|May provide useful cash protection for accidents or hospital events. Must be treated as supplemental unless the policy language proves otherwise.
-
-|3
-|CrowdHealth-style healthcare funding model
-|May help with bill negotiation and crowdfunding of eligible medical bills, but must be treated as non-insurance until funding obligations, eligibility, exclusions, and emergency mechanics are verified.
-
-|4
-|ACA Marketplace plan
-|Expensive at about $1,300/month, but provides the cleanest comprehensive protection and remains the benchmark for judging weaker products.
-
-|5
-|Full COBRA
-|Very expensive at about $2,500/month. Keep as a continuity fallback only if specific network, treatment, or timing reasons justify it.
-
-|6
-|Uninsured plus HSA
-|Lowest premium cost, highest uncapped risk. Only consider consciously after short-term and supplemental options are understood.
-|===
 
 == Cost Benchmark
 
@@ -130,109 +106,41 @@ This is not yet a final recommendation document. It is a guide for gathering the
 |Premium-free, but exposure is uncapped. The $20,000 HSA may handle smaller events but not a major hospital bill.
 |===
 
-== Immediate Action Checklist
-
-[cols="1,1,1",options="header"]
-|===
-|Short-Term Medical
-|Aflac / Supplemental
-|CrowdHealth / Fallback Verification
-
-|Search Texas short-term medical options.
-|Check Aflac and similar accident / hospital indemnity options.
-|Add link:https://www.joincrowdhealth.com/[CrowdHealth] to the research portfolio and keep ACA Marketplace quote as the benchmark.
-
-|Contact at least one licensed independent Texas broker.
-|Confirm whether each product can be used without primary medical insurance.
-|Confirm link:https://www.healthcare.gov/unemployed/cobra-coverage/[COBRA premium assistance ending and Marketplace Special Enrollment] rules.
-
-|Ask specifically for accident and sudden illness coverage.
-|Ask what each policy pays for a car accident requiring surgery and three hospital days.
-|Ask CrowdHealth how a Texas emergency accident event would be handled from ER intake through bill negotiation and funding.
-
-|Get the actual policy brochure, exclusions, and benefit schedule before payment.
-|Separate accident-only, hospital indemnity, critical illness, and cancer policies into different comparison rows.
-|Do not let a short-term policy end date create an ACA enrollment gap.
-
-|Verify carrier and agent licensing through Texas resources.
-|Check whether benefits are paid to the patient or provider.
-|Model the same $100,000 emergency scenario across all options.
-|===
-
-== Short-Term Medical Research Strategy
-
-=== Where To Look First
-
-[cols="1,1",options="header"]
-|===
-|Source
-|Use
-
-|link:https://www.texashealthplancompare.com/[TexasHealthPlanCompare.com]
-|Texas-oriented starting point for plan comparison and consumer guidance.
-
-|link:https://www.texashealthplancompare.com/short-term.html[TexasHealthPlanCompare short-term health insurance guidance]
-|Key Texas-specific warning page for short-term limited-duration plans.
-
-|link:https://www.tdi.texas.gov/consumer/health-insurance.html[Texas Department of Insurance health insurance consumer resources]
-|Consumer guidance, health insurance shopping resources, and Texas contact points.
-
-|link:https://www.tdi.texas.gov/consumer/alternative-health-plans.html[Texas Department of Insurance alternative health plan guidance]
-|Warnings about short-term, limited-benefit, fixed-indemnity, discount, and health sharing products.
-
-|link:https://www.tdi.texas.gov/consumer/company-profiles-and-agents-for-service-of-process.html[Texas Department of Insurance company and agent lookup guidance]
-|How to verify carriers and agents.
-
-|link:https://www.sircon.com/ComplianceExpress/Inquiry/consumerInquiry.do?nonSscrb=Y[Texas insurance agent and company license lookup]
-|License verification before providing payment or sensitive information.
-|===
 
 === Carrier And Broker Leads
 
 These are research leads, not recommendations. Availability, underwriting, benefits, and Texas eligibility must be verified.
 
-[cols="1,1",options="header"]
+[cols="1,1,1",options="header"]
 |===
 |Lead
 |Link
+|Notes
 
 |UnitedHealthcare / Golden Rule
 |link:https://www.uhone.com/health-insurance/short-term-health-insurance[UnitedHealthcare short-term health insurance]
+|link:https://shop.uhone.com/en/quote/plans/shortterm[uhome] - $15000 decuctable $568.18 month
 
 |Allstate Health Solutions / National General
 |link:https://allstatehealth.com/[Allstate Health Solutions]
+|link:https://shop.allstatehealth.com/individual-family?insurance_type=short_term&hnref=https%253A%252F%252Fallstatehealth.com%252F&hostname=allstatehealth.com&pathname=%2Findividual%2Fquote%2F&guid=d4623185-d059-49c4-aa4d-5338127f1d00[allstate] - $25k deductable - $250k max benefits - $453.42 
 
 |Pivot Health
 |link:https://www.pivothealth.com/[Pivot Health]
+|link:https://enroll.pivothealth.com/quotes/?months=4&maxDuration=0&sort=deductible[pivot health] $10k detuctable max coverage $100k - $272.45 month 
 
 |Everest
 |link:https://www.everesthealthinsurance.com/[Everest short-term health insurance]
+|link:https://start.smartandsimple.com/quote?qid=4112094&qguid=%7Badd4e8cc-884e-422d-8f1e-c32301e3f3cf%7D&sessionid=[everest] out of pocket max $5k policy max $1m - $768 month
 
 |eHealth
 |link:https://www.ehealthinsurance.com/short-term-health-insurance[eHealth short-term health insurance]
+|link:https://www.ehealthinsurance.com/short-term-health-insurance/plans?allid=ehe12862000&zipCode=76040&county=TARRANT[eHealth Comparison Site] - compares a whole bunch of options 
 
-|AgileHealthInsurance
-|link:https://www.agilehealthinsurance.com/[AgileHealthInsurance]
 |===
 
 Use a dedicated email address and possibly a dedicated phone number for quote sites, because some broker and lead-generation sites can produce persistent sales calls.
 
-=== Search Terms
-
-[cols="1,1",options="header"]
-|===
-|General Search
-|Coverage-Specific Search
-
-|Texas short term medical insurance
-|Texas short term medical insurance ER surgery ICU ambulance
-
-|Texas short term limited duration health insurance
-|short term health insurance Texas accident illness hospitalization
-
-|Texas temporary health insurance
-|Texas temporary health insurance hospitalization surgery
-|===
 
 === Broker Script
 
@@ -310,6 +218,9 @@ The goal is to determine whether accident, hospital indemnity, or other suppleme
 |===
 
 === Aflac / Supplemental Questions To Answer
+
+[Note]
+I don't think Aflac is the way forward. We would need to take out multiple policies such as critical illness, accident and hospital cover. Maybe that would still be cheaper?
 
 [cols="1,1",options="header"]
 |===
@@ -450,31 +361,7 @@ If one of us has a $100,000 emergency event in Texas involving ambulance, ER, su
 
 Record the answer separately from any marketing examples, testimonials, or published funded-bill examples.
 
-== Research Capture Template
 
-Use one row per quote or policy.
-
-[cols="1,1,1,1,1,1",options="header"]
-|===
-|Carrier / Product
-|Type
-|Monthly Cost
-|Best Case
-|Main Gaps
-|Follow-Up
-
-|TBD
-|Short-term medical / accident / hospital indemnity / CrowdHealth / ACA / COBRA
-|TBD
-|TBD
-|TBD
-|TBD
-|===
-
-Use this scenario for every option:
-
-[quote]
-If one of us has a $100,000 emergency event involving ambulance, ER, surgery, imaging, anesthesia, and three hospital days, what exactly does the policy pay and what would we still owe?
 
 == Decision Gate
 
