@@ -219,7 +219,7 @@ The goal is to determine whether accident, hospital indemnity, or other suppleme
 
 === Aflac / Supplemental Questions To Answer
 
-[Note]
+[WARNING]
 I don't think Aflac is the way forward. We would need to take out multiple policies such as critical illness, accident and hospital cover. Maybe that would still be cheaper?
 
 [cols="1,1",options="header"]
