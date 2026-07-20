@@ -37,4 +37,4 @@ enableEmoji = true
   workingFolderCurrent = true
   noHeaderOrFooter = true
   safeMode = "unsafe"
-  attributes = { icons = "font", idseparator = "_", source-highlighter = "rouge", "rouge-style" = "monokai", experimental = true, sectanchors = true }
+  attributes = { idseparator = "_", source-highlighter = "rouge", "rouge-style" = "monokai", experimental = true, sectanchors = true }
