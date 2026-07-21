@@ -7,41 +7,14 @@ showToc: true
 ---
 
 // Document Attributes
-:icons: font
-:experimental:
-// Image directory — local vs hugo
-ifndef::env-hugo[]
 :imagesdir: /images/engineers-thumb/
-:source-highlighter: highlight.js
-:highlightjs-theme: monokai
-:data-uri:
-:plantuml-jar-path: /usr/local/bin/plantuml.jar
-:plantuml-format: svg
-:diagram-cache-path: ./.diagram-cache
-endif::[]
-ifdef::env-hugo[]
-:imagesdir: /images/engineers-thumb
-:source-highlighter: rouge
-endif::[]
-:source-language: bash
-:stem:
-:toc: right 
+:toc:
 :toclevels: 3
 :toc-title: Table of Contents
 :doctype: book
 :sectnums:
 :appendix-caption: Appendix
 :appendix-number: 0
-ifdef::env-github[]
-:tip-caption: :bulb:
-:note-caption: :information_source:
-:important-caption: :heavy_exclamation_mark:
-:caution-caption: :fire:
-:warning-caption: :warning:
-endif::[]
-:author: Charles Webster
-:email: charles.webster@rocasta.com
-:revdate: {docdate}
 
 // Main Document
 = The Adventure of the Engineer's Thumb
