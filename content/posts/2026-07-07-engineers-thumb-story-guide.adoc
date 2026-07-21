@@ -11,7 +11,7 @@ showToc: true
 :experimental:
 // Image directory — local vs hugo
 ifndef::env-hugo[]
-:imagesdir: ./images/
+:imagesdir: /engineers-thumb/images/
 :source-highlighter: highlight.js
 :highlightjs-theme: monokai
 :data-uri:
