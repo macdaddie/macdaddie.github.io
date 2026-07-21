@@ -1,7 +1,7 @@
 ---
 
 title: The Adventure of the Engineer's Thumb
-date: 2026-07-17
+date: 2026-07-21
 showToc: true
 
 ---
@@ -11,7 +11,7 @@ showToc: true
 :experimental:
 // Image directory — local vs hugo
 ifndef::env-hugo[]
-:imagesdir: /engineers-thumb/images/
+:imagesdir: /images/engineers-thumb/
 :source-highlighter: highlight.js
 :highlightjs-theme: monokai
 :data-uri:
