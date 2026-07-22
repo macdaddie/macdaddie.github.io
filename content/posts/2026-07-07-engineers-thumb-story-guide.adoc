@@ -7,7 +7,7 @@ showToc: true
 ---
 
 // Document Attributes
-:imagesdir: images/engineers_thumb/
+:imagesdir: /images/engineers_thumb/
 :toc:
 :toclevels: 3
 :toc-title: Table of Contents
@@ -108,7 +108,7 @@ evidence that the wound is not what it seems.
 
 image:scene-025-thumb-fitting.png[]
 
-*Scene:* We are still in Dr. Watson's consulting room at baker street. 
+*Scene:* We are still in Dr. Watson's consulting room at baker street.
 The open box of "Tom's Thumbs" sits on the seat, spilling a bizarre assortment of thumb
 prosthetics — lady's thumbs with engraved brass nails, worker's thumbs with
 can-openers and wrenches, standard thumbs of every size proportional to that of a hand. There are no oversized thumbs.
@@ -249,7 +249,7 @@ ____
 
 *Cat Note:* There are no cats in this scene
 
-*Mouse note:* 
+*Mouse note:*
 Hatherley's hydro-clockwork mouse's ears have transformed into little radar dishes and are scanning from side to side. The mouse makes little notes as to where they are going (out 3.5 miles, back 3.5 miles, in a curcle) in a tiny notebook with a tiny pencil. The mouse does this surreptitiously, out of sight of the Colonel
 
 ---
