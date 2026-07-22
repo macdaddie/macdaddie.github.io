@@ -7,7 +7,7 @@ showToc: true
 ---
 
 // Document Attributes
-:imagesdir: /images/engineers-thumb/
+:imagesdir: images/engineers_thumb/
 :toc:
 :toclevels: 3
 :toc-title: Table of Contents
