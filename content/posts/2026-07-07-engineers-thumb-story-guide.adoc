@@ -374,18 +374,19 @@ clambers out the window. The colonel breaks free, raises a butcher's cleaver,
 and brings it down. Hatherley falls.
 
 *Narration:*
-> The woman threw her arms around the colonel, crying, "He will be silent!"
-> He dashed her aside and swung the cleaver.
->
-> Hatherley let himself drop. The blade caught his thumb — hacked it clean
-> off. He fell into the garden below, unconscious.
+[quote]
+____
+The woman threw her arms around the colonel, crying, "He will be silent!"
+He dashed her aside and swung the cleaver.
 
-*Cat note:* As Hatherley falls, Lollipop's grappling-hook tail catches a
-gutter, slowing his descent just enough to save his life. He never knows. In
-the moonlight, for just an instant, a cat-shaped silhouette watches from the
-roof, then vanishes.
+Hatherley let himself drop. The blade caught his thumb — hacked it clean
+off. He fell into the garden below, unconscious.
 
----
+____
+*Cat note:* No cats in this scene
+
+*Mouse Note:* Hatherley has fallen to the ground, clutching his injured hand. Tick-tock had snatched Hatherley's thumb from where it rested beside the clever and using Hatherley's handkerchief as a parachute, the four corners of which he is holding in his other hand, floats down, safely to join Hatherley on the ground.
+
 
 == Spread 12 — Morning at Eyford
 
@@ -397,16 +398,19 @@ image:scene-12-morning-station.png[]
 staggers to the railway station — it is the very station where he arrived.
 
 *Narration:*
-> When he awoke, the moon had sunk and a bright morning was breaking. He was
-> lying in a hedge by the high road. Neither house nor garden were to be
-> seen.
->
-> Staggering to the station, he took the first train back to London.
+[quote]
+____
+When he awoke, the moon had sunk and a bright morning was breaking. He was
+lying in a hedge by the high road. Neither house nor garden were to be
+seen.
 
-*Cat note:* At 221B, Catticus and Lollipop sit side by side on the
-mantelpiece, waiting. They know the story is not yet over.
+Staggering to the station, he took the first train back to London.
 
----
+*Cat Note*: There are no cats in this scene
+
+*Mouse Note*: Tick-tock has used the parachute handkerchief to wrap up hatherley's thumb into a red stained bundle which he has suspended on a small twig-like stick and carries over his shoulder like a hobo. He has scrambled back into Hatherley's top pocket and in his other hand is consulting a mouse sized version of bradshaw's railway guide to find the next train back to london.
+
+____
 
 == Spread 13 — Holmes Deduces
 
