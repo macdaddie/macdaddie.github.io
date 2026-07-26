@@ -32,8 +32,8 @@ This guide lists every spread with its scene, text, and the cats' involvement.
 === Page Credits
 
 - Pages 1–3: Front matter (half-title, title, copyright)
-- Pages 4–35: Story content (15 spreads, including spread 2.5)
-- Page 36: Back matter / colophon
+- Pages 4–39: Story content (18 spreads, including spread 2.5)
+- Page 40: Back matter / colophon
 
 ---
 
@@ -50,7 +50,11 @@ dressing-gown, examines him with concern.
 *Narration:*
 
 [quote]
-It was just before seven o'clock when the maid knocked. A young gentleman had arrived from Paddington Station with a hand wrapped in bloody linen. His card read: _Mr. Victor Hatherley, Hydraulic Engineer._
+____
+It was just before seven o'clock when the maid knocked. A young gentleman
+had arrived from Paddington Station with a hand wrapped in bloody linen.
+His card read: _Mr. Victor Hatherley, Hydraulic Engineer._
+____
 
 *Cat note (invisible to text):* On the rooftops visible through the window,
 two silhouettes — Catticus and Lollipop — watch the cab that brought
@@ -250,7 +254,7 @@ ____
 *Cat Note:* There are no cats in this scene
 
 *Mouse note:*
-Hatherley's hydro-clockwork mouse's ears have transformed into little radar dishes and are scanning from side to side. The mouse makes little notes as to where they are going (out 3.5 miles, back 3.5 miles, in a curcle) in a tiny notebook with a tiny pencil. The mouse does this surreptitiously, out of sight of the Colonel
+Hatherley's hydro-clockwork mouse's ears have transformed into little radar dishes and are scanning from side to side. The mouse makes little notes as to where they are going (out six miles, back six miles, in a circle) in a tiny notebook with a tiny pencil. The mouse does this surreptitiously, out of sight of the Colonel
 
 ---
 
@@ -405,64 +409,239 @@ lying in a hedge by the high road. Neither house nor garden were to be
 seen.
 
 Staggering to the station, he took the first train back to London.
-
-*Cat Note*: There are no cats in this scene
-
-*Mouse Note*: Tick-tock has used the parachute handkerchief to wrap up hatherley's thumb into a red stained bundle which he has suspended on a small twig-like stick and carries over his shoulder like a hobo. He has scrambled back into Hatherley's top pocket and in his other hand is consulting a mouse sized version of bradshaw's railway guide to find the next train back to london.
-
 ____
 
-== Spread 13 — Holmes Deduces
+*Cat Note:* There are no cats in this scene.
 
-*Pages 30–31 — Double-page spread*
-
-image:scene-13-holmes-map.png[]
-
-*Scene:* The train to Eyford. Holmes, Hatherley, Watson, and Inspector
-Bradstreet gather around an ordnance map. Each points to a different compass
-point. Holmes calmly places his finger in the centre of the circle.
-
-*Narration:*
-> "Six miles out and six miles back," said Holmes. "The horse was fresh.
-> The house is here — within a mile of the station."
->
-> "They are coiners on a large scale," he added. "The press was used to
-> form counterfeit silver."
-
-*Cat note:* If anyone had been watching Catticus as Holmes made his
-deduction, they might have noticed the cat's monocle briefly flash — a
-silent acknowledgement of a job well done.
+*Mouse Note:* Tick-Tock has used the parachute handkerchief to wrap up
+Hatherley's thumb into a red-stained bundle which he has suspended on a
+small twig-like stick and carries over his shoulder like a hobo. He has
+scrambled back into Hatherley's top pocket and in his other hand is
+consulting a mouse-sized version of Bradshaw's railway guide to find the
+next train back to London.
 
 ---
 
-== Spread 14 — The Burning House
+== Spread 13 — Six Miles Out and Six Miles Back
+
+*Pages 30–31 — Double-page spread*
+
+image:scene-13-map-deduction.png[]
+
+*Scene:* Back at 221B Baker Street. The ordnance map is spread on the
+table in Holmes' sitting room. Holmes, Hatherley, Watson, and Bradstreet
+argue over the compass directions. Holmes calmly places his finger in
+the centre of the circle Bradstreet has drawn.
+
+*Narration:*
+[quote]
+____
+"I think I could lay my finger on it," said Holmes quietly.
+
+"Really, now!" cried the inspector. "You have formed your opinion! Come,
+now, we shall see who agrees with you. I say it is south, for the
+country is more deserted there."
+
+"And I say east," said my patient.
+
+"And I am for north," said I.
+
+"You are all wrong."
+
+"But we can't all be."
+
+"Oh, yes, you can. This is my point." He placed his finger in the centre
+of the circle. "This is where we shall find them."
+
+"But the twelve-mile drive?" gasped Hatherley.
+
+"Six out and six back. Nothing simpler. You say yourself that the horse
+was fresh and glossy when you got in. How could it be if it had gone
+twelve miles over heavy roads?"
+____
+
+*Mouse Note:* Tick-Tock frantically waves the notes he took in the
+original carriage ride. His heightened steamborg senses recorded the
+circuitous route — out six miles, back six miles, in a circle — but
+none of the humans pay him any attention.
+
+*Cat note:* The cats notice Tick-Tock's gestures immediately. Lollipop
+pins him down with one paw that has transformed into a steampunk paw —
+long copper claws, fizzing with electricity. Catticus's monocled eye
+becomes more elaborate and projects a cone-shaped green laser pattern of Tick-Tock's
+drawing as an overlay to the map, so that Holmes can clearly see that
+the carriage drove a circuitous route out of Eyford and then back into
+it, to the house which was barely a quarter of a mile from the station.
+
+---
+
+== Spread 14 — The Investigation Party Departs
 
 *Pages 32–33 — Double-page spread*
 
-image:scene-14-burning-house.png[]
+image:scene-14-departure-v4.png[]
 
-*Scene:* Eyford station platform. A column of smoke rises over the trees.
-The party rushes to find the house in flames — the broken lamp in the press
-started a fire. The criminals have fled.
+*Scene:* Paddington Station. The train compartment, bound from Reading to
+Eyford. Holmes, Hatherley, Watson, and Inspector Bradstreet are climbing 
+into a first-class carriage.  Tick-Tock is back in Hatherley's top pocket.
+
+On the platform, two feral steamborg cats watch the party board —
+tarnished brass leg replacements, a worn spine plate, one with a
+battered cap. Catticus and lollipop are cautiously approaching the feral cats and it looks like they might be exchanging information.
 
 *Narration:*
-> As the train pulled into Eyford, a column of smoke rose above the trees.
-> The house was in flames — the shattered lamp had set the wooden walls
-> alight.
->
-> "You have had your revenge," said Holmes. But the criminals were gone.
->
-> "I have lost my thumb and my fee. What have I gained?" asked Hatherley.
->
-> "Experience," said Holmes.
+[quote]
+____
+Some three hours or so afterwards we were all boarded the train together,
+bound from Reading to the little Berkshire village. There were Sherlock
+Holmes, the hydraulic engineer, Inspector Bradstreet, of Scotland Yard,
+and myself.
+____
 
-*Cat note:* On the roof of the station house, two small silhouettes watch the
-fire. Catticus and Lollipop, having run the whole way from London along the
-telegraph wires, observe their work. The counterfeiting ring is broken. The
-house is ash. The woman and her captors have fled — but they know where.
+*Cat note:* Catticus and Lollipop approach the two feral cats from the "night train" scene and it looks like the feral cats have information to divulge about the last time they saw Hatherley.
 
-The cats turn and pad silently home to Baker Street, where Mrs. Hudson has
-left them a saucer of milk.
+*Mouse Note:* Tick-Tock is back in Hatherley's top pocket after his
+morning adventure. He peers out surreptitiously, his natural rounded
+mouse ears visible.
+
+---
+
+== Spread 15 — The Coiners Exposed
+
+*Pages 34–35 — Double-page spread*
+
+image:scene-15-coiners-exposed-v3.png[]
+
+*Scene:* The train rattles through the Berkshire countryside. Inside the
+compartment, Holmes stands addressing the room. Hatherley, Watson,
+and Bradstreet are seated or leaning forward, all eyes on the
+compartment wall where a faintly glowing Victorian infographic is projected by Catticus Finch's diffracted monocle cone from
+beneath the seat.
+
+The infographic is rendered in delicate green laser light, etched in a
+quaintly Victorian style: a diagram showing the coining process from raw
+metal blanks through the hydraulic press to finished counterfeit
+half-crowns. The style is technical illustration — engraving lines,
+labelled components, cross-sections — as though drawn by a Victorian
+engineer, but luminous and green, projected on the wooden compartment wall.
+
+Catticus is barely visible beneath the seat, his body hidden in shadow.
+system fanning a diffracted cone of green light upward onto the wall. The
+Only his head, top hat and brass monocle array is clearly seen — the multi-lens projection
+humans see the diagram but not the cat.
+
+Lollipop, curls her way between Holmes' legs in classic cat fashion, extending her segmented brass
+scorpion tail upward. The stinger tip traces the path of the process
+through the diagram — lingering on the press mechanism and the finished
+coins — like a teacher guiding her audience's attention to the right part
+of the infographic.
+
+Tick-Tock sits on Hatherley's shoulder, clapping, delightedly, leaning forward with wide eyes, fascinated by the glowing
+diagram. The humans stare at the wall, captivated — none of them aware
+that the projection is coming from beneath the seat.
+
+*Narration:*
+[quote]
+____
+"None at all," said Holmes. "They are coiners on a large scale, and have
+used the machine to form the amalgam which has taken the place of silver."
+
+"We have known for some time that a clever gang was at work," said the
+inspector. "They have been turning out half-crowns by the thousand."
+
+Holmes gestured toward the wall, where a luminous diagram traced the
+path from blank metal to counterfeit coin. None of us thought to ask how
+it had got there.
+____
+
+*Cat note:* Catticus's projection system is the same multi-lens monocle
+array used for the map deduction. The diffracted cone of green light is
+broader than a single beam — it illuminates a section of the compartment
+wall like a soft spotlight. The infographic style is deliberately
+antiquated: engraving-line cross-sections, hand-lettered labels, Victorian
+technical illustration rendered in green laser light. Lollipop's scorpion
+tail is in full extension from the luggage rack, the brass segments
+telescoped, the stinger used precisely as a pointer. 
+
+*Mouse Note:* Tick-Tock is perched on Hatherley's shoulder, leaning
+forward,clapping with innocent delight, staring at the
+infographic with wide, fascinated eyes. He chitters softly at the
+diagram.
+
+---
+
+== Spread 16 — Smoke Above Eyford
+
+*Pages 36–37 — Double-page spread*
+
+image:scene-16-eyford-smoke.png[]
+
+*Scene:* Eyford station platform. The train has just arrived. The party
+steps onto the platform — and freezes. A gigantic column of smoke rises
+above the trees beyond the village, hanging like an immense ostrich
+feather over the landscape. The house is burning.
+
+*Narration:*
+[quote]
+____
+As we rolled into Eyford Station we saw a gigantic column of smoke which
+streamed up from behind a small clump of trees in the neighbourhood and
+hung like an immense ostrich feather over the landscape.
+
+"A house on fire?" asked Bradstreet as the train steamed off again on
+its way.
+____
+
+*Cat note:* On the roof of the Eyford station house, two small
+silhouettes watch the smoke. Catticus and Lollipop, who travelled
+concealed among the luggage, have disembarked unseen and taken the high
+ground. They watch the column of smoke with calm recognition — the
+counterfeiting house is burning. The broken lamp in the press has done
+their work for them.
+
+*Mouse Note:* Tick-Tock peers out of Hatherley's pocket at the smoke,
+ears flat, one paw raised in alarm.
+
+---
+
+== Spread 17 — The Smouldering Ruins
+
+*Pages 38–39 — Double-page spread*
+
+image:scene-17-smouldering-ruins.png[]
+
+*Scene:* The party has driven from the station to the site of the house.
+What remains is a blackened shell — smouldering timbers, collapsed
+walls, a chimney stack standing alone against a grey sky. The criminals
+have fled. The evidence is ash.
+
+Holmes stands at the edge of the ruins, hands behind his back, studying
+the remains. Hatherley stares at the place where he nearly died.
+Bradstreet surveys the destruction with professional frustration.
+Watson stands beside Hatherley, one hand on his shoulder.
+
+*Narration:*
+[quote]
+____
+"You have had your revenge," said Holmes.
+
+But the criminals were gone.
+
+"I have lost my thumb and my fee. What have I gained?" asked Hatherley.
+
+"Experience," said Holmes.
+____
+
+*Cat note:* Among the ruins, barely visible among the ash and
+smouldering debris, two small figures pick through the wreckage with
+purpose. Catticus and Lollipop have arrived ahead of the humans. They
+search for something among the ashes — a fragment of the press, a
+dropped coin, a clue the criminals left behind. By the time the humans
+approach, the cats melt away, leaving no trace they were there.
+
+*Mouse Note:* Tick-Tock, still in Hatherley's pocket, watches the ruins
+with wide eyes. He chitters softly — a sound no human interprets as
+grief for the woman who once showed kindness to a stranger.
 
 ---
 
