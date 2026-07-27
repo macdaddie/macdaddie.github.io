@@ -8,7 +8,7 @@ showToc: true
 
 // Document Attributes
 :imagesdir: /images/engineers_thumb/
-:toc:
+:toc: right
 :toclevels: 3
 :toc-title: Table of Contents
 :doctype: book
@@ -510,7 +510,7 @@ mouse ears visible.
 
 *Pages 34–35 — Double-page spread*
 
-image:scene-15-coiners-exposed-v3.png[]
+image:scene-15-coiners-exposed-v4.png[]
 
 *Scene:* The train rattles through the Berkshire countryside. Inside the
 compartment, Holmes stands addressing the room. Hatherley, Watson,
@@ -592,15 +592,12 @@ hung like an immense ostrich feather over the landscape.
 its way.
 ____
 
-*Cat note:* On the roof of the Eyford station house, two small
-silhouettes watch the smoke. Catticus and Lollipop, who travelled
-concealed among the luggage, have disembarked unseen and taken the high
-ground. They watch the column of smoke with calm recognition — the
-counterfeiting house is burning. The broken lamp in the press has done
-their work for them.
+*Cat note:* Just above the men, on the roof of the Eyford station house, Catticus and Lollopop watch the smoke. 
+Catticus monocled eye has one again transformed into an ornate, brass telescope which he uses to survey the burning house, from a distance.
+Lollopops ears are again transformed into parabolic reflectors as she trains them in the direction of the house to hear anything that may inform the situation further.
 
 *Mouse Note:* Tick-Tock peers out of Hatherley's pocket at the smoke,
-ears flat, one paw raised in alarm.
+ears flat, his mouth a silent, "O" of alarms and his tiny paws on each cheek.
 
 ---
 
@@ -608,10 +605,10 @@ ears flat, one paw raised in alarm.
 
 *Pages 38–39 — Double-page spread*
 
-image:scene-17-smouldering-ruins.png[]
+image:scene-17-smouldering-ruins-v5.png[]
 
 *Scene:* The party has driven from the station to the site of the house.
-What remains is a blackened shell — smouldering timbers, collapsed
+What remains is a blackened shell — smouldering timbers, a few licks of flame, collapsed
 walls, a chimney stack standing alone against a grey sky. The criminals
 have fled. The evidence is ash.
 
@@ -632,16 +629,11 @@ But the criminals were gone.
 "Experience," said Holmes.
 ____
 
-*Cat note:* Among the ruins, barely visible among the ash and
-smouldering debris, two small figures pick through the wreckage with
-purpose. Catticus and Lollipop have arrived ahead of the humans. They
-search for something among the ashes — a fragment of the press, a
-dropped coin, a clue the criminals left behind. By the time the humans
-approach, the cats melt away, leaving no trace they were there.
+*Cat note:* Catticus is amongst the ruins. His steampumk brass nose as returned and its heightened olfactory senses have lead him to a small pile of half melted, counterfeit coins. He sniffs at them tentatively. His top hat is on his head and his monocle glints, in his right eye.
 
-*Mouse Note:* Tick-Tock, still in Hatherley's pocket, watches the ruins
-with wide eyes. He chitters softly — a sound no human interprets as
-grief for the woman who once showed kindness to a stranger.
+Lollipop's ears have returned to normal however, the end of her scorpion tail has transformed into the cone of a fire-extinguisher from the end of which a jet of CO2 extinguishes one of isolated fires still burning amongst the wreckage.
+
+*Mouse Note:* Tick-Tock, has returned in Hatherley's pocket but has donned a fireman's hat.
 
 ---
 

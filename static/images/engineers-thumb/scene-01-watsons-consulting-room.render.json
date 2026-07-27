@@ -1,0 +1,21 @@
+{
+  "output_file": "engineers_thumb/images/scene-01-watsons-consulting-room.png",
+  "model": "gpt-image-2",
+  "size": "1024x1536",
+  "quality": "high",
+  "style": "victorian-picture-book",
+  "endpoint": "edits",
+  "prompt_hash": "6a81f031b6f0ec29",
+  "reference_count": 7,
+  "reference_images": [
+    "reference/images/catticus/02205FA2-A83B-4633-B10B-55A263E7F051_1_105_c.png",
+    "reference/images/catticus/B2D9D3FC-72AD-4688-96C9-8A041F57F6B6_1_201_a.png",
+    "reference/images/catticus/15C2ED6B-B61E-447B-8A5D-E892DD9F8B0A.png",
+    "reference/images/catticus/09C9392E-F22E-47C3-BBC3-1A1A9C591F5F_1_201_a.png",
+    "reference/images/catticus/3EFA99F6-DDD3-4502-8DA4-66F94EF1CCEE_1_105_c.png",
+    "reference/images/catticus/54419FDC-31F9-4B13-8E0A-905B8CEBF33C_1_105_c.png",
+    "reference/images/catticus/A156E6AB-493A-490E-B70A-07E7EC40D742_1_201_a.png"
+  ],
+  "timestamp": "2026-07-05T14:45:35Z",
+  "reference_images_used": true
+}
