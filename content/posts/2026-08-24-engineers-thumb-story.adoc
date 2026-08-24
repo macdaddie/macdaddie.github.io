@@ -7,108 +7,45 @@ showToc: true
 ---
 
 // Document Attributes
-:imagesdir: /images/engineers_thumb/
+:imagesdir: ./images/engineers_thumb/
 :toc: right
 :toclevels: 3
 :toc-title: Table of Contents
 :doctype: book
-:sectnums:
 :appendix-caption: Appendix
 :appendix-number: 0
 
 // Main Document
 = The Adventure of the Engineer's Thumb
 
-== Story Guide
+== Chapter 1 — The Clock Strikes Seven
 
-The original story runs approximately 6,000 words. For a 36-page picture book
-(15 double-page spreads after front matter), target text is ~600 words,
-roughly 40–50 words per spread.
-
-This guide lists every spread with its scene, text, and the cats' involvement.
-
----
-
-=== Page Credits
-
-- Pages 1–3: Front matter (half-title, title, copyright)
-- Pages 4–39: Story content (18 spreads, including spread 2.5)
-- Page 40: Back matter / colophon
-
----
-
-== Spread 1 — The Clock Strikes Seven
-
-*Page 4 — Full-page illustration*
+Of all the problems which have been submitted to my friend, Mr. Sherlock
+Holmes, for solution during the years of our intimacy, there were only
+two which I was the means of introducing to his notice, one of which was that of Mr.
+Hatherley’s thumb.
 
 image:scene-01-watsons-consulting-room.png[]
 
-*Scene:* Dr. Watson's consulting room, early morning. A young man sits with a
-blood-soaked handkerchief wrapped around his hand. Watson, still in his
-dressing-gown, examines him with concern.
+One morning, at a little before seven o’clock, I entered my consulting-room and found a gentleman seated by the table. His card read _“Mr. Victor Hatherley, hydraulic and clockwork engineer"_. He was accompanied by a smartly assembled young mouse who proffered up to me what looked to all the world like a human thumb!
 
-*Narration:*
+“A very good morning to you, Doctor. My name is Victor Hatherley and this is my friend," said the young gentleman, gesturing with his uninjured hand to the small mouse, "Tick-Tock. I am sorry to knock you up so early, but I have had a very serious accident during the night."
 
-[quote]
-____
-It was just before seven o'clock when the maid knocked. A young gentleman
-had arrived from Paddington Station with a hand wrapped in bloody linen.
-His card read: _Mr. Victor Hatherley, Hydraulic Engineer._
-____
-
-*Cat note (invisible to text):* On the rooftops visible through the window,
-two silhouettes — Catticus and Lollipop — watch the cab that brought
-Hatherley. They had tracked him from Paddington.
-
-*Mouse Note (Invisible to text):* Haltherley's mouth is sitting on the table, offering up the thumb, partially exposed and wrapped in a scrap of red stained handkerchief, to Dr. Watson with both paws.
-
----
-
-== Spread 2 — A Strange Case
-
-*Pages 6–7 — Double-page spread*
+He unwound the handkerchief and held out his hand. It gave even my hardened nerves a shudder to look at it. There were four protruding fingers and a horrid red, spongy surface where the thumb should have been. It had been hacked or torn right out from the roots.
 
 image:scene-02-thumb-theft.png[]
 
-*Scene:* Consulting room. Hatherley sits with his bandaged hand extended.
-Watson is half-rising from his chair, one hand reaching out, his face caught
-between professional concern and frustrated alarm.
+I was just considering if it was worth attempting to reattach the existing thumb Tick-Tock was still offering to me or simply to upgrade it when Mrs. Hudson's cats, Catticus Finch and Lollipop sauntered in through the open, consulting-room door and made the decision for me.
 
-Catticus has jumped on the table and is sniffing the enginner's injured hand. His nose as turned into brass, indicating that those steamborg implants have activated.
-At the
-doorway, Lollipop has the severed thumb in her mouth, a swift blur dashing
-from the room as Watson's shout forms on his lips.
+The two cats were built to address the plague of rats that had ever been the curse of Old London Town. Every establishment with the means to afford one had _steamborg_, these days. Usually a cat or dog adapted to the work. To Mrs. Hudson's ever-lasting pride these murine predators were most efficient at their job. A rat had not been seen in Baker Street for many a moon. No doubt it was Tick-Tock's presence that had prompted them to enter, their implants already activating, and I worried that my new patient would lose his diminutive companion to these efficient exterminators.
 
-*Narration:*
-[quote]
-____
-"A cleaver," said he, when I asked. "And not an accident — murderously
-intended."
+It seemed, however, rather than his person it was what he was holding that fascinated Lollipop, the smaller (and I secretly suspected, deadlier) of the two and quicker than lighting she leapt over the table, snatched Hatherley's thumb from the paws of his miniscule friend and ran with it, held in her jaws out of the consulting room!
 
-He had brought the thumb with him, wrapped in linen. I stared at it, then
-at the wound, then back again. Before I could speak, one of Mrs. Hudson's
-cats — the calico — had seized it and was disappearing through the door.
+In the commotion, her companion had silently jumped onto the table and was intent on burying his nose, now a shining brass array of olfactory sensors, into the makeshift bandages of Mr. Hatherley's injured hand.
 
-I gave chase, but too late. The cat was gone.
+"I fear we shan't see that old thumb of yours again!" I said to Hatherley in a consoling voice, reaching for my box of "Tom's Thumbs. "Not to worry, we'll soon have you fixed up, good as new ... better than new, if I can be a judge."
 
-"You must tell this to my friend, Mr. Sherlock Holmes," I said at last,
-"before you go to the police."
-____
-
-*Cat note:* Lollipop's theft is not random — the severed thumb carries trace
-metal residues from the press. She and Catticus will analyse it in their
-quarters beneath the kitchen floorboards. Catticus's apparent curiosity at the
-wound is equally calculated: his enhanced olfactory sensors are cataloguing
-hydraulic oil, nickel dust, and fuller's-earth (the colonel's cover story) —
-evidence that the wound is not what it seems.
-
-*Mouse Note:* Tick-Tock, Hatherley's mouse, stands at the table, on the edge of the handkerchief the thumb was wrapped in, looking bemused at lollopop and waving at her in a friendly fashion.
-
----
-
-== Spread 2.5 — Tom's Thumbs
-
-*Pages 8–9 — Double-page spread*
+"Blast it, I'm all thumbs today!" - This last, I said to myself as I had dropped my surgical screwdriver as I made a long arm to the box on the shelf and brought it to the table.
 
 image:scene-025-thumb-fitting.png[]
 
@@ -123,16 +60,18 @@ hydro-clockwork mouse, sits on Hatherley's wrist, both forepaws holding the pros
 steady in place. Catticus Finch is on the table, nose close to the action, like a curious cat would. his nose is still in it's steamborg transformed state, esentially a normal cat nose but now ornately brass and copper , and a thin blue arc of electrical energy sparks from his nose to
 the newly fitted thumb, which glows faintly with electric life.
 
-*Narration:*
-[quote]
-____
-"We're never going to see that old thumb again; blooming cats!" muttered Dr.
-Watson, reaching for a box of "Tom's Thumbs."
 
-"Not to worry, old boy — we'll soon have you fixed up, right as rain," Dr.
-Watson said cheerily to Mr. Hatherley, and then to himself as he dropped his
-surgical screwdriver: "Blast it, I'm all thumbs today!"
-____
+"A cleaver," said he, when I asked. "And not an accident — murderously
+intended."
+
+He had brought the thumb with him, wrapped in linen. I stared at it, then
+at the wound, then back again. Before I could speak, one of Mrs. Hudson's
+cats — the calico — had seized it and was disappearing through the door.
+
+I gave chase, but too late. The cat was gone.
+
+"You must tell this to my friend, Mr. Sherlock Holmes," I said at last,
+"before you go to the police."
 
 *Cat note:* Catticus has followed the cab from Watson's consulting room. His steamborg nose is still manifest from the analysis earlier. The blue spark
 is subtle but significant — Catticus can somehow energise brass prosthetics,
