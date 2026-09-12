@@ -7,7 +7,7 @@ showToc: true
 ---
 
 // Document Attributes
-:imagesdir: ./images/engineers_thumb/
+:imagesdir: images/engineers_thumb/
 :toc: right
 :toclevels: 3
 :toc-title: Table of Contents
@@ -61,7 +61,7 @@ I often think to myself that these newfangled implants and attachments have redu
 == Breakfast at Baker Street
 
 
-I called a cab and we were quickly at Baker Street. Sherlock Holmes was, as I expected, lounging about his sitting-room in his dressing-gown, reading the agony column of The Times and smoking his before-breakfast pipe. He received us in his quietly genial fashion, ordered fresh rashers and eggs, and joined us in a hearty meal. 
+I called a cab and we were quickly at Baker Street. Sherlock Holmes was, as I expected, lounging about his sitting-room in his dressing-gown, reading the agony column of The Times and smoking his before-breakfast pipe. He received us in his quietly genial fashion, ordered fresh rashers and eggs, and joined us in a hearty meal.
 
 image:scene-03-221b-breakfast.png[]
 
@@ -392,7 +392,7 @@ it, to the house which was barely a quarter of a mile from the station.
 image:scene-14-departure-v4.png[]
 
 *Scene:* Paddington Station. The train compartment, bound from Reading to
-Eyford. Holmes, Hatherley, Watson, and Inspector Bradstreet are climbing 
+Eyford. Holmes, Hatherley, Watson, and Inspector Bradstreet are climbing
 into a first-class carriage.  Tick-Tock is back in Hatherley's top pocket.
 
 On the platform, two feral steamborg cats watch the party board —
@@ -471,7 +471,7 @@ wall like a soft spotlight. The infographic style is deliberately
 antiquated: engraving-line cross-sections, hand-lettered labels, Victorian
 technical illustration rendered in green laser light. Lollipop's scorpion
 tail is in full extension from the luggage rack, the brass segments
-telescoped, the stinger used precisely as a pointer. 
+telescoped, the stinger used precisely as a pointer.
 
 *Mouse Note:* Tick-Tock is perched on Hatherley's shoulder, leaning
 forward,clapping with innocent delight, staring at the
@@ -502,7 +502,7 @@ hung like an immense ostrich feather over the landscape.
 its way.
 ____
 
-*Cat note:* Just above the men, on the roof of the Eyford station house, Catticus and Lollopop watch the smoke. 
+*Cat note:* Just above the men, on the roof of the Eyford station house, Catticus and Lollopop watch the smoke.
 Catticus monocled eye has one again transformed into an ornate, brass telescope which he uses to survey the burning house, from a distance.
 Lollopops ears are again transformed into parabolic reflectors as she trains them in the direction of the house to hear anything that may inform the situation further.
 
