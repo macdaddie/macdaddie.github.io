@@ -1,16 +1,236 @@
-/* Widen the main content area */
+/* Layout */
 :root {
     --main-width: 1100px;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+        "Liberation Mono", monospace;
+
+    --code-block-bg: #f6f8fa;
+    --code-fg: #24292f;
+    --code-border: #d0d7de;
+    --inline-code-bg: rgba(175, 184, 193, 0.2);
+    --inline-code-border: rgba(31, 35, 40, 0.12);
+
+    --accent: #0969da;
+    --accent-hover: #0550ae;
+
+    --note: #0969da;
+    --tip: #1a7f37;
+    --warning: #9a6700;
+    --caution: #bc4c00;
+    --important: #8250df;
 }
 
-/* Improve article paragraph spacing */
+:root[data-theme="dark"] {
+    --code-block-bg: #0d1117;
+    --code-fg: #e6edf3;
+    --code-border: #30363d;
+    --inline-code-bg: #262c36;
+    --inline-code-border: rgba(240, 246, 252, 0.12);
+
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+
+    --note: #58a6ff;
+    --tip: #3fb950;
+    --warning: #d29922;
+    --caution: #db6d28;
+    --important: #a371f7;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root[data-theme="auto"] {
+        --code-block-bg: #0d1117;
+        --code-fg: #e6edf3;
+        --code-border: #30363d;
+        --inline-code-bg: #262c36;
+        --inline-code-border: rgba(240, 246, 252, 0.12);
+
+        --accent: #58a6ff;
+        --accent-hover: #79c0ff;
+
+        --note: #58a6ff;
+        --tip: #3fb950;
+        --warning: #d29922;
+        --caution: #db6d28;
+        --important: #a371f7;
+    }
+}
+
+/* Typography */
 .post-content p {
     margin-bottom: 1.25em;
     line-height: 1.75;
 }
 
-/* Make code blocks more comfortable */
-.post-content pre {
-    font-size: 0.9rem;
+.md-content h2 {
+    font-size: 28px;
+    letter-spacing: -0.01em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--border);
+}
+
+.md-content h3 {
+    font-size: 22px;
+    letter-spacing: -0.005em;
+}
+
+.md-content :is(h2, h3, h4) .anchor[aria-hidden="true"] {
+    display: inline;
+    visibility: hidden;
+    margin-left: 0.35em;
+    font-weight: 400;
+    color: var(--secondary);
+}
+
+.md-content :is(h2, h3, h4):hover .anchor[aria-hidden="true"] {
+    visibility: visible;
+}
+
+/* Links */
+.md-content a:not(.anchor) {
+    color: var(--accent);
+    text-underline-offset: 0.25rem;
+    text-decoration-thickness: 1px;
+}
+
+.md-content a:not(.anchor):hover {
+    color: var(--accent-hover);
+    text-decoration-thickness: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Inline code */
+.post-content code {
+    padding: 0.15em 0.35em;
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    font-variant-ligatures: none;
+    color: var(--code-fg);
+    background: var(--inline-code-bg);
+    border: 1px solid var(--inline-code-border);
+    border-radius: 4px;
+}
+
+/* Code blocks */
+.md-content :is(.listingblock, .imageblock) > .title,
+.md-content table.tableblock > caption.title {
+    color: var(--accent);
+    font-size: 0.875rem;
+    font-style: italic;
     line-height: 1.5;
+}
+
+.md-content .listingblock > .title {
+    margin-bottom: 0.4em;
+}
+
+.md-content .imageblock > .title {
+    margin-top: 0.4em;
+}
+
+.md-content table.tableblock > caption.title {
+    margin-bottom: 0.4em;
+    text-align: left;
+}
+
+.md-content .listingblock pre,
+.md-content .literalblock pre {
+    width: 100%;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-variant-ligatures: none;
+    line-height: 1.6;
+    background: var(--code-block-bg) !important;
+    border: 1px solid var(--code-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.md-content .listingblock pre code,
+.md-content .literalblock pre code {
+    display: block;
+    padding: 16px 20px;
+    font-size: inherit;
+    line-height: inherit;
+    color: var(--code-fg);
+    white-space: pre;
+    word-break: normal;
+    overflow-x: auto;
+    border: 0;
+    border-radius: 0;
+}
+
+/* AsciiDoc tables */
+.md-content .tableblock {
+    font-size: 0.95em;
+}
+
+.md-content .tableblock th.tableblock,
+.md-content .tableblock td.tableblock {
+    padding: 8px 12px;
+    border: 1px solid var(--code-border);
+}
+
+.md-content .tableblock th.tableblock {
+    font-weight: 600;
+    text-align: left;
+    background: var(--code-block-bg);
+}
+
+/* AsciiDoc admonitions */
+.md-content .admonitionblock {
+    margin: 1.5em 0;
+}
+
+.md-content .admonitionblock > table {
+    width: 100%;
+    border-collapse: separate;
+    background: var(--code-block-bg);
+    border: 1px solid var(--code-border);
+    border-left: 3px solid var(--admonition-accent, var(--accent));
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.md-content .admonitionblock td.icon,
+.md-content .admonitionblock td.content {
+    padding: 12px 14px;
+    border: 0;
+}
+
+.md-content .admonitionblock td.icon {
+    width: 1%;
+    white-space: nowrap;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--admonition-accent, var(--accent));
+}
+
+.md-content .admonitionblock.note {
+    --admonition-accent: var(--note);
+}
+
+.md-content .admonitionblock.tip {
+    --admonition-accent: var(--tip);
+}
+
+.md-content .admonitionblock.warning {
+    --admonition-accent: var(--warning);
+}
+
+.md-content .admonitionblock.caution {
+    --admonition-accent: var(--caution);
+}
+
+.md-content .admonitionblock.important {
+    --admonition-accent: var(--important);
 }

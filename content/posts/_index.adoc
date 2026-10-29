@@ -1,0 +1,8 @@
+---
+title: "The Lab"
+date: 2026-10-26
+weight: 5
+---
+
+== _Making machines do interesting things._
+

@@ -1,13 +1,8 @@
 ---
-title: "Architecture Documentation"
+title: "How This Site is Built"
 date: 2026-07-07
 weight: 5
 ---
 
-== Architecture Documentation
-
 This section documents the architecture, design, and build process for rocasta.com.
 
-* link:/arch/architecture/[Architecture Overview]
-* link:/arch/design-guide/[Design Guide]
-* link:/arch/build-guide/[Build Guide]

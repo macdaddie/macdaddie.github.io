@@ -1,0 +1,8 @@
+---
+title: "Creative Writing"
+date: 2026-07-07
+weight: 5
+---
+
+This section is somewhat whimsical and explores the use of AI to illustrate public domain classical literate, with cats.
+

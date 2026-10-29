@@ -24,9 +24,10 @@ enableEmoji = true
 
 [menu]
   main = [
-    { identifier = "posts", name = "Posts", url = "/posts/", weight = 10 },
+    { identifier = "posts", name = "The Lab", url = "/posts/", weight = 10 },
     { identifier = "about", name = "About", url = "/about/", weight = 20 },
-    { identifier = "arch", name = "Arch", url = "/arch/", weight = 15 },
+    { identifier = "arch", name = "Site Build", url = "/arch/", weight = 15 },
+    { identifier = "writing", name = "Writing", url = "/writings/", weight = 17 },
     { identifier = "tags", name = "Tags", url = "/tags/", weight = 30 },
   ]
 
