@@ -1,6 +1,6 @@
 ---
 title: "A Case for Snakes"
-description: "How renaming files gets out of hand."
+description: "How renaming files got out of hand."
 date: 2026-10-28
 showToc: true
 ---
