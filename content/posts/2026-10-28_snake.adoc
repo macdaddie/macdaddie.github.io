@@ -29,7 +29,9 @@ If you are writing a Bash script, then you have to think about...
 
 All these and more make your scripts increasingly likely to fall over unexpectedly, and this could all be avoided if filenames were just house-trained better.
 
-Given this typographical hellscape, who are the villains committing these sins of syntax? Well, it isn't me! `this_is_my_file_csw_v1.adoc` is about as adventurous as I get. It's `You’re unsubscribed..eml` when I copy a file from an email to my file system so I can actually refer to it again when I need it, or it's some file I've downloaded (`Old Paper Texture.jpg`) or an application has generated -- `Bogos Data/WORD TEMPLATES/Basic Report Template.doc`. I feel like the Kyle Reese of the command line, dodging overly verbose Hunter-Killers in the sky.
+Given this typographical hellscape, who are the villains committing these sins of syntax? Well, it isn't me! `this_is_my_file_csw_v1.adoc` is about as adventurous as I get. It's `You’re unsubscribed..eml` when I copy a file from an email to my file system so I can actually refer to it again when I need it, or it's some file I've downloaded (`Old Paper Texture.jpg`) or an application has generated -- `Bogos Data/WORD TEMPLATES/Basic Report Template.doc`.
+
+I feel like the Kyle Reese of the command line, dodging overly verbose Hunter-Killers in the sky.
 
 Now, I say this knowing that I should write my bash scripts to take all of these things into consideration because decrying what I consider to be poor filename etiquette doesn't mean that I'm not going to still encounter it.
 
@@ -72,9 +74,9 @@ Renamed 'My Important Document - Final Version (2).pdf' to './my_important_docum
 ----
 
 
-Over time, it turns out that my interpretation of snake case is a lot more nuanced than I thought. I don't like punctuation (except when I want a directory to be `name.status.date`). I don't like special characters like apostrophes or trailing spaces. I want to batch process a lot of files at once, and I want that batch process to be recursive, except when I don't. I also don't want it to accidentally overwrite files when I have `Hello World.txt` and `hello_world.txt` together.
+Over time, it turns out that my interpretation of snake case is a lot more nuanced than I thought. I don't like punctuation (except when I want a directory to be `name.status.date`). I don't like special characters like apostrophes or trailing spaces. I want to batch process a lot of files at once, and I want that batch process to be recursive, except when I don't. I also don't want it to accidentally overwrite files when I have `Hello World.txt` and `hello_world.txt` already exits in my directory.
 
-With each new file I renamed, I found that the creativity of cyberland had found yet another way to disturb my filename namaste, and my snake became an ouroboros.
+With each new file I renamed, I found that the creativity of cyberland had found yet another way to disturb my filename namaste, and my snake function became an ouroboros.
 
 .Current snake logic
 image::snake.png[]
@@ -118,7 +120,7 @@ You can see everything that `snake` can currently do over on link:{github}[GitHu
 
 What started as a simple exercise in snake case quickly ballooned into a complex set of requirements for nothing short of a highly opinionated filename-renaming utility with its own curated views about punctuation, extensions, recursion, and what constitutes acceptable behaviour.
 
-How many bells are ringing here? Was this your last customer engagement, software development, sales pursuit or hasty promise to your spouse?
+How many bells are ringing here? Was this your last customer engagement, software development, sales pursuit or hasty commitment to your spouse?
 
 How often have we heard, or indeed said, "It should be simple enough"? The trouble is that the simplicity usually exists only because we haven't yet encountered all the exceptions, edge cases and unforeseen consequences. It's only when you get your hands dirty that you discover the solution you naively wanted wasn't the solution you needed.
 
