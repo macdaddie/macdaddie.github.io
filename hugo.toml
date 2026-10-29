@@ -17,6 +17,7 @@ enableEmoji = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowToc = true
+  hideFooter = true
 
 [taxonomies]
   tag = "tags"
