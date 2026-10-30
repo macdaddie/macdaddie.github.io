@@ -31,7 +31,7 @@ All these and more make your scripts increasingly likely to fall over unexpected
 
 Given this typographical hellscape, who are the villains committing these sins of syntax? Well, it isn't me! `this_is_my_file_csw_v1.adoc` is about as adventurous as I get. It's `You’re unsubscribed..eml` when I copy a file from an email to my file system so I can actually refer to it again when I need it, or it's some file I've downloaded (`Old Paper Texture.jpg`) or an application has generated -- `Bogos Data/WORD TEMPLATES/Basic Report Template.doc`.
 
-I feel like the Kyle Reese of the command line, dodging overly verbose Hunter-Killers in the sky.
+I feel like the Kyle Reese of the command line, dodging overly verbose Terminators in a typographical wasteland.
 
 Now, I say this knowing that I should write my bash scripts to take all of these things into consideration because decrying what I consider to be poor filename etiquette doesn't mean that I'm not going to still encounter it.
 
