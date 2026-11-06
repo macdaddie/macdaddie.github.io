@@ -1,86 +1,92 @@
 /* ============================================
-   CSS Custom Properties (Theme Variables)
-   ============================================
-   Defines color palette and typography settings for both light and dark themes.
-   Uses CSS custom properties for easy theming and consistency across the site.
-   -------------------------------------------- */
+   Rocasta design tokens
+   Modern technical publishing with restrained editorial personality.
+   ============================================ */
 
-/* Light theme (default) */
 :root {
-    --main-width: 1100px;
+    --main-width: 1050px;
+    --reading-measure: 90ch;
+
     --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
         "Liberation Mono", monospace;
 
-    --code-block-bg: #f6f8fa;
-    --code-fg: #24292f;
-    --code-border: #d0d7de;
-    --inline-code-bg: rgba(175, 184, 193, 0.2);
-    --inline-code-border: rgba(31, 35, 40, 0.12);
+    --code-block-bg: #f5f6f7;
+    --code-fg: #24272b;
+    --code-border: #d2d6da;
+    --inline-code-bg: rgba(85, 93, 102, 0.1);
+    --inline-code-border: rgba(31, 35, 40, 0.14);
 
-    --accent: #0969da;
-    --accent-hover: #0550ae;
+    --accent: #1769aa;
+    --accent-hover: #0f568f;
+    --annotation: #a45b19;
+    --aside-fg: #6b6255;
+    --aside-rule: #b9ad99;
 
-    --note: #0969da;
-    --tip: #1a7f37;
-    --warning: #9a6700;
-    --caution: #bc4c00;
-    --important: #8250df;
+    --note: #1769aa;
+    --tip: #26734d;
+    --warning: #8a6500;
+    --caution: #a94f2b;
+    --important: #7251a8;
 
-    /* Border radius for rounded corners */
-    --radius: 6px;
+    --radius-small: 4px;
+    --radius-medium: 6px;
 }
 
-/* Dark theme (explicitly set) */
 :root[data-theme="dark"] {
-    --code-block-bg: #0d1117;
-    --code-fg: #e6edf3;
-    --code-border: #30363d;
-    --inline-code-bg: #262c36;
-    --inline-code-border: rgba(240, 246, 252, 0.12);
+    --code-block-bg: #15181c;
+    --code-fg: #e7e2d8;
+    --code-border: #353b42;
+    --inline-code-bg: #252a30;
+    --inline-code-border: rgba(235, 230, 220, 0.14);
 
-    --accent: #58a6ff;
-    --accent-hover: #79c0ff;
+    --accent: #6cb6e8;
+    --accent-hover: #9ad1f2;
+    --annotation: #e6a85c;
+    --aside-fg: #c8bda8;
+    --aside-rule: #6e6455;
 
-    --note: #58a6ff;
-    --tip: #3fb950;
-    --warning: #d29922;
-    --caution: #db6d28;
-    --important: #a371f7;
-
-    --radius: 6px;
+    --note: #6cb6e8;
+    --tip: #70c790;
+    --warning: #e0b95c;
+    --caution: #e58a5c;
+    --important: #b79aeb;
 }
 
-/* Dark theme (auto-detected via system preference) */
 @media (prefers-color-scheme: dark) {
     :root[data-theme="auto"] {
-        --code-block-bg: #0d1117;
-        --code-fg: #e6edf3;
-        --code-border: #30363d;
-        --inline-code-bg: #262c36;
-        --inline-code-border: rgba(240, 246, 252, 0.12);
+        --code-block-bg: #15181c;
+        --code-fg: #e7e2d8;
+        --code-border: #353b42;
+        --inline-code-bg: #252a30;
+        --inline-code-border: rgba(235, 230, 220, 0.14);
 
-        --accent: #58a6ff;
-        --accent-hover: #79c0ff;
+        --accent: #6cb6e8;
+        --accent-hover: #9ad1f2;
+        --annotation: #e6a85c;
+        --aside-fg: #c8bda8;
+        --aside-rule: #6e6455;
 
-        --note: #58a6ff;
-        --tip: #3fb950;
-        --warning: #d29922;
-        --caution: #db6d28;
-        --important: #a371f7;
-
-        --radius: 6px;
+        --note: #6cb6e8;
+        --tip: #70c790;
+        --warning: #e0b95c;
+        --caution: #e58a5c;
+        --important: #b79aeb;
     }
 }
 
 /* ============================================
-   Post Navigation Sticky Header
-   ============================================
-   Keeps the post navigation/context visible while scrolling on larger screens.
-   -------------------------------------------- */
+   Reading layout
+   ============================================ */
 
-/* Keep post context visible while reading on larger screens. */
+.post-content {
+    max-inline-size: var(--reading-measure);
+    margin-inline: auto;
+    container-type: inline-size;
+}
+
+/* A large TOC makes the full post header unsuitable for sticky positioning. */
 @media screen and (min-width: 900px) {
-    .post-sticky {
+    .post-sticky:not(:has(.toc)) {
         position: sticky;
         top: 0;
         z-index: 10;
@@ -91,58 +97,61 @@
 }
 
 /* ============================================
-   Typography
-   ============================================
-   Controls text appearance, spacing, and heading styles.
-   -------------------------------------------- */
+   Typography and section navigation
+   ============================================ */
 
-/* Typography */
 .post-content p {
     margin-bottom: 1.25em;
     line-height: 1.75;
 }
 
 .md-content h2 {
-    font-size: 28px;
+    padding-bottom: 0;
+    border-bottom: 0;
+    font-size: clamp(1.5rem, 1.25rem + 1vw, 1.9rem);
     letter-spacing: -0.01em;
-    padding-bottom: 0.3em;
-    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 6rem;
+}
+
+.md-content h2::after {
+    content: "";
+    display: block;
+    inline-size: 2.5rem;
+    margin-block-start: 0.45rem;
+    border-block-end: 2px solid var(--accent);
 }
 
 .md-content h3 {
-    font-size: 22px;
+    font-size: clamp(1.2rem, 1.08rem + 0.5vw, 1.45rem);
     letter-spacing: -0.005em;
+    scroll-margin-top: 6rem;
 }
 
-/* ============================================
-   Section Anchors (Permalinks)
-   ============================================
-   Shows/hides hash links when hovering over headings.
-   -------------------------------------------- */
+.md-content h4 {
+    scroll-margin-top: 6rem;
+}
 
 .md-content :is(h2, h3, h4) .anchor[aria-hidden="true"] {
     display: inline;
     visibility: hidden;
-    margin-left: 0.35em;
-    font-weight: 400;
+    margin-inline-start: 0.35em;
     color: var(--secondary);
+    font-weight: 400;
 }
 
-.md-content :is(h2, h3, h4):hover .anchor[aria-hidden="true"] {
+.md-content :is(h2, h3, h4):is(:hover, :focus-within)
+    .anchor[aria-hidden="true"] {
     visibility: visible;
 }
 
 /* ============================================
-   Links
-   ============================================
-   Standard link styling with hover effects and focus states for accessibility.
-   -------------------------------------------- */
+   Links and focus
+   ============================================ */
 
-/* Links */
 .md-content a:not(.anchor) {
     color: var(--accent);
-    text-underline-offset: 0.25rem;
     text-decoration-thickness: 1px;
+    text-underline-offset: 0.25rem;
 }
 
 .md-content a:not(.anchor):hover {
@@ -150,193 +159,252 @@
     text-decoration-thickness: 2px;
 }
 
-a:focus-visible,
-button:focus-visible,
-summary:focus-visible,
-input:focus-visible {
+:where(a, button, summary, input, select, textarea):focus-visible {
     outline: 2px solid var(--accent);
-    outline-offset: 2px;
+    outline-offset: 3px;
 }
 
 /* ============================================
-   Inline Code
-   ============================================
-   Styles for inline code snippets (`code` tags).
-   -------------------------------------------- */
+   Inline code and source listings
+   ============================================ */
 
-/* Inline code */
 .post-content code {
     padding: 0.15em 0.35em;
+    border: 1px solid var(--inline-code-border);
+    border-radius: var(--radius-small);
+    color: var(--code-fg);
+    background: var(--inline-code-bg);
     font-family: var(--font-mono);
     font-size: 0.85em;
     font-variant-ligatures: none;
-    color: var(--code-fg);
-    background: var(--inline-code-bg);
-    border: 1px solid var(--inline-code-border);
-    border-radius: 4px;
 }
 
-/* ============================================
-   Code Blocks and Literal Blocks
-   ============================================
-   Styles for code blocks (listingblock, literalblock), images with captions, and tables.
-   -------------------------------------------- */
-
-/* Code blocks */
-.md-content :is(.listingblock, .imageblock) > .title,
-.md-content table.tableblock > caption.title {
-    color: var(--accent);
-    font-size: 0.875rem;
-    font-style: italic;
+.post-content :is(.listingblock, .imageblock) > .title,
+.post-content table.tableblock > caption.title {
+    color: var(--secondary);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-style: normal;
     line-height: 1.5;
+    letter-spacing: 0.025em;
 }
 
-.md-content .listingblock > .title {
+.post-content .listingblock > .title {
     margin-bottom: 0.4em;
 }
 
-.md-content .imageblock > .title {
-    margin-top: 0.4em;
+.post-content .imageblock > .title {
+    margin-top: 0.45em;
 }
 
-.md-content table.tableblock > caption.title {
+.post-content table.tableblock > caption.title {
     margin-bottom: 0.4em;
-    text-align: left;
+    text-align: start;
 }
 
-/* ============================================
-   Code Block Content
-   ============================================
-   The actual code inside the code blocks.
-   -------------------------------------------- */
-
-.md-content .listingblock pre,
-.md-content .literalblock pre {
+.post-content .listingblock pre,
+.post-content .literalblock pre {
     width: 100%;
+    border: 1px solid var(--code-border);
+    border-radius: var(--radius-medium);
+    background: var(--code-block-bg) !important;
     font-family: var(--font-mono);
     font-size: 0.875rem;
     font-variant-ligatures: none;
     line-height: 1.6;
-    background: var(--code-block-bg) !important;
-    border: 1px solid var(--code-border);
-    border-radius: var(--radius);
     overflow: hidden;
+    tab-size: 4;
 }
 
-.md-content .listingblock pre code,
-.md-content .literalblock pre code {
+.post-content .listingblock pre code,
+.post-content .literalblock pre code {
     display: block;
     padding: 16px 20px;
+    border: 0;
+    border-radius: 0;
+    color: var(--code-fg);
     font-size: inherit;
     line-height: inherit;
-    color: var(--code-fg);
     white-space: pre;
     word-break: normal;
     overflow-x: auto;
-    border: 0;
-    border-radius: 0;
 }
 
 /* ============================================
-   AsciiDoc Tables
-   ============================================
-   Styles for tables generated from AsciiDoc content.
-   -------------------------------------------- */
+   AsciiDoc tables
+   ============================================ */
 
-/* AsciiDoc tables */
-.md-content .tableblock {
+.post-content table.tableblock {
+    display: block;
+    max-inline-size: 100%;
+    border-collapse: collapse;
     font-size: 0.95em;
+    overflow-x: auto;
 }
 
-.md-content .tableblock th.tableblock,
-.md-content .tableblock td.tableblock {
+.post-content .tableblock th.tableblock,
+.post-content .tableblock td.tableblock {
     padding: 8px 12px;
     border: 1px solid var(--code-border);
 }
 
-.md-content .tableblock th.tableblock {
-    font-weight: 600;
-    text-align: left;
+.post-content .tableblock th.tableblock {
     background: var(--code-block-bg);
+    font-weight: 600;
+    text-align: start;
 }
 
 /* ============================================
-   AsciiDoc Admonitions (Note/Tip/Warning/etc.)
-   ============================================
-   Styles for admonition blocks with colored left borders.
-   Different types use different accent colors defined in CSS variables.
-   -------------------------------------------- */
+   AsciiDoc admonitions
+   The outer block owns the visual treatment; its table is layout only.
+   ============================================ */
 
-/* AsciiDoc admonitions */
-.md-content .admonitionblock {
-    margin: 1.5em 0;
-}
+.post-content .admonitionblock {
+    --admonition-accent: var(--accent);
 
-.md-content .admonitionblock > table {
-    width: 100%;
-    border-collapse: separate;
-    background: var(--code-block-bg);
+    margin-block: 1.5em;
+    padding: 0;
     border: 1px solid var(--code-border);
-    border-left: 3px solid var(--admonition-accent, var(--accent));
-    border-radius: var(--radius);
+    border-inline-start: 4px solid var(--admonition-accent);
+    border-radius: var(--radius-medium);
+    background: var(--code-block-bg);
     overflow: hidden;
 }
 
-.md-content .admonitionblock td.icon,
-.md-content .admonitionblock td.content {
-    padding: 12px 14px;
+.post-content .admonitionblock > table {
+    width: 100%;
+    margin: 0;
     border: 0;
+    border-collapse: separate;
+    background: transparent;
 }
 
-.md-content .admonitionblock td.icon {
+.post-content .admonitionblock td.icon,
+.post-content .admonitionblock td.content {
+    padding: 12px 14px;
+    border: 0;
+    background: transparent;
+}
+
+.post-content .admonitionblock td.icon {
     width: 1%;
-    white-space: nowrap;
+    color: var(--admonition-accent);
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--admonition-accent, var(--accent));
+    white-space: nowrap;
 }
 
-.md-content .admonitionblock.note {
+.post-content .admonitionblock.note {
     --admonition-accent: var(--note);
 }
 
-.md-content .admonitionblock.tip {
+.post-content .admonitionblock.tip {
     --admonition-accent: var(--tip);
 }
 
-.md-content .admonitionblock.warning {
+.post-content .admonitionblock.warning {
     --admonition-accent: var(--warning);
 }
 
-.md-content .admonitionblock.caution {
+.post-content .admonitionblock.caution {
     --admonition-accent: var(--caution);
 }
 
-.md-content .admonitionblock.important {
+.post-content .admonitionblock.important {
     --admonition-accent: var(--important);
 }
 
 /* ============================================
-   AsciiDoc Image Alignment
-   ============================================
-   Handles non-floating image alignment (left, center, right).
-   Overrides PaperMod's default behavior to respect AsciiDoc alignment settings.
-   -------------------------------------------- */
+   Callout lists and editorial asides
+   ============================================ */
+
+.post-content .colist {
+    margin-block: 1.5em;
+    padding: 1em 1.25em;
+    border: 1px solid var(--code-border);
+    border-radius: var(--radius-medium);
+    background: var(--code-block-bg);
+}
+
+.post-content .colist table {
+    margin: 0;
+    border: 0;
+    background: transparent;
+}
+
+.post-content .colist td {
+    border: 0;
+    background: transparent;
+}
+
+.post-content .sidebarblock.right-callout {
+    float: inline-end;
+    clear: inline-end;
+    inline-size: clamp(16rem, 35%, 22rem);
+    margin: 0 0 1.25rem 1.5rem;
+    padding: 1rem 1.1rem;
+    border: 0;
+    border-inline-start: 1px solid var(--aside-rule);
+    border-radius: var(--radius-medium);
+    color: var(--aside-fg);
+    background: color-mix(in srgb, var(--code-block-bg) 48%, transparent);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+        serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.65;
+}
+
+.post-content .sidebarblock.right-callout p {
+    line-height: inherit;
+}
+
+.post-content .sidebarblock.right-callout strong {
+    color: inherit;
+    font-weight: 600;
+}
+
+.post-content .sidebarblock.right-callout code {
+    font-style: normal;
+}
+
+/* Admonitions used as optional detail are deliberately quieter. */
+.post-content .admonitionblock.right-callout {
+    --admonition-accent: var(--secondary);
+
+    float: inline-end;
+    clear: inline-end;
+    inline-size: clamp(16rem, 35%, 22rem);
+    margin: 0 0 1.25rem 1.5rem;
+    color: var(--aside-fg);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+        serif;
+    font-size: 0.875rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.post-content .admonitionblock.right-callout code {
+    font-style: normal;
+}
+
+@container (max-width: 40rem) {
+    .post-content :is(.admonitionblock, .sidebarblock).right-callout {
+        float: none;
+        clear: both;
+        inline-size: 100%;
+        margin: 1.5rem 0;
+    }
+}
 
 /* ============================================
-   AsciiDoc Image Alignment
-   ============================================
-   Handles non-floating image alignment (left, center, right).
-   Overrides PaperMod's default behavior to respect AsciiDoc alignment settings.
-   -------------------------------------------- */
+   Images and figures
+   ============================================ */
 
-/* Non-floating images: left, center, right */
-
-/* Non-floating images: left, center, right */
 .post-content .imageblock.text-left {
-    text-align: left;
+    text-align: start;
 }
 
 .post-content .imageblock.text-center {
@@ -344,104 +412,56 @@ input:focus-visible {
 }
 
 .post-content .imageblock.text-right {
-    text-align: right;
+    text-align: end;
 }
 
-/* Override PaperMod's automatic image centering */
-.post-content .imageblock[class*="text-"] img {
+.post-content .imageblock[class*="text-"] img,
+.post-content .imageblock.center img {
     display: inline-block;
-    margin: 0;
     max-width: 100%;
     height: auto;
+    margin: 0;
 }
 
-/* ============================================
-   AsciiDoc floating images
-   ============================================ */
+.post-content .imageblock.left,
+.post-content .imageblock.right {
+    max-inline-size: min(45%, 22rem);
+}
 
-/* Float left: text wraps on the right */
 .post-content .imageblock.left {
-    float: left;
+    float: inline-start;
     margin: 0 1.5rem 1rem 0;
 }
 
-/* ============================================
-   AsciiDoc Floating Images
-   ============================================
-   Allows images to float left or right with text wrapping around them.
-   Useful for side-by-side content layouts.
-   -------------------------------------------- */
-
-/* Float right: text wraps on the left */
 .post-content .imageblock.right {
-    float: right;
+    float: inline-end;
     margin: 0 0 1rem 1.5rem;
 }
 
-/* Center: no native CSS center float exists */
+.post-content .imageblock:is(.left, .right) img {
+    max-width: 100%;
+    height: auto;
+}
+
 .post-content .imageblock.center {
     float: none;
     clear: both;
-    text-align: center;
     margin: 1rem auto;
+    text-align: center;
 }
 
-.post-content .imageblock.center img {
-    display: inline-block;
-    margin: 0;
-    max-width: 100%;
-    height: auto;
-}
-
-/* ============================================
-   Right Callout Sidebars
-   ============================================
-   Sidebar-style blocks floated to the right (for responsive layouts).
-   Adjusts to full width on smaller screens.
-   -------------------------------------------- */
-
-/* Keep floating images responsive */
-.post-content .imageblock.left img,
-.post-content .imageblock.right img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* ============================================
-   Quotation Blocks
-   ============================================
-   Styles for blockquotes using AsciiDoc quoteblock syntax.
-   Provides a distinctive serif-style appearance for quoted content.
-   -------------------------------------------- */
-.admonitionblock.right-callout {
-    float: right;
-    width: 35%;
-    margin: 0 0 1rem 1.5rem;
-    clear: right;
-    border: 1px solid var(--code-border);
-    border-left: 3px solid var(--admonition-accent, var(--accent));
-    border-radius: var(--radius);
-    background: var(--code-block-bg);
-}
-.sidebarblock.right-callout {
-    float: right;
-    width: 35%;
-    margin: 0 0 1rem 1.5rem;
-    clear: right;
-    border: 1px solid var(--code-border);
-    border-radius: var(--radius);
-    background: var(--code-block-bg);
-}
-@media (max-width: 768px) {
-    .admonitionblock.right-callout,
-    .sidebarblock.right-callout {
+@container (max-width: 36rem) {
+    .post-content .imageblock:is(.left, .right) {
         float: none;
-        width: 100%;
+        clear: both;
+        max-inline-size: 100%;
         margin: 1rem 0;
     }
 }
 
-/* Asciidoctor-style quotation blocks */
+/* ============================================
+   Quotations
+   ============================================ */
 
 .post-content .quoteblock {
     margin: 1.5em 1em;
@@ -451,70 +471,76 @@ input:focus-visible {
 .post-content .quoteblock blockquote {
     margin: 0;
     padding: 0;
-    border: none;
+    border: 0;
     background: transparent;
     color: inherit;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.15em;
     font-style: italic;
     line-height: 1.65;
-    text-align: left;
+    text-align: start;
 }
 
 .post-content .quoteblock blockquote p {
     margin-bottom: 0.75em;
 }
 
+.post-content .quoteblock blockquote::before {
+    content: "\201c";
+    margin-inline-end: 0.12em;
+    color: var(--annotation);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3em;
+    font-style: normal;
+    line-height: 0.1;
+    vertical-align: -0.42em;
+}
+
+.post-content .quoteblock blockquote::after {
+    content: "\201d";
+    margin-inline-start: 0.12em;
+    color: var(--annotation);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3em;
+    font-style: normal;
+    line-height: 0.1;
+    vertical-align: -0.48em;
+}
+
 .post-content .quoteblock .attribution {
     margin-top: 0.5em;
-    text-align: right;
+    color: var(--secondary);
     font-size: 0.85em;
     font-style: normal;
-    color: var(--secondary);
+    text-align: end;
 }
 
 .post-content .quoteblock .attribution cite {
     font-style: italic;
 }
 
-/* Rounded borders for AsciiDoc admonitions */
-.post-content .admonitionblock {
-    margin: 1.5em 0;
-    padding: 1em 1.25em;
-    border: 1px solid var(--tertiary);
-    border-radius: 10px;
-    background: var(--code-bg);
-}
+/* ============================================
+   Print
+   ============================================ */
 
-/* Preserve existing admonition table layout */
-.post-content .admonitionblock > table {
-    margin: 0;
-    border: none;
-    background: transparent;
-}
+@media print {
+    .post-sticky {
+        position: static;
+    }
 
-.post-content .admonitionblock > table td {
-    border: none;
-    background: transparent;
-}
+    .post-content {
+        max-inline-size: none;
+    }
 
-/* Rounded borders for AsciiDoc callout lists */
-.post-content .colist {
-    margin: 1.5em 0;
-    padding: 1em 1.25em;
-    border: 1px solid var(--tertiary);
-    border-radius: 10px;
-    background: var(--code-bg);
-}
+    .post-content :is(.admonitionblock, .sidebarblock).right-callout,
+    .post-content .imageblock:is(.left, .right) {
+        float: none;
+        inline-size: auto;
+        max-inline-size: none;
+        margin: 1rem 0;
+    }
 
-/* Remove unnecessary inner spacing */
-.post-content .colist table {
-    margin: 0;
-    border: none;
-    background: transparent;
-}
-
-.post-content .colist td {
-    border: none;
-    background: transparent;
+    .post-content :is(.listingblock, .imageblock, .admonitionblock) {
+        break-inside: avoid;
+    }
 }
