@@ -1,4 +1,11 @@
-/* Layout */
+/* ============================================
+   CSS Custom Properties (Theme Variables)
+   ============================================
+   Defines color palette and typography settings for both light and dark themes.
+   Uses CSS custom properties for easy theming and consistency across the site.
+   -------------------------------------------- */
+
+/* Light theme (default) */
 :root {
     --main-width: 1100px;
     --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
@@ -18,8 +25,12 @@
     --warning: #9a6700;
     --caution: #bc4c00;
     --important: #8250df;
+
+    /* Border radius for rounded corners */
+    --radius: 6px;
 }
 
+/* Dark theme (explicitly set) */
 :root[data-theme="dark"] {
     --code-block-bg: #0d1117;
     --code-fg: #e6edf3;
@@ -35,8 +46,11 @@
     --warning: #d29922;
     --caution: #db6d28;
     --important: #a371f7;
+
+    --radius: 6px;
 }
 
+/* Dark theme (auto-detected via system preference) */
 @media (prefers-color-scheme: dark) {
     :root[data-theme="auto"] {
         --code-block-bg: #0d1117;
@@ -53,8 +67,16 @@
         --warning: #d29922;
         --caution: #db6d28;
         --important: #a371f7;
+
+        --radius: 6px;
     }
 }
+
+/* ============================================
+   Post Navigation Sticky Header
+   ============================================
+   Keeps the post navigation/context visible while scrolling on larger screens.
+   -------------------------------------------- */
 
 /* Keep post context visible while reading on larger screens. */
 @media screen and (min-width: 900px) {
@@ -67,6 +89,12 @@
         border-bottom: 1px solid var(--border);
     }
 }
+
+/* ============================================
+   Typography
+   ============================================
+   Controls text appearance, spacing, and heading styles.
+   -------------------------------------------- */
 
 /* Typography */
 .post-content p {
@@ -86,6 +114,12 @@
     letter-spacing: -0.005em;
 }
 
+/* ============================================
+   Section Anchors (Permalinks)
+   ============================================
+   Shows/hides hash links when hovering over headings.
+   -------------------------------------------- */
+
 .md-content :is(h2, h3, h4) .anchor[aria-hidden="true"] {
     display: inline;
     visibility: hidden;
@@ -97,6 +131,12 @@
 .md-content :is(h2, h3, h4):hover .anchor[aria-hidden="true"] {
     visibility: visible;
 }
+
+/* ============================================
+   Links
+   ============================================
+   Standard link styling with hover effects and focus states for accessibility.
+   -------------------------------------------- */
 
 /* Links */
 .md-content a:not(.anchor) {
@@ -118,6 +158,12 @@ input:focus-visible {
     outline-offset: 2px;
 }
 
+/* ============================================
+   Inline Code
+   ============================================
+   Styles for inline code snippets (`code` tags).
+   -------------------------------------------- */
+
 /* Inline code */
 .post-content code {
     padding: 0.15em 0.35em;
@@ -129,6 +175,12 @@ input:focus-visible {
     border: 1px solid var(--inline-code-border);
     border-radius: 4px;
 }
+
+/* ============================================
+   Code Blocks and Literal Blocks
+   ============================================
+   Styles for code blocks (listingblock, literalblock), images with captions, and tables.
+   -------------------------------------------- */
 
 /* Code blocks */
 .md-content :is(.listingblock, .imageblock) > .title,
@@ -151,6 +203,12 @@ input:focus-visible {
     margin-bottom: 0.4em;
     text-align: left;
 }
+
+/* ============================================
+   Code Block Content
+   ============================================
+   The actual code inside the code blocks.
+   -------------------------------------------- */
 
 .md-content .listingblock pre,
 .md-content .literalblock pre {
@@ -179,6 +237,12 @@ input:focus-visible {
     border-radius: 0;
 }
 
+/* ============================================
+   AsciiDoc Tables
+   ============================================
+   Styles for tables generated from AsciiDoc content.
+   -------------------------------------------- */
+
 /* AsciiDoc tables */
 .md-content .tableblock {
     font-size: 0.95em;
@@ -195,6 +259,13 @@ input:focus-visible {
     text-align: left;
     background: var(--code-block-bg);
 }
+
+/* ============================================
+   AsciiDoc Admonitions (Note/Tip/Warning/etc.)
+   ============================================
+   Styles for admonition blocks with colored left borders.
+   Different types use different accent colors defined in CSS variables.
+   -------------------------------------------- */
 
 /* AsciiDoc admonitions */
 .md-content .admonitionblock {
@@ -245,4 +316,205 @@ input:focus-visible {
 
 .md-content .admonitionblock.important {
     --admonition-accent: var(--important);
+}
+
+/* ============================================
+   AsciiDoc Image Alignment
+   ============================================
+   Handles non-floating image alignment (left, center, right).
+   Overrides PaperMod's default behavior to respect AsciiDoc alignment settings.
+   -------------------------------------------- */
+
+/* ============================================
+   AsciiDoc Image Alignment
+   ============================================
+   Handles non-floating image alignment (left, center, right).
+   Overrides PaperMod's default behavior to respect AsciiDoc alignment settings.
+   -------------------------------------------- */
+
+/* Non-floating images: left, center, right */
+
+/* Non-floating images: left, center, right */
+.post-content .imageblock.text-left {
+    text-align: left;
+}
+
+.post-content .imageblock.text-center {
+    text-align: center;
+}
+
+.post-content .imageblock.text-right {
+    text-align: right;
+}
+
+/* Override PaperMod's automatic image centering */
+.post-content .imageblock[class*="text-"] img {
+    display: inline-block;
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ============================================
+   AsciiDoc floating images
+   ============================================ */
+
+/* Float left: text wraps on the right */
+.post-content .imageblock.left {
+    float: left;
+    margin: 0 1.5rem 1rem 0;
+}
+
+/* ============================================
+   AsciiDoc Floating Images
+   ============================================
+   Allows images to float left or right with text wrapping around them.
+   Useful for side-by-side content layouts.
+   -------------------------------------------- */
+
+/* Float right: text wraps on the left */
+.post-content .imageblock.right {
+    float: right;
+    margin: 0 0 1rem 1.5rem;
+}
+
+/* Center: no native CSS center float exists */
+.post-content .imageblock.center {
+    float: none;
+    clear: both;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.post-content .imageblock.center img {
+    display: inline-block;
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ============================================
+   Right Callout Sidebars
+   ============================================
+   Sidebar-style blocks floated to the right (for responsive layouts).
+   Adjusts to full width on smaller screens.
+   -------------------------------------------- */
+
+/* Keep floating images responsive */
+.post-content .imageblock.left img,
+.post-content .imageblock.right img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ============================================
+   Quotation Blocks
+   ============================================
+   Styles for blockquotes using AsciiDoc quoteblock syntax.
+   Provides a distinctive serif-style appearance for quoted content.
+   -------------------------------------------- */
+.admonitionblock.right-callout {
+    float: right;
+    width: 35%;
+    margin: 0 0 1rem 1.5rem;
+    clear: right;
+    border: 1px solid var(--code-border);
+    border-left: 3px solid var(--admonition-accent, var(--accent));
+    border-radius: var(--radius);
+    background: var(--code-block-bg);
+}
+.sidebarblock.right-callout {
+    float: right;
+    width: 35%;
+    margin: 0 0 1rem 1.5rem;
+    clear: right;
+    border: 1px solid var(--code-border);
+    border-radius: var(--radius);
+    background: var(--code-block-bg);
+}
+@media (max-width: 768px) {
+    .admonitionblock.right-callout,
+    .sidebarblock.right-callout {
+        float: none;
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
+
+/* Asciidoctor-style quotation blocks */
+
+.post-content .quoteblock {
+    margin: 1.5em 1em;
+    padding: 0;
+}
+
+.post-content .quoteblock blockquote {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15em;
+    font-style: italic;
+    line-height: 1.65;
+    text-align: left;
+}
+
+.post-content .quoteblock blockquote p {
+    margin-bottom: 0.75em;
+}
+
+.post-content .quoteblock .attribution {
+    margin-top: 0.5em;
+    text-align: right;
+    font-size: 0.85em;
+    font-style: normal;
+    color: var(--secondary);
+}
+
+.post-content .quoteblock .attribution cite {
+    font-style: italic;
+}
+
+/* Rounded borders for AsciiDoc admonitions */
+.post-content .admonitionblock {
+    margin: 1.5em 0;
+    padding: 1em 1.25em;
+    border: 1px solid var(--tertiary);
+    border-radius: 10px;
+    background: var(--code-bg);
+}
+
+/* Preserve existing admonition table layout */
+.post-content .admonitionblock > table {
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+
+.post-content .admonitionblock > table td {
+    border: none;
+    background: transparent;
+}
+
+/* Rounded borders for AsciiDoc callout lists */
+.post-content .colist {
+    margin: 1.5em 0;
+    padding: 1em 1.25em;
+    border: 1px solid var(--tertiary);
+    border-radius: 10px;
+    background: var(--code-bg);
+}
+
+/* Remove unnecessary inner spacing */
+.post-content .colist table {
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+
+.post-content .colist td {
+    border: none;
+    background: transparent;
 }
