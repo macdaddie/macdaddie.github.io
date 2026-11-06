@@ -368,6 +368,39 @@
     --admonition-accent: var(--important);
 }
 
+/* Asciidoctor's font icon mode emits legacy icon-* classes but does not
+   provide their glyphs when its default stylesheet is not loaded. */
+.post-content .admonitionblock td.icon > i {
+    display: inline-block;
+    width: 1.5em;
+    font-family: system-ui, sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+}
+
+.post-content .admonitionblock .icon-note::before {
+    content: "\2139\FE0E";
+}
+
+.post-content .admonitionblock .icon-tip::before {
+    content: "\25C6";
+}
+
+.post-content .admonitionblock .icon-warning::before {
+    content: "\26A0\FE0E";
+}
+
+.post-content .admonitionblock .icon-caution::before {
+    content: "\2716";
+}
+
+.post-content .admonitionblock .icon-important::before {
+    content: "!";
+}
+
 /* ============================================
    Callout lists and editorial asides
    ============================================ */
