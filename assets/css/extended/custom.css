@@ -33,44 +33,62 @@
 }
 
 :root[data-theme="dark"] {
-    --code-block-bg: #15181c;
-    --code-fg: #e7e2d8;
-    --code-border: #353b42;
-    --inline-code-bg: #252a30;
-    --inline-code-border: rgba(235, 230, 220, 0.14);
+    --theme: rgb(29, 30, 32);
+    --entry: #34302c;
+    --primary: #ece1d7;
+    --secondary: #c1a78e;
+    --tertiary: #544b45;
+    --content: #ddd0c4;
+    --code-bg: #34302c;
+    --border: #403a36;
 
-    --accent: #6cb6e8;
-    --accent-hover: #9ad1f2;
-    --annotation: #e6a85c;
-    --aside-fg: #c8bda8;
-    --aside-rule: #6e6455;
+    --code-block-bg: #34302c;
+    --code-fg: #ece1d7;
+    --code-border: #544b45;
+    --inline-code-bg: #403a36;
+    --inline-code-border: #544b45;
 
-    --note: #6cb6e8;
-    --tip: #70c790;
-    --warning: #e0b95c;
-    --caution: #e58a5c;
-    --important: #b79aeb;
+    --accent: #a3a9ce;
+    --accent-hover: #89b3b6;
+    --annotation: #ebc06d;
+    --aside-fg: #c1a78e;
+    --aside-rule: #867462;
+
+    --note: #a3a9ce;
+    --tip: #85b695;
+    --warning: #ebc06d;
+    --caution: #d47766;
+    --important: #cf9bc2;
 }
 
 @media (prefers-color-scheme: dark) {
     :root[data-theme="auto"] {
-        --code-block-bg: #15181c;
-        --code-fg: #e7e2d8;
-        --code-border: #353b42;
-        --inline-code-bg: #252a30;
-        --inline-code-border: rgba(235, 230, 220, 0.14);
+        --theme: rgb(29, 30, 32);
+        --entry: #34302c;
+        --primary: #ece1d7;
+        --secondary: #c1a78e;
+        --tertiary: #544b45;
+        --content: #ddd0c4;
+        --code-bg: #34302c;
+        --border: #403a36;
 
-        --accent: #6cb6e8;
-        --accent-hover: #9ad1f2;
-        --annotation: #e6a85c;
-        --aside-fg: #c8bda8;
-        --aside-rule: #6e6455;
+        --code-block-bg: #34302c;
+        --code-fg: #ece1d7;
+        --code-border: #544b45;
+        --inline-code-bg: #403a36;
+        --inline-code-border: #544b45;
 
-        --note: #6cb6e8;
-        --tip: #70c790;
-        --warning: #e0b95c;
-        --caution: #e58a5c;
-        --important: #b79aeb;
+        --accent: #a3a9ce;
+        --accent-hover: #89b3b6;
+        --annotation: #ebc06d;
+        --aside-fg: #c1a78e;
+        --aside-rule: #867462;
+
+        --note: #a3a9ce;
+        --tip: #85b695;
+        --warning: #ebc06d;
+        --caution: #d47766;
+        --important: #cf9bc2;
     }
 }
 
