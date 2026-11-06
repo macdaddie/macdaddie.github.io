@@ -366,6 +366,15 @@
     font-weight: 600;
 }
 
+.post-content .sidebarblock.right-callout > .content > .title {
+    margin-block-end: 0.55rem;
+    color: var(--annotation);
+    font-size: 1rem;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.3;
+}
+
 .post-content .sidebarblock.right-callout code {
     font-style: normal;
 }
