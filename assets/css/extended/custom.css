@@ -249,6 +249,40 @@
 }
 
 /* ============================================
+   AsciiDoc horizontal description lists
+   Asciidoctor renders these as layout tables; remove PaperMod's data-table
+   treatment while preserving the term-and-description columns.
+   ============================================ */
+
+.post-content .hdlist > table {
+    width: 100%;
+    margin-bottom: var(--content-gap);
+    border: 0;
+    background: transparent;
+}
+
+.post-content .hdlist > table > tbody > tr {
+    background: transparent;
+}
+
+.post-content .hdlist > table > tbody > tr > td.hdlist1,
+.post-content .hdlist > table > tbody > tr > td.hdlist2 {
+    min-width: 0;
+    padding: 0 0.625em;
+    border: 0;
+    vertical-align: top;
+}
+
+.post-content .hdlist > table > tbody > tr > td.hdlist1 {
+    padding-bottom: 1.25em;
+    font-weight: 700;
+}
+
+.post-content .hdlist > table > tbody > tr > td.hdlist2 {
+    overflow-wrap: anywhere;
+}
+
+/* ============================================
    AsciiDoc tables
    ============================================ */
 
