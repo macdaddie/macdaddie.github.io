@@ -1,0 +1,136 @@
+---
+title: "It's Dark Outside"
+description: "Making dark data work for you"
+date: 2026-11-05
+showToc: true
+---
+:imagesdir: /images/2026_11_05_dark_data
+:sectnums:
+:toc:
+
+[[dark_data]]
+image:turning_dark_data_into_career_insight.png[dark_data]
+
+== What is Dark Data?
+
+Have you ever wondered about all those notes you've made, all those spreadsheets you've created, all those documents that you've written over your lifetime?
+
+Thousands, I'd bet. 178,284, in my case.
+
+And have you ever wondered what insights all that collective data might give you if only you could ask it the right questions?
+
+[SIDEBAR,role="right-callout"]
+****
+.How to count your office and text files
+[source,bash]
+ find <path-to-files> -type f \( \
+    -iname '*.doc'  -o -iname '*.docx' -o \
+    -iname '*.xls'  -o -iname '*.xlsx' -o \
+    -iname '*.ppt'  -o -iname '*.pptx' -o \
+    -iname '*.odp'  -o -iname '*.pdf'  -o \
+    -iname '*.eml'  -o -iname '*.msg'  -o \
+    -iname '*.adoc' -o -iname '*.md'   -o \
+    -iname '*.rtf'  -o -iname '*.txt'  -o \
+    -iname '*.text' -o -iname '*.csv' \
+\) | wc -l
+****
+
+* _"What problem do I keep solving for customers?"_
+* _"What types of challenges typically expand beyond their initial scope?"_
+* _"What am I asked to do, most commonly?"_
+
+In my case, apparently, the answers were:
+
+. _Enterprise integration, organisational change and risk mitigation_
+. _Infrastructure migration, security compliance projects and *any* pre-sale engagement_
+. _Translate technical complexity into business value_
+
+Think how that power could benefit you or your business to target customer needs, put the right people in the right place, and streamline and improve efficiency for the work you deliver.
+
+Now, imagine those 178,284 files multiplied by all the people in your organisation. What a wealth of information that would be. This is an example of *_dark data_*, the information a company collects during its normal business operations but isn't part of its analytics or decision-making. And it's not just the unstructured notes of colleagues on your file shares; it can be unused database records, the contents of your email servers, or historical metadata stored in logs.
+
+It's not just insights that you or your business can benefit from by mining your _dark data_. Think about the security risks you may be exposing because the business is unaware of all the data it holds or, by the same measure, could you be out of compliance? Also, wouldn't it be great to archive that data if it holds no value and reclaim some of those ever-increasing storage costs?
+
+These are questions smart companies are looking to artificial intelligence to help answer, and recently I decided to try and illuminate my own _dark data_ to tackle a pressing problem of my own.
+
+== Extracting the Ore
+
+Recently, I have found myself back in the employment market. Not only is it a very different beast from when I last applied for a job some decades ago, but I have also accumulated so many skills and experiences, and held so many different positions, that it was difficult to imagine how I was meant to encompass all of that in a single résumé and a cover letter that would lead my prospective employer to see how perfect I was for their role.
+
+[quote]
+"Well," I thought. "Perhaps I should apply the same approach to mine my own career's _dark data_?"
+
+[[offline_career_miner]]
+.Offline Career Miner
+image::offline_career_miner_themed.png[ocm_info]
+
+Over the years, I've accumulated a lot of project documentation, emails, and technical notes, so I decided to build a <<offline_career_miner,local offline pipeline>> that ingests documents, chunks them into evidence-sized pieces, stores them in SQLite, and enriches them using local models (running on Ollama) to tag customers, projects, technologies, and outcomes. After running this over my source files, I could generate structured artefacts that transformed all of this higgledy-piggledy data into evidence-backed dossiers concentrating on customers I've delivered solutions for, the projects I've worked on, and the skills I've demonstrated.
+
+
+[SIDEBAR,role="right-callout"]
+.Full Text Search (FTS5)
+****
+Ordinary SQL can search text, but it generally looks for exact patterns. For example, searching for `Azure disaster recovery` using SQL's `LIKE` would miss a document containing *"Implemented disaster recovery for Azure-hosted databases"* because the words aren't in the expected order.
+
+FTS5 understands individual words rather than just strings of characters, so a search such as `NEAR(Azure disaster, 10)` can find documents where those words appear close together, even in a different order or with other words between them.
+
+It's a powerful way to search unstructured text without needing a separate search engine or the complexity of a RAG system.
+****
+
+I had some clear security concerns when considering this project. Even as a private citizen, my notes contain potentially sensitive information that I had no wish to see become part of a corporate AI's next training cycle. So, it was important for me that the dissection and tagging of all this information never left my computer. To make sure this happened, I chose local LLMs to tag the data after it had been read into the database. Whilst this took considerably longer than using ChatGPT or Claude, I was pleased to discover that it could be achieved reliably with a comparatively small model such as `qwen2.5:7b` on a home server, even if it had to run overnight.
+
+I also deliberately chose SQLite with FTS5 over a conventional RAG footnote:rag[Retrieval-Augmented Generation] architecture. RAG gives me approximations to questions, and I would potentially get different results on a second pass. I wanted deterministic evidence retrieval and auditable searches rather than similarity-based matches. Also, SQLite is lightweight, entirely offline, and requires no additional services. Local LLMs handle the enrichment and synthesis, but retrieval stays predictable, transparent, and firmly grounded in the source material.
+
+From here, I hope you can start to see how the skills required in a job description could now be matched to real-world examples, making the path to writing a tailored curriculum vitae (CV) clear.
+
+== Manufacturing a Product
+
+
+Finding a new role means that you must first learn some new roles yourself: job seeker, résumé specialist, recruitment consultant, interview coach, and ATS footnote:ats[Applicant Tracking System] specialist, amongst others. That's a lot of work for one person, and nobody else was volunteering to help me out. However, in this brave new world, this doesn't matter so much because if you need people to help you, you can just build them, not out of clay but out of `markdown`.
+
+I constructed an agentic pipeline consisting of specialist agents governed by my _team lead_, an orchestrator coordinating three related workflows.
+
+
+[horizontal,labelwidth=20]
+Job Application:: Specialist agents research the employer and likely salary, check my data-mined evidence against the job description, assess the fit, and build a rationale to link my proven skills to the employer's requirements. +
+A writing agent then produces a CV and cover letter tailored to that role.
++
+See steps 1-5 in the <<job_agent_workflow,diagram>>, above.
+Interview:: The same evidence can be combined with public and open-source information and notes from earlier conversations to create interview, technical, and behavioural insights to give you an informed advantage for your conversation.
++
+See steps 6 in the <<job_agent_workflow,agentic workflow>>.
+
+Government Work Search Compliance:: Finally, each job-search activity, from application preparation through submission, interviews and the eventual outcome, is recorded as a separate dated entry in the work-search logs required by the government should you be claiming an employment benefit.
+
+[[job_agent_workflow]]
+.Job Agents Workflow
+image::job_ai_agent_workflow_infographic.png[job_ai]
+
+=== The Job Application
+
+The job application workflow required a number of sources to produce the most tailored documentation to represent you as a strong candidate for the advertised role:
+
+The Canon of Work::
+. As previously shown, the <<offline_career_miner,career miner>> provides the career profile detailing my skills, experiences, work history and projects
+. Qualifications - A list of my education & certifications.
+. _Rules and Guardrails_ - Coded guidance that includes, but is not limited to:
+* A fixed work history chronology so the agents do not hallucinate timelines or invent employers
+* A specific CV format - Left to their own devices an LLM will produce a different CV format for each iteration whereas I prefer a consistent format in the documents I sent to prospective employers
+* A writing guide to match my idiosyncratic style of prose so the finished documents sound more like I wrote them than AI which, you could argue, is a questionable choice.
+The Candidate Role::
+[start=4]
+. In this pipeline I do the job search, manually. I identify a candidate role and provide the job description as a text document to the AI workflow.
+OpenSource Intelligence::
+[start=5]
+. Individual agents identify the prospective employer and create a dossier of open source information which can include organisational structure, market analysis, mission as well as more specific information appertaining to the business function recruiting the role. They also research the current market value of the role to suggest appropriate salary bands should that data not be included in the job description.
+
+The workflow first breaks the description down into the employer’s requirements: the role’s purpose, required capabilities, technologies, business context, seniority and likely points of emphasis. Specialist agents then compare those requirements with the canonical records, guardrails, role and customer profiles, qualifications, project evidence and skills records. They identify the strongest supported matches, decide which parts of my experience deserve prominence, and flag unsupported claims so the writing stage cannot quietly invent a convenient skill or rewrite my history.
+
+Until now, the agents have all run off line, on my local server. However, offline agents have their limitations and producing flowing, life-like prose is one of them. The analysis has, by this point, been aggregated and anonymised removing all sensitive information. I thus use a paid frontier model to drive a writing agent to use the analysis to create two different documents.
+
+. The CV’s emphasis and wording are tailored to highlight the experience most relevant to the role, while preserving employers, titles, dates, chronology and facts.
+. The cover letter draws on fewer evidence points to explain how I work, why the role makes sense and what I could contribute.
+
+These comprise the external documents that are submitted to the employers ATS footnote:ats[] system
+
+Instead, a separate rationale provides the audit trail, mapping the role’s requirements and the material assertions in the application back to specific canonical sources and examples. That makes the tailoring verifiable. Every substantial claim should be traceable to something I actually did, not just a plausible sentence generated to match the advert.
