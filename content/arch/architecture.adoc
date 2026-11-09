@@ -4,13 +4,15 @@ date: 2026-07-07
 weight: 10
 showToc: true
 ---
+:sectnums:
+:icons: font
 
 This document describes the architecture of the rocasta.com static site.
 
 == Technology Stack
 
 * *Static Site Generator:* Hugo (Extended) v0.164+
-* *Theme:* PaperMod
+* *Theme:* PaperMod (customised: `custom.css`)
 * *Content Format:* AsciiDoc (processed by Asciidoctor)
 * *Deployment:* GitHub Pages via GitHub Actions
 * *Local Development:* Hugo development server with live reload
@@ -54,12 +56,20 @@ AsciiDoc attributes that must be set per-post when using images:
 == Theme Architecture
 
 PaperMod provides:
+
 - Dark/light/auto theme toggle
 - Responsive design
 - Taxonomy support (tags, categories)
 - Table of contents
 - Code copy buttons
 - Social share buttons
+
+[NOTE]
+====
+The theme has been significantly modified in the `assets/css/extended/custom.css` to support additional asciidoc features such as callouts, admonitions (right justified), quotes and description lists.
+
+In addition, the colour scheme has been modified to reflect the neovim `melange` colour scheme which in turn was based on the Textmate Twilight theme
+====
 
 == Build Pipeline
 
