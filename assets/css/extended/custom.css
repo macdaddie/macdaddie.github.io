@@ -249,6 +249,35 @@
 }
 
 /* ============================================
+   AsciiDoc description lists
+   PaperMod makes every dl horizontal. Restore Asciidoctor's stacked layout
+   for ordinary description lists; [horizontal] lists use .hdlist below.
+   ============================================ */
+
+.post-content .dlist > dl {
+    display: block;
+    margin: 0 0 1.25em;
+    line-height: 1.6;
+}
+
+.post-content .dlist > dl > dt {
+    width: auto;
+    margin: 0 0 0.3125em;
+    font-weight: 700;
+}
+
+.post-content .dlist > dl > dd {
+    width: auto;
+    margin: 0 0 1.25em 1.125em;
+    padding-inline-start: 0;
+}
+
+.post-content .dlist > dl > dd:last-child,
+.post-content .dlist > dl > dd:last-child > :last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
    AsciiDoc horizontal description lists
    Asciidoctor renders these as layout tables; remove PaperMod's data-table
    treatment while preserving the term-and-description columns.
