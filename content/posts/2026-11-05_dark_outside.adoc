@@ -53,9 +53,13 @@ It's not just insights that you or your business can benefit from by mining your
 
 These are questions smart companies are looking to artificial intelligence to help answer, and recently I decided to try and illuminate my own _dark data_ to tackle a pressing problem of my own.
 
-== Extracting the Ore
+== Mining the Past
 
 Recently, I have found myself back in the employment market. Not only is it a very different beast from when I last applied for a job some decades ago, but I have also accumulated so many skills and experiences, and held so many different positions, that it was difficult to imagine how I was meant to encompass all of that in a single résumé and a cover letter that would lead my prospective employer to see how perfect I was for their role.
+
+Further, the progression of online recruitment means that the employment marketplace is considerably larger than when job applications were sent to a prospective employer by post. With potentially hundreds of opportunities that match my requirements, sifting and applying for the right ones may no longer be a wholly manual task. 
+
+It seems that my own _dark data_ combined with _data mining_ and _generative AI_ might be able to help.
 
 [quote]
 "Well," I thought. "Perhaps I should apply the same approach to mine my own career's _dark data_?"
@@ -83,7 +87,7 @@ I also deliberately chose SQLite with FTS5 over a conventional RAG footnote:rag[
 
 From here, I hope you can start to see how the skills required in a job description could now be matched to real-world examples, making the path to writing a tailored curriculum vitae (CV) clear.
 
-== Manufacturing a Product
+== Forging the Future
 
 
 Finding a new role means that you must first learn some new roles yourself: job seeker, résumé specialist, recruitment consultant, interview coach, and ATS footnote:ats[Applicant Tracking System] specialist, amongst others. That's a lot of work for one person, and nobody else was volunteering to help me out. However, in this brave new world, this doesn't matter so much because if you need people to help you, you can just build them, not out of clay but out of `markdown`.
@@ -91,46 +95,53 @@ Finding a new role means that you must first learn some new roles yourself: job 
 I constructed an agentic pipeline consisting of specialist agents governed by my _team lead_, an orchestrator coordinating three related workflows.
 
 
-[horizontal,labelwidth=20]
-Job Application:: Specialist agents research the employer and likely salary, check my data-mined evidence against the job description, assess the fit, and build a rationale to link my proven skills to the employer's requirements. +
-A writing agent then produces a CV and cover letter tailored to that role.
-+
-See steps 1-5 in the <<job_agent_workflow,diagram>>, above.
+// [horizontal,labelwidth=20]
+Job Application::
+* Specialist agents research the employer and likely salary, check my data-mined evidence and qualifications against the job description, assess the fit, and build a rationale to link my proven skills to the employer's requirements.
+* Coded guidance including a fixed work history, writing guide and CV formatting rules prevent the agents from hallucinating timelines or inventing employers and keeping their output format consistent with recruiting best practice.
+* A writing agent then produces a CV and cover letter tailored to that role that can be submitted to the employer's ATS footnote:ats[] system.
+
+[[job_agent_workflow]]
+.Job Agents Workflow
+image::job_ai_agent_workflow_infographic.png[job_ai]
+
 Interview:: The same evidence can be combined with public and open-source information and notes from earlier conversations to create interview, technical, and behavioural insights to give you an informed advantage for your conversation.
 +
 See steps 6 in the <<job_agent_workflow,agentic workflow>>.
 
 Government Work Search Compliance:: Finally, each job-search activity, from application preparation through submission, interviews and the eventual outcome, is recorded as a separate dated entry in the work-search logs required by the government should you be claiming an employment benefit.
 
-[[job_agent_workflow]]
-.Job Agents Workflow
-image::job_ai_agent_workflow_infographic.png[job_ai]
 
-=== The Job Application
+// === The Job Application
+//
+// The job application workflow required a number of sources to produce the most tailored documentation to represent you as a strong candidate for the advertised role:
+//
+// The Canon of Work::
+// . As previously shown, the <<offline_career_miner,career miner>> provides the career profile detailing my skills, experiences, work history and projects
+// . Qualifications - A list of my education & certifications.
+// . _Rules and Guardrails_ - Coded guidance that includes, but is not limited to:
+// * A fixed work history chronology so the agents do not hallucinate timelines or invent employers
+// * A specific CV format - Left to their own devices an LLM will produce a different CV format for each iteration whereas I prefer a consistent format in the documents I sent to prospective employers
+// * A writing guide to match my idiosyncratic style of prose so the finished documents sound more like I wrote them than AI which, you could argue, is a questionable choice.
+// The Candidate Role::
+// [start=4]
+// . In this pipeline I do the job search, manually. I identify a candidate role and provide the job description as a text document to the AI workflow.
+// OpenSource Intelligence::
+// [start=5]
+// . Individual agents identify the prospective employer and create a dossier of open source information which can include organisational structure, market analysis, mission as well as more specific information appertaining to the business function recruiting the role. They also research the current market value of the role to suggest appropriate salary bands should that data not be included in the job description.
+//
+// The workflow first breaks the description down into the employer’s requirements: the role’s purpose, required capabilities, technologies, business context, seniority and likely points of emphasis. Specialist agents then compare those requirements with the canonical records, guardrails, role and customer profiles, qualifications, project evidence and skills records. They identify the strongest supported matches, decide which parts of my experience deserve prominence, and flag unsupported claims so the writing stage cannot quietly invent a convenient skill or rewrite my history.
+//
+// Until now, the agents have all run off line, on my local server. However, offline agents have their limitations and producing flowing, life-like prose is one of them. The analysis has, by this point, been aggregated and anonymised removing all sensitive information. I thus use a paid frontier model to drive a writing agent to use the analysis to create two different documents.
+//
+// . The CV’s emphasis and wording are tailored to highlight the experience most relevant to the role, while preserving employers, titles, dates, chronology and facts.
+// . The cover letter draws on fewer evidence points to explain how I work, why the role makes sense and what I could contribute.
+//
+// These comprise the external documents that are submitted to the employers ATS footnote:ats[] system
+//
+// Instead, a separate rationale provides the audit trail, mapping the role’s requirements and the material assertions in the application back to specific canonical sources and examples. That makes the tailoring verifiable. Every substantial claim should be traceable to something I actually did, not just a plausible sentence generated to match the advert.
 
-The job application workflow required a number of sources to produce the most tailored documentation to represent you as a strong candidate for the advertised role:
+== All that Glisters ...
 
-The Canon of Work::
-. As previously shown, the <<offline_career_miner,career miner>> provides the career profile detailing my skills, experiences, work history and projects
-. Qualifications - A list of my education & certifications.
-. _Rules and Guardrails_ - Coded guidance that includes, but is not limited to:
-* A fixed work history chronology so the agents do not hallucinate timelines or invent employers
-* A specific CV format - Left to their own devices an LLM will produce a different CV format for each iteration whereas I prefer a consistent format in the documents I sent to prospective employers
-* A writing guide to match my idiosyncratic style of prose so the finished documents sound more like I wrote them than AI which, you could argue, is a questionable choice.
-The Candidate Role::
-[start=4]
-. In this pipeline I do the job search, manually. I identify a candidate role and provide the job description as a text document to the AI workflow.
-OpenSource Intelligence::
-[start=5]
-. Individual agents identify the prospective employer and create a dossier of open source information which can include organisational structure, market analysis, mission as well as more specific information appertaining to the business function recruiting the role. They also research the current market value of the role to suggest appropriate salary bands should that data not be included in the job description.
 
-The workflow first breaks the description down into the employer’s requirements: the role’s purpose, required capabilities, technologies, business context, seniority and likely points of emphasis. Specialist agents then compare those requirements with the canonical records, guardrails, role and customer profiles, qualifications, project evidence and skills records. They identify the strongest supported matches, decide which parts of my experience deserve prominence, and flag unsupported claims so the writing stage cannot quietly invent a convenient skill or rewrite my history.
-
-Until now, the agents have all run off line, on my local server. However, offline agents have their limitations and producing flowing, life-like prose is one of them. The analysis has, by this point, been aggregated and anonymised removing all sensitive information. I thus use a paid frontier model to drive a writing agent to use the analysis to create two different documents.
-
-. The CV’s emphasis and wording are tailored to highlight the experience most relevant to the role, while preserving employers, titles, dates, chronology and facts.
-. The cover letter draws on fewer evidence points to explain how I work, why the role makes sense and what I could contribute.
-
-These comprise the external documents that are submitted to the employers ATS footnote:ats[] system
-
-Instead, a separate rationale provides the audit trail, mapping the role’s requirements and the material assertions in the application back to specific canonical sources and examples. That makes the tailoring verifiable. Every substantial claim should be traceable to something I actually did, not just a plausible sentence generated to match the advert.
+// conclusion
