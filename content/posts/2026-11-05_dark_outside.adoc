@@ -55,80 +55,79 @@ It's not just insights that you or your business can benefit from by mining your
 
 These are questions smart companies are looking to artificial intelligence to help answer, and recently I decided to try and illuminate my own _dark data_ to tackle a pressing problem of my own.
 
-== Mining the Past
+== Mining the Past - _A Personal Usecase_
 
 Recently, I found myself back in the employment market.
 
-Not only is it a very different beast from when I last applied for a job some decades ago, but I have also accumulated so many skills and experiences, and held so many different positions, that it was difficult to imagine how I was meant to encompass all of that in a single résumé and a cover letter that would lead my prospective employer to see how perfect I was for their role.
+It's a different world from when I was a lad. I've done so much more, accumulated so many skills and held so many different positions that it's difficult to imagine how to encompass all of that in a single résumé and a cover letter that would lead a prospective employer to see how perfect I may be for their role.
 
-Further, the progression of online recruitment means that the employment marketplace is considerably larger than when job applications were sent to a prospective employer by post. With potentially hundreds of opportunities that match my requirements, sifting and applying for the right ones may no longer be a wholly manual task.
+Further, the progression of online recruitment means that the employment marketplace is considerably larger than when job applications were solicited in magazines and newspapers and submitted by post. With potentially hundreds of opportunities that match my skills on any given day, sifting and applying for the right ones may no longer be something one person can achieve in a timely fashion.
 
 It seemed that my own _dark data_ combined with _data mining_ and _generative AI_ might be able to help.
 
 [quote]
 "Well," I thought. "Perhaps I should apply the same approach to mine my _dark data_ to help my own career aspirations?"
 
+=== Where's the Gold?
+
 [[offline_career_miner]]
 .Offline Career Miner
 image::offline_career_miner_themed.png[ocm_info]
 
-Over the years, I accumulated a lot of project documentation, emails, and technical notes, so I decided to build a <<offline_career_miner,local offline pipeline>> that ingests documents, chunks them into evidence-sized pieces, stores them in a link:https://www.sqlite.org[SQLite] database, and enriches them using local large language models (running on link:https://ollama.com[Ollama]) to tag customers, projects, technologies, and outcomes. After running this over my source files, I could generate structured artefacts that transformed all of this higgledy-piggledy data into evidence-backed dossiers concentrating on customers I delivered solutions for, the projects I worked on, and the skills I accumulated.
+Over the years, I accumulated a lot of project documentation, emails, and technical notes saved to disk. So, I decided to build a <<offline_career_miner,local offline pipeline>> that ingests documents, chunks them into evidence-sized pieces, stores them in a link:https://www.sqlite.org[SQLite] database, and enriches them using local large language models (running on link:https://ollama.com[Ollama]) to tag customers, projects, technologies, and outcomes. After running this over my source files, I could generate structured artefacts that transformed all of this higgledy-piggledy data into evidence-backed dossiers concentrating on customers I delivered solutions for, the projects I worked on, and the skills I accumulated.
 
 
 [SIDEBAR,role="right-callout"]
-.Full-Text Search (FTS5)
+.SQLite and Full-Text Search (FTS5)
 ****
 Ordinary SQL can search text, but it generally looks for exact patterns. For example, searching for `Azure disaster recovery` using SQL's `LIKE` would miss a document containing *"Implemented disaster recovery for Azure-hosted databases"* because the words aren't in the expected order.
 
 FTS5 understands individual words rather than just strings of characters, so a search such as `NEAR(Azure disaster, 10)` can find documents where those words appear close together, even in a different order or with other words between them.
 
-It was a powerful way to search unstructured text without needing a separate search engine or the complexity of a RAG system.
+It was a powerful way to search unstructured text without needing a separate search engine or the complexity of a RAG footnote:rag[Retrieval-Augmented Generation: an AI technique that retrieves relevant information from external sources to help ground its answers.] system.
 ****
 
 I had some clear security concerns when considering this project. Even as a private citizen, my notes contained potentially sensitive information that I had no wish to see become part of a corporate AI's next training cycle. So, it was important for me that the dissection and tagging of all this information never left my computer. To make sure this happened, I chose local LLMs to tag the data after it had been read into the database. Whilst this took considerably longer than using an online frontier model, I was pleased to discover that it could be achieved reliably with a comparatively small model such as `qwen2.5:7b` on a home server, even if it had to run overnight.
 
-I also deliberately chose SQLite with FTS5 over a conventional RAG footnote:rag[Retrieval-Augmented Generation: an AI technique that retrieves relevant information from external sources to help ground its answers.] architecture. RAG would have given me approximations to questions, and I could potentially get different results on a second pass. I wanted deterministic evidence retrieval and auditable searches rather than similarity-based matches. Also, SQLite was lightweight, entirely offline, and required no additional services. Local LLMs handled the enrichment and synthesis, but retrieval stayed predictable, transparent, and firmly grounded in the source material.
+// I also deliberately chose SQLite with FTS5 over a conventional RAG footnote:rag[Retrieval-Augmented Generation: an AI technique that retrieves relevant information from external sources to help ground its answers.] architecture. RAG would have given me approximations to questions, and I could potentially get different results on a second pass. I wanted deterministic evidence retrieval and auditable searches rather than similarity-based matches. Also, SQLite was lightweight, entirely offline, and required no additional services. Local LLMs handled the enrichment and synthesis, but retrieval stayed predictable, transparent, and firmly grounded in the source material.
 
 From here, I hope you can start to see how the skills and experience required in a job description could now be matched to real-world examples, making the path to writing a tailored curriculum vitae (CV) clear.
 
 == Forging the Future
 
+Finding a new role means that you have first to learn some new roles yourself: job seeker, résumé specialist, recruitment consultant, interview coach, and ATS footnote:ats[Applicant Tracking System: software employers use to manage job applications, track candidates and organise the recruitment process.] specialist, amongst others. That's a lot of work for one person, and nobody else was showing up to help me out. However, in this brave new world, this matters less; if you needed people to help you, you build them, not out of clay but from `Markdown`.
 
-Finding a new role means that you have first to learn some new roles yourself: job seeker, résumé specialist, recruitment consultant, interview coach, and ATS footnote:ats[Applicant Tracking System: software employers use to manage job applications, track candidates and organise the recruitment process.] specialist, amongst others. That was a lot of work for one person, and nobody else was volunteering to help me out. However, in this brave new world, this didn't matter so much because if you needed people to help you, you could just build them, not out of clay but out of `Markdown`.
-
-I constructed an agentic pipeline consisting of specialist agents governed by my _team lead_, an orchestrator coordinating three related workflows.
+I constructed an agentic pipeline consisting of specialist agents governed by a _team lead_, an orchestrator coordinating three related workflows.
 
 // [horizontal,labelwidth=20]
 Job Application::
-* Specialist agents researched the employer and likely salary, checked my data-mined evidence and qualifications against the job description, assessed the fit to whittle out jobs I was not suited for, and built a rationale to link my proven skills to the employer's requirements.
-* Coded guidance including a fixed work history, writing guide and CV formatting rules prevented the agents from hallucinating timelines or inventing employers and kept their output format consistent with recruiting best practice.
-* A writing agent then produced a CV and cover letter tailored to that role that could be submitted to the employer's ATS footnote:ats[] system.
+* Specialist agents researched the employer and likely salary, checked data-mined evidence and qualifications against the job description, assessed fit to ferret out jobs I was not suited for, and built a rationale to link my proven skills to the employer's requirements.
+* Coded guidance including a fixed work history, writing guide and CV formatting rules prevented the agents from hallucinating timelines or inventing employers and to keep their output format consistent with recruiting best practice.
+* A writing agent produced a CV and cover letter tailored for the role that could be submitted to the employer's ATS footnote:ats[] system.
 
 [[job_agent_workflow]]
 .Job Agents Workflow
 image::job_ai_agent_workflow_infographic.png[job_ai]
 
-Interview:: The same evidence could be combined with public and open-source information and notes from earlier conversations to create structured interview, technical, and behavioural insights, each tailored to give you an informed advantage for your conversation based on the company, job role and your experiences.
+Interview:: The same evidence could be combined with public information and notes from earlier conversations to create structured discussion, technical, and behavioural insights, each tailored to give an informed advantage for the interview based on the company, job role and my skills & experiences.
 
-Government Work Search Compliance:: Finally (and this was unrelated to _dark data_ but very relevant for the unemployed), each job-search activity, from application preparation through submission, interviews and the eventual outcome, was recorded as a separate dated entry in the work-search logs required by the government if you were claiming an employment benefit.
+Government Work Search Compliance:: Finally (and this was unrelated to _dark data_ but very relevant for the unemployed), each job-search activity, from application preparation through submission, interviews and the eventual outcome, got recorded as a separate dated entry in work-search logs required by the government should you be claiming an employment benefit.
 
+The outcome of this exercise proved to be one of the most revealing and beneficial pieces of work I have undertaken in terms of the rediscovery of my own value, as well as allowing me to compete in an saturated employment marketplace where the electronic gatekeepers are strongly biased against all but the closest matching applicants.
 
-The outcome of this exercise proved to be one of the most revealing and beneficial pieces of work I have undertaken in terms of the rediscovery of my own value, as well as allowing me to compete in an employment marketplace where the electronic gatekeepers seem determined to prevent you from succeeding.
+The tool reminded me of my deep skills in ITIL footnote:itil[Information Technology Infrastructure Library: a framework of best practices for managing IT services and aligning them with business needs.], project management and disaster recovery, and of my work in asset management in the nuclear and energy industries. Whilst I've worked in financial markets the most it found I have years of experience in aerospace, GIS footnote:gis[Geospatial Information Services], gaming and entertainment, and many more.
 
-I was reminded of deep skills in ITIL footnote:itil[Information Technology Infrastructure Library: a framework of best practices for managing IT services and aligning them with business needs.], project management and disaster recovery, and of my work in asset management in the nuclear and energy industries. Whilst I've worked in financial markets, solving their technical and service challenges more than in any other industry, I also have years of experience in aerospace, GIS footnote:gis[Geospatial Information Services], gaming and entertainment, to name only a few.
+These insights have allowed me to widen my net in terms of the roles I have felt confident applying for, knowing that I could attend interviews with strong, evidence-backed stories of how these experiences and skills could benefit future employers. The pipeline also built ATS-targeted documentation that was more likely to match with the ATS filters and land on the hiring manager's desk and was instrumental in lining up more interviews than I could have achieved on my own.
 
-Such insights have allowed me to widen my net in terms of the roles I have felt confident applying for, knowing that I could attend interviews with strong, evidence-backed stories of how these experiences and skills could benefit my future employers. The pipeline also built ATS-targeted documentation that was more likely to dodge the filters and appear in front of real, human eyeballs, and mined fresh value from the interaction with interviewers and recruiters.
-
-
-== All that Glisters ...
+== All that Glisters ... _Did it work for me, could it work for you?_
 
 And so, having spent months building my mining operation, did I find gold? Did my _dark data_ ultimately yield value?
 
 I think so.
 
-I had an immediate need and a practical problem to solve: how could I represent decades of experience in a modern employment marketplace? In the process of addressing that need, I unexpectedly rediscovered experiences and capabilities I had largely forgotten I had. These insights had real, tangible value, allowing me to target opportunities supported by well-documented successes, broaden my portfolio and appeal to a wider market. Just as a business could use _dark data_ to support its business development, resource planning and skills assessments, I applied exactly the same principles to my own career.
+I had an immediate need and a practical problem to solve: how could I represent decades of experience in a modern employment marketplace? In the process of addressing that need, I unexpectedly rediscovered experiences and capabilities I had largely forgotten I had. These insights had real, tangible value, allowing me to target opportunities supported by well-documented successes, broadening my portfolio and appeal to a wider market. Just as a business could use _dark data_ to support its business development, resource planning and skills assessments, I applied the same principles to my own career.
 
-Of course, not everything that glisters is gold. AI is perfectly capable of producing convincing nonsense fuelled by decades of accretion: there is a lot of digital detritus in those sedimented sources. Distinguishing real value from noise and ensuring that whatever conclusions the models reach can be traced back to something real is the trick. That's why deterministic retrieval, keeping the original evidence accessible and, of course, retaining my own oversight are so important to realising the value.
+Of course, not everything that glisters is gold. AI is perfectly capable of producing convincing nonsense fuelled by decades of accretion: there is a lot of digital detritus in them there hills. Distinguishing real value from noise and ensuring that whatever conclusions the models reach can be traced back to something real is the trick. That's why deterministic retrieval, keeping the original evidence accessible and, of course, human oversight are so important to realising the value.
 
 Equally, this project took time, time that wasn't finding a new role, that wasn't "generating revenue." But the dividends were greater and the result was more valuable. From a black mountain of data, it yielded a searchable, reusable body of knowledge that I can continue to interrogate and put to work.
 
