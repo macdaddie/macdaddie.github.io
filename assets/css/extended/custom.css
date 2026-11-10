@@ -9,6 +9,8 @@
 
     --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
         "Liberation Mono", monospace;
+    --font-footnote: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+        serif;
 
     --code-block-bg: #f5f6f7;
     --code-fg: #24272b;
@@ -21,6 +23,7 @@
     --annotation: #a45b19;
     --aside-fg: #6b6255;
     --aside-rule: #b9ad99;
+    --footnote-fg: #655b52;
 
     --note: #1769aa;
     --tip: #26734d;
@@ -53,6 +56,7 @@
     --annotation: #ebc06d;
     --aside-fg: #c1a78e;
     --aside-rule: #867462;
+    --footnote-fg: #bda58f;
 
     --note: #a3a9ce;
     --tip: #85b695;
@@ -83,6 +87,7 @@
         --annotation: #ebc06d;
         --aside-fg: #c1a78e;
         --aside-rule: #867462;
+        --footnote-fg: #bda58f;
 
         --note: #a3a9ce;
         --tip: #85b695;
@@ -175,6 +180,21 @@
 .md-content a:not(.anchor):hover {
     color: var(--accent-hover);
     text-decoration-thickness: 2px;
+}
+
+/* ============================================
+   Footnotes
+   ============================================ */
+
+.post-content #footnotes {
+    color: var(--footnote-fg);
+    font-family: var(--font-footnote);
+    font-size: 0.85rem;
+    line-height: 1.55;
+}
+
+.post-content #footnotes .footnote {
+    margin-block-end: 0.45em;
 }
 
 :where(a, button, summary, input, select, textarea):focus-visible {
