@@ -13,7 +13,7 @@ image:turning_dark_data_into_career_insight.png[dark_data]
 
 == What is Dark Data?
 
-Have you ever wondered about all those notes you've made, all those spreadsheets you've created, all those documents that you've written over your lifetime?
+Have you ever wondered about all those notes you've made, all those spreadsheets you've created, all those documents that you've written over your lifetime? Do you know how many you have?
 
 Thousands, I'd bet. 178,284, in my case.
 
@@ -37,29 +37,29 @@ And have you ever wondered what insights all that collective data might give you
 
 * _"What problem do I keep solving for customers?"_
 * _"What types of challenges typically expand beyond their initial scope?"_
-* _"What am I asked to do, most commonly?"_
+* _"What am I most commonly asked to do?"_
 
 In my case, apparently, the answers were:
 
 . _Enterprise integration, organisational change and risk mitigation_
-. _Infrastructure migration, security compliance projects and *any* pre-sale engagement_
+. _Infrastructure migration, security compliance projects, and *any* pre-sale engagement_
 . _Translate technical complexity into business value_
 
 Think how that power could benefit you or your business to target customer needs, put the right people in the right place, and streamline and improve efficiency for the work you deliver.
 
 Now, imagine those 178,284 files multiplied by all the people in your organisation. What a wealth of information that would be.
 
-This is an example of *_dark data_*, the information a company collects during its normal business operations but isn't part of its analytics or decision-making, hidden away, collecting dust. And it's not just the unstructured notes of colleagues on your file shares; it can be unused database records, the contents of your email servers, or historical metadata stored in logs.
+This is an example of *_dark data_*, the information a company collects during its normal business operations but isn't part of its analytics or decision-making. Instead, it's hidden away, collecting dust. And it's not just the unstructured notes of colleagues on your file shares; it can be unused database records, the contents of your email servers, or historical metadata stored in logs.
 
 It's not just insights that you or your business can benefit from by mining your _dark data_. Think about the security risks you could uncover because the business is unaware of all the sensitive data it holds or, by the same measure, whether you could be out of compliance. Also, wouldn't it be great to archive that data if it holds no value and reclaim some of those ever-increasing storage costs?
 
-These are questions smart companies are looking to artificial intelligence to help answer, and recently I decided to try and illuminate my own _dark data_ to tackle a pressing problem of my own.
+These are questions smart companies are looking to artificial intelligence to help answer, and I decided to try and illuminate my own _dark data_ to tackle a pressing problem of my own.
 
 == Mining the Past - _A Personal Usecase_
 
 Recently, I found myself back in the employment market.
 
-It's a different world from when I was a lad. I've done so much more, accumulated so many skills and held so many different positions that it's difficult to imagine how to encompass all of that in a single résumé and a cover letter that would lead a prospective employer to see how perfect I may be for their role.
+It's a different world from when I was a lad. I've done so much more, accumulated so many skills, and held so many different positions that it's difficult to imagine how to encompass all of that in a single résumé and a cover letter that would lead a prospective employer to see how perfect I may be for their role.
 
 Further, the progression of online recruitment means that the employment marketplace is considerably larger than when job applications were solicited in magazines and newspapers and submitted by post. With potentially hundreds of opportunities that match my skills on any given day, sifting and applying for the right ones may no longer be something one person can achieve in a timely fashion.
 
@@ -95,7 +95,7 @@ From here, I hope you can start to see how the skills and experience required in
 
 == Forging the Future
 
-Finding a new role means that you have first to learn some new roles yourself: job seeker, résumé specialist, recruitment consultant, interview coach, and ATS footnote:ats[Applicant Tracking System: software employers use to manage job applications, track candidates and organise the recruitment process.] specialist, amongst others. That's a lot of work for one person, and nobody else was showing up to help me out. However, in this brave new world, this matters less; if you need people to help you, you can build them, not out of clay but from `Markdown`.
+Finding a new role means that you have first to learn some new roles yourself: job seeker, résumé specialist, recruitment consultant, interview coach, and ATS footnote:ats[Applicant Tracking System: software employers use to manage job applications, track candidates, and organise the recruitment process.] specialist, amongst others. That's a lot of work for one person, and nobody else was showing up to help me out. However, in this brave new world, this matters less; if you need people to help you, you can build them, not out of clay but from `Markdown`.
 
 I constructed an agentic pipeline consisting of specialist agents governed by a _team lead_, an orchestrator coordinating three related workflows.
 
@@ -109,13 +109,13 @@ Job Application::
 .Job Agents Workflow
 image::job_ai_agent_workflow_infographic.png[job_ai]
 
-Interview:: The same evidence could be combined with public information and notes from earlier conversations to create structured discussion, technical, and behavioural insights, each tailored to give an informed advantage for the interview based on the company, its goals, the job role and my skills & experiences.
+Interview:: The same evidence could be combined with public information and notes from earlier conversations to create structured discussion, technical, and behavioural insights, each tailored to give an informed advantage for the interview based on the company, its goals, the job role, and my skills & experiences.
 
 Government Work Search Compliance:: Finally (and this was unrelated to _dark data_ but very relevant for the unemployed), each job-search activity, from application preparation through submission, interviews and the eventual outcome, got recorded as a separate dated entry in work-search logs required by the government should you be claiming an employment benefit.
 
-The outcome of this exercise proved to be one of the most revealing and beneficial pieces of work I have undertaken in terms of the rediscovery of my own value, as well as allowing me to compete in an saturated employment marketplace where the electronic gatekeepers are strongly biased against all but the closest matching applicants.
+The outcome of this exercise proved to be one of the most revealing and beneficial pieces of work I have undertaken in terms of the rediscovery of my own value, as well as allowing me to compete in a saturated employment marketplace where the electronic gatekeepers are strongly biased against all but the closest matching applicants.
 
-Beyond what I would probably tell you about myself the tool reminded me of my deep skills in ITIL footnote:itil[Information Technology Infrastructure Library: a framework of best practices for managing IT services and aligning them with business needs.], project management and disaster recovery, and of my work in asset management in the nuclear and energy industries. Whilst I've worked in financial markets the most it found I have years of experience in aerospace, GIS footnote:gis[Geospatial Information Services], gaming and entertainment, and many more. These are the things I had forgotten to remember but could be gold to a prospective employer.
+Beyond what I would probably tell you about myself, the tool reminded me of my deep skills in ITIL footnote:itil[Information Technology Infrastructure Library: a framework of best practices for managing IT services and aligning them with business needs.], project management and disaster recovery, and of my work in asset management in the nuclear and energy industries. Whilst I've worked in financial markets the most, it found I have years of experience in aerospace, GIS footnote:gis[Geospatial Information Services], gaming and entertainment, and many more. These are the things I had forgotten to remember but could be gold to a prospective employer.
 
 These insights have allowed me to widen my net in terms of the roles I have felt confident applying for, knowing that I can attend interviews with strong, evidence-backed stories of how these experiences and skills could benefit future employers. The pipeline also built ATS-targeted documentation that was more likely to match with the ATS filters and land on the hiring manager's desk and was instrumental in lining up more interviews than I could have achieved on my own.
 
@@ -129,11 +129,11 @@ I had an immediate need and a practical problem to solve: how could I represent 
 
 Of course, not everything that glisters is gold. AI is perfectly capable of producing convincing nonsense fuelled by decades of accretion: there is a lot of digital detritus in them there hills. Distinguishing real value from noise and ensuring that whatever conclusions the models reach can be traced back to something real is the trick. That's why deterministic retrieval, keeping the original evidence accessible and, of course, human oversight are so important to realising the value.
 
-Equally, this project took time, time that wasn't finding a new role, that wasn't "generating revenue." But the dividends were greater and the result was more valuable. From a black mountain of data, it yielded a searchable, reusable body of knowledge that I can continue to interrogate and put to work.
+Equally, this project took time, time that wasn't finding a new role, that wasn't "generating revenue." However, the dividends were greater and the result was more valuable. From a black mountain of data, it yielded a searchable, reusable body of knowledge that I can continue to interrogate and put to work.
 
 So, think on that. My 178,284 files are a drop in the ocean of information accumulated by even a modest-sized organisation. Somewhere in those dark waters may be answers to questions nobody has thought to ask, lessons already learned but subsequently forgotten, or risks nobody realises they're carrying.
 
-It may not all be gold but until you cast light on the shadows, how will you know?
+It may not all be gold, but until you cast light on the shadows, how will you know?
 
 // == Stuff I Removed
 // === The Job Application
